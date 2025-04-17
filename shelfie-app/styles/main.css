@@ -1,24 +1,7 @@
 @import url(./reset.css);
 @import url(./typography.css);
+@import url(./navigation.css);
 
 
-.header nav {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    border: 1px solid black;
-    background-color: #f4f2e9;
-    padding: 1em 3em;
-}
 
-.header .navbar .logo{
-    font-size: 2em;
-}
-
-.navbar ul {
-    display: flex;
-    gap: 1.3em;
-    padding-bottom: 0em;
-    font-size: 1.2em;
-}
 
