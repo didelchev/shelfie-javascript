@@ -1,12 +1,33 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="/styles/main.css">
     <title>Login</title>
-</head>
-<body>
-    <h1>Login works</h1>
-    
-</body>
+  </head>
+  <body>
+    <header class="header">
+      <nav class="navbar">
+        <a class="logo" href="./index.html">Shelfie</a>
+        <ul>
+          <li><a href="./catalog.html">Browse</a></li>
+          <li><a href="./login.html">Login</a></li>
+          <li><a href="./register.html">Register</a></li>
+        </ul>
+      </nav>
+    </header>
+    <main>
+        <section class="login-container">
+            <form action="#" class="login-form">
+                <h2>Login</h2>
+                <label for="">Email</label>
+                <input type="text" id="email" name="email">
+                <label for="">Password</label>
+                <input type="password" id="password" name="password">
+                <button type="submit">Login</button>
+            </form>
+        </section>
+    </main>
+  </body>
 </html>

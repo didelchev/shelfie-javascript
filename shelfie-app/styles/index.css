@@ -23,7 +23,7 @@
     gap: 2em;
 }
 
-.action-buttons > button {
+.action-buttons > a {
     border: none;
     background-color: black;
     color: white;
