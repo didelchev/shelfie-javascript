@@ -1,0 +1,20 @@
+.book-details{
+    display: flex;
+    width: 70%;
+    gap: 3em;
+    margin:5em auto;
+    border: 1px solid black;
+    padding: 1em;
+   
+}
+
+.book-details .image-container {
+    display: block;
+    width: 100%;
+}
+
+.book-details .book-description p {
+    font-size: 1.1em;
+    margin-bottom: 0;
+    padding-bottom: 1em;
+}
