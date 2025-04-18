@@ -21,6 +21,11 @@ body{
     box-shadow: 0 0 1em rgba(0, 0, 0, 0.1);
 }
 
+.login-form h2{
+    text-align: center;
+    font-size: 2.4em;
+}
+
 .login-form > label{
     font-size: 1.2em;
 }
@@ -36,6 +41,4 @@ body{
     color: white;
     padding: 1em 0;
     font-size: 1.2em;
-    width: 20%;
-    margin: 0 auto;
 }
