@@ -3,8 +3,7 @@
   height: calc(100vh - 76.2px);
   padding:5em  7em 0 7em;
   gap: 2em;
-  grid-template-columns: 0.5fr 1fr;
-  background-color: #f4f2e9;
+  grid-template-columns: 0.6fr 1fr;
 }
 
 .welcome-text{
@@ -15,6 +14,7 @@
     
 }
 .welcome-text h1{
+    font-weight: 800;
     font-size: 4em;
 }
 
@@ -22,6 +22,47 @@
     display: flex;
     gap: 2em;
 }
-.welcome-image {
-    /* border: 1px solid black; */
+
+.action-buttons > button {
+    border: none;
+    background-color: black;
+    color: white;
+    padding: 0.5em 1.5em;
+}
+
+.app-description h4{ 
+    font-weight: 600;
+}
+.app-description { 
+    padding: 3em 7em;
+    border: 1px solid black;
+    text-align: center;
+    font-size: 1.6em;
+}
+
+.popular-books h2 {
+    text-align: center;
+    font-weight: 600;
+    margin-top: 1em;
+}
+
+.popular-books-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 200px);
+    margin-top: 3em;
+    justify-content: center;
+    gap: 10em;
+}
+.popular-books-grid > div.books {
+}
+
+
+.popular-books-grid > div.books > h4 {
+    margin:0.4em 0 0 0;
+    font-weight: 500;
+    white-space: normal;
+    
+}
+.popular-books-grid > div.books > p {
+    font-size: 1.1em;
 }
