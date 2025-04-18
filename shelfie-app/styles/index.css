@@ -35,9 +35,9 @@
 }
 .app-description { 
     padding: 3em 7em;
-    border: 1px solid black;
     text-align: center;
     font-size: 1.6em;
+    background-color: #f4f2e9;
 }
 
 .popular-books h2 {
@@ -53,9 +53,6 @@
     justify-content: center;
     gap: 10em;
 }
-.popular-books-grid > div.books {
-}
-
 
 .popular-books-grid > div.books > h4 {
     margin:0.4em 0 0 0;
@@ -66,3 +63,16 @@
 .popular-books-grid > div.books > p {
     font-size: 1.1em;
 }
+
+footer {
+    background-color: #f4f2e9;
+    color: black;
+    padding: 20px;
+    text-align: center;
+  }
+  
+  .footer-links a {
+    color: black;
+    margin: 0 10px;
+    font-size: 1rem;
+  }
