@@ -2,7 +2,7 @@ body{
     background-color: #eee;
 }
 
-.login-container{
+.register-container{
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -11,7 +11,7 @@ body{
 
 }
 
-.login-form{
+.register-form{
     display: flex;
     flex-direction: column;
     padding: 2em;
@@ -20,21 +20,21 @@ body{
     box-shadow: 0 0 1em rgba(0, 0, 0, 0.1);
 }
 
-.login-form h2{
+.register-form h2{
     text-align: center;
     font-size: 2.4em;
 }
 
-.login-form > label{
+.register-form > label{
     font-size: 1.2em;
 }
 
-.login-form > input {
+.register-form > input {
     margin-bottom: 1em;
     padding: 0.3em;
 }
 
-.login-form button{
+.register-form button{
     border: none;
     background-color: black;
     color: white;
