@@ -54,6 +54,11 @@
     gap: 10em;
 }
 
+.popular-books img {
+    border-top-right-radius: 1em;
+    border-bottom-right-radius: 1em;
+}
+
 .popular-books-grid > div.books > h4 {
     margin:0.4em 0 0 0;
     font-weight: 500;
