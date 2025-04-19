@@ -6,6 +6,12 @@
   grid-template-columns: 0.6fr 1fr;
 }
 
+
+.main-content .welcome-image img{
+    border-bottom-right-radius: 20em;
+    border-top-left-radius: 24em;
+
+}
 .welcome-text{
     display: flex;
     flex-direction: column;
