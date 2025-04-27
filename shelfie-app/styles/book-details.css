@@ -1,20 +1,28 @@
 .book-details{
     display: flex;
-    width: 70%;
-    gap: 3em;
-    margin:5em auto;
-    border: 1px solid black;
+    width: 50%;
+    margin: 5em auto;
+    gap: 1em;
     padding: 1em;
+    outline: 0.5px solid #0000002b;
    
 }
-
-.book-details .image-container {
-    display: block;
-    width: 100%;
+.book-details > * {
+    outline: 1px solid lime;
+}
+.image-container  {
+    flex-shrink: 0;
+    flex-basis: content;
 }
 
-.book-details .book-description p {
-    font-size: 1.1em;
+.book-description{
+    padding: 1em;
+    flex-basis: 75ch;
+    flex-grow: 1;
+}
+
+.book-description p {
+    font-size: 1.2em;
     margin-bottom: 0;
     padding-bottom: 1em;
 }
