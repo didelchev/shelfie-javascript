@@ -3,6 +3,7 @@
 @import url(./login.css);
 @import url(./register.css);
 @import url(./book-details.css);
+@import url(./catalog.css);
 
 /* Resets */
 @import url(./reset.css);
