@@ -1,23 +1,23 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" href="../styles/main.css" />
-    <script type="module" src="../scripts/app.js"></script>
-    <title>Shelfie</title>
-  </head>
-  <body>
-    <header class="header">
-      <nav class="navbar">
-        <a class="logo" href="./index.html">Shelfie</a>
-        <ul>
-          <li><a href="./catalog.html">Browse</a></li>
-          <li><a href="./login.html">Login</a></li>
-          <li><a href="./register.html">Register</a></li>
-        </ul>
-      </nav>
-    </header>
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet" href="../styles/main.css" />
+  <title>Shelfie</title>
+</head>
+<body>
+  <header class="header">
+    <nav class="navbar">
+      <a class="logo" href="/">Shelfie</a>
+      <ul>
+        <li><a href="./catalog.html" class="link">Browse</a></li>
+        <li><a href="./login.html" class="link">Login</a></li>
+        <li><a href="./register.html" class="link">Register</a></li>
+      </ul>
+    </nav>
+  </header>
+  <div id="root">
     <main class="book-catalog">
       <h1>Explore Books</h1>
       <div class="book-catalog-grid">
@@ -43,5 +43,17 @@
         </a>
       </div>
     </main>
-  </body>
+    
+    <footer>
+      <div class="footer">
+        <p>&copy; 2025 Shelfie - All rights reserved</p>
+        <div class="footer-links">
+          <a href="/privacy-policy">Privacy Policy</a>
+          <a href="/terms-of-service">Terms of Service</a>
+        </div>
+      </div>
+    </footer>
+  </div>
+</body>
+
 </html>
