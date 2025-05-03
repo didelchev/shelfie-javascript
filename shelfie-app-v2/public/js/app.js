@@ -1,3 +1,4 @@
-const root = document.getElementById('root')
 
-root.innerHTML = `<h1>Hello World</h1>`
+import { testFunction } from "./test.js";
+
+testFunction()
