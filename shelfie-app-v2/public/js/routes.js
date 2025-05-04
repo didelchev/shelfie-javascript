@@ -6,13 +6,13 @@ const routes = {
     root.innerHTML = `<h1>Home Page</h1>`;
   },
   "/catalog": () => {
-    root.innerHTML = `<h1>Catalog Page</h1>`;
+    root.innerHTML = `<h1>Home Page</h1>`;
   },
   "/login": () => {
-    root.innerHTML = `<h1>Login Page</h1>`;
+    root.innerHTML = `<h1>Home Page</h1>`;
   },
   "/register": () => {
-    root.innerHTML = `<h1>Register Page</h1>`;
+    root.innerHTML = `<h1>Home Page</h1>`;
   },
 };
 
@@ -41,10 +41,3 @@ links.forEach((link) => {
     })
 })
 
-window.addEventListener('load', () => {
-    window.addEventListener('popstate', () => {
-        Router(location.pathname)
-    })
-})
-
-Router(location.pathname)
