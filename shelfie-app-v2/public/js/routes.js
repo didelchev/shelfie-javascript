@@ -1,18 +1,20 @@
+import { homeView } from "./views/home.js";
+
 const root = document.getElementById("root");
 const links = document.querySelectorAll(".link");
 
 const routes = {
   "/": () => {
-    root.innerHTML = `<h1>Home Page</h1>`;
+    root.innerHTML = homeView;
   },
   "/catalog": () => {
-    root.innerHTML = `<h1>Home Page</h1>`;
+    root.innerHTML = `<h1>Catalog Page</h1>`;
   },
   "/login": () => {
-    root.innerHTML = `<h1>Home Page</h1>`;
+    root.innerHTML = `<h1>Login Page</h1>`;
   },
   "/register": () => {
-    root.innerHTML = `<h1>Home Page</h1>`;
+    root.innerHTML = `<h1>Register Page</h1>`;
   },
 };
 
@@ -27,17 +29,27 @@ const Router = (path) => {
 }
 
 
-links.forEach((link) => {
-    link.addEventListener("click", (e) => {
+export const Navigate = () => {
+  links.forEach((link) => {
+    link.addEventListener('click', (e) => {
+      e.preventDefault();
 
-        e.preventDefault();
+      const linkPath = link.getAttribute('href');
 
-        const linkPath = link.getAttribute('href');
+      history.pushState(null, null, link.href);      
 
-        history.pushState(null, null, link.href);
+      Router(linkPath)
+    })
+  })
+}
 
-        Router(linkPath)
-        
+
+window.addEventListener('load', () => {
+    window.addEventListener('popstate', () => {
+        Router(location.pathname)
     })
 })
 
+Router(location.pathname)
+
+Navigate();

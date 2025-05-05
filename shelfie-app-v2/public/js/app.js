@@ -1,12 +1,11 @@
-import { homeView } from "./homeView.js";
+import { homeComponent } from "./views/home.js";
 
 const root = document.getElementById("root");
 const links = document.querySelectorAll(".link");
 
+
 const routes = {
-  "/": () => {
-    root.innerHTML = homeView;
-  },
+  "/": homeComponent,
   "/catalog": () => {
     root.innerHTML = `<h1>Catalog Page</h1>`;
   },
@@ -19,6 +18,10 @@ const routes = {
 };
 
 
+
+
+
+
 const Router = (path) => {
 
     if(!routes[path]){
@@ -29,19 +32,20 @@ const Router = (path) => {
 }
 
 
-links.forEach((link) => {
-    link.addEventListener("click", (e) => {
+export const Navigate = () => {
+  links.forEach((link) => {
+    link.addEventListener('click', (e) => {
+      e.preventDefault();
 
-        e.preventDefault();
+      const linkPath = link.getAttribute('href');
 
-        const linkPath = link.getAttribute('href');
+      history.pushState(null, null, link.href);      
 
-        history.pushState(null, null, link.href);
-
-        Router(linkPath)
-        
+      Router(linkPath)
     })
-})
+  })
+}
+
 
 window.addEventListener('load', () => {
     window.addEventListener('popstate', () => {
@@ -50,3 +54,5 @@ window.addEventListener('load', () => {
 })
 
 Router(location.pathname)
+
+Navigate();
