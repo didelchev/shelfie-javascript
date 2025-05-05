@@ -1,8 +1,6 @@
 import { homeComponent } from "./views/home.js";
 
 const root = document.getElementById("root");
-const links = document.querySelectorAll(".link");
-
 
 const routes = {
   "/": homeComponent,
@@ -17,42 +15,39 @@ const routes = {
   },
 };
 
-
-
-
-
-
 const Router = (path) => {
-
-    if(!routes[path]){
-        root.innerHTML = `<h1>404 Page Not Found</h1>`
-    }else{
-        routes[path]();
-    }
-}
-
+  if (!routes[path]) {
+    root.innerHTML = `<h1>404 Page Not Found</h1>`;
+  } else {
+    routes[path]();
+  }
+};
 
 export const Navigate = () => {
+  const links = document.querySelectorAll(".link");
   links.forEach((link) => {
-    link.addEventListener('click', (e) => {
+    link.addEventListener("click", (e) => {
       e.preventDefault();
 
-      const linkPath = link.getAttribute('href');
+      const linkPath = link.getAttribute("href");
 
-      history.pushState(null, null, link.href);      
+      history.pushState(null, null, link.href);
 
-      Router(linkPath)
-    })
-  })
-}
+      // Router(linkPath)
+    });
+  });
+};
 
+const onLoad = () => {
+  window.addEventListener("load", () => {
+    window.addEventListener("popstate", () => {
+      Router(location.pathname);
+    });
+  });
 
-window.addEventListener('load', () => {
-    window.addEventListener('popstate', () => {
-        Router(location.pathname)
-    })
-})
+  Router(location.pathname);
+};
 
-Router(location.pathname)
+onLoad();
 
 Navigate();

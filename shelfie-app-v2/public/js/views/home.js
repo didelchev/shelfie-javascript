@@ -1,6 +1,8 @@
 import { render } from "../utils.js"
 
 export const homeComponent = () => {
+  document.title = 'Shelfie'
+
   render(`<section class="main-content">
         <div class="welcome-text">
           <h1>Welcome to Shelfie</h1>
