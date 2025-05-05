@@ -1,9 +1,11 @@
+import { homeView } from "./homeView.js";
+
 const root = document.getElementById("root");
 const links = document.querySelectorAll(".link");
 
 const routes = {
   "/": () => {
-    root.innerHTML = `<h1>Home Page</h1>`;
+    root.innerHTML = homeView;
   },
   "/catalog": () => {
     root.innerHTML = `<h1>Catalog Page</h1>`;
