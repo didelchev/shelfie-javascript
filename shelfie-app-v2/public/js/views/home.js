@@ -1,16 +1,15 @@
-const root = document.getElementById('root');
+import { render } from "../utils.js"
 
-export const homeView = () => {
-    root.innerHTML = `
-    <section class="main-content">
+export const homeComponent = () => {
+  render(`<section class="main-content">
         <div class="welcome-text">
           <h1>Welcome to Shelfie</h1>
           <h2>
             Lorem, ipsum dolor sit amet consectetur adipisicing elit. Eius, amet.
           </h2>
           <div class="action-buttons">
-            <a class="login-button" href="/login">Login</a>
-            <a class="register-button" href="/register">Register</a>
+            <a class="link" href="/login">Login</a>
+            <a class="link" href="/register">Register</a>
           </div>
         </div>
         <div class="welcome-image">
@@ -68,5 +67,5 @@ export const homeView = () => {
         </div>
       </div>
     </footer>
-`
+    `)
 }
