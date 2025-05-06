@@ -6,29 +6,25 @@ import { registerComponent } from "./components/registerComponent.js";
 
 
 
-const routes = [
-  { path: '/', component: homeComponent },
-  { path: '/catalog', component: catalogComponent},
-  { path: '/login', component: loginComponent},
-  { path: '/register', component: registerComponent},
-  { path: '/book-details', component: bookComponent },
+// const routes = [
+//   { path: '/', component: homeComponent },
+//   { path: '/catalog', component: catalogComponent},
+//   { path: '/login', component: loginComponent},
+//   { path: '/register', component: registerComponent},
+//   { path: '/book-details', component: bookComponent },
 
-]
+// ]
+const routes = []
 
-const testBook = {
-  title: 'Harry Potter and the Chamber of Secrets',
-  author: 'J.K Rowling',
-  pages: '493',
-  genre: 'fantasy',
-  description: 'Good book',
-  image: '../../images/book-2.jpg'
-  
+
+export const useRoutes = (path, component) => {
+  routes.push({path, component})
 }
 
 const Router = (path) => {
     routes.forEach((routesPath) => {
       if(routesPath.path === path) {
-          routesPath.component(testBook)
+          routesPath.component()
       }
     })
 };
@@ -48,7 +44,7 @@ export const Navigate = () => {
   });
 };
 
-export const onLoad = () => {
+export const startRouter = () => {
   window.addEventListener("load", () => {
     window.addEventListener("popstate", () => {
       Router(location.pathname);
@@ -56,6 +52,8 @@ export const onLoad = () => {
   });
 
   Router(location.pathname);
+
+  Navigate()
 };
 
 
