@@ -15,10 +15,20 @@ const routes = [
 
 ]
 
+const testBook = {
+  title: 'Harry Potter and the Chamber of Secrets',
+  author: 'J.K Rowling',
+  pages: '493',
+  genre: 'fantasy',
+  description: 'Good book',
+  image: '../../images/book-2.jpg'
+  
+}
+
 const Router = (path) => {
     routes.forEach((routesPath) => {
       if(routesPath.path === path) {
-          routesPath.component()
+          routesPath.component(testBook)
       }
     })
 };
