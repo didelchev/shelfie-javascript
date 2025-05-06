@@ -1,55 +1,51 @@
-import { homeView } from "./views/home.js";
+import { bookComponent } from "./components/bookComponent.js";
+import { catalogComponent } from "./components/catalogComponent.js";
+import { homeComponent } from "./components/homeComponent.js";
+import { loginComponent } from "./components/loginComponent.js";
+import { registerComponent } from "./components/registerComponent.js";
 
-const root = document.getElementById("root");
-const links = document.querySelectorAll(".link");
 
-const routes = {
-  "/": () => {
-    root.innerHTML = homeView;
-  },
-  "/catalog": () => {
-    root.innerHTML = `<h1>Catalog Page</h1>`;
-  },
-  "/login": () => {
-    root.innerHTML = `<h1>Login Page</h1>`;
-  },
-  "/register": () => {
-    root.innerHTML = `<h1>Register Page</h1>`;
-  },
+
+const routes = [
+  { path: '/', component: homeComponent },
+  { path: '/catalog', component: catalogComponent},
+  { path: '/login', component: loginComponent},
+  { path: '/register', component: registerComponent},
+  { path: '/book-details', component: bookComponent },
+
+]
+
+const Router = (path) => {
+    routes.forEach((routesPath) => {
+      if(routesPath.path === path) {
+          routesPath.component()
+      }
+    })
+};
+
+export const Navigate = () => {
+  const links = document.querySelectorAll(".link");
+  links.forEach((link) => {
+    link.addEventListener("click", (e) => {
+      e.preventDefault();
+
+      const linkPath = link.getAttribute("href");
+
+      history.pushState(null, null, link.href);
+
+      Router(linkPath)
+    });
+  });
+};
+
+export const onLoad = () => {
+  window.addEventListener("load", () => {
+    window.addEventListener("popstate", () => {
+      Router(location.pathname);
+    });
+  });
+
+  Router(location.pathname);
 };
 
 
-const Router = (path) => {
-
-    if(!routes[path]){
-        root.innerHTML = `<h1>404 Page Not Found</h1>`
-    }else{
-        routes[path]();
-    }
-}
-
-
-export const Navigate = () => {
-  links.forEach((link) => {
-    link.addEventListener('click', (e) => {
-      e.preventDefault();
-
-      const linkPath = link.getAttribute('href');
-
-      history.pushState(null, null, link.href);      
-
-      Router(linkPath)
-    })
-  })
-}
-
-
-window.addEventListener('load', () => {
-    window.addEventListener('popstate', () => {
-        Router(location.pathname)
-    })
-})
-
-Router(location.pathname)
-
-Navigate();
