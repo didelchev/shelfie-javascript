@@ -1,3 +1,4 @@
+
 const routes = []
 
 
@@ -6,9 +7,9 @@ export const useRoutes = (path, component) => {
 }
 
 const Router = (path) => {
-    routes.forEach((routesPath) => {
-      if(routesPath.path === path) {
-          routesPath.component()
+    routes.forEach((potentialPath) => {
+      if(potentialPath.path === path) {
+          potentialPath.component()
       }
     })
 };
