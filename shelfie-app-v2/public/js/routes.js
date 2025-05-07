@@ -1,11 +1,14 @@
-
+// Array for storing the routes
 const routes = []
 
 
+// 
 export const useRoutes = (path, component) => {
   routes.push({path, component})
 }
 
+
+// Recieves a path and checks the routes array for any matches, then runs the component function
 const Router = (path) => {
     routes.forEach((potentialPath) => {
       if(potentialPath.path === path) {
@@ -13,6 +16,7 @@ const Router = (path) => {
       }
     })
 };
+
 
 export const Navigate = () => {
   const links = document.querySelectorAll(".link");

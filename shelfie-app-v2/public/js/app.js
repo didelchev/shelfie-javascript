@@ -16,11 +16,4 @@ useRoutes('/book-details', bookComponent)
 startRouter()
 
 
-// const routes = [
-//   { path: '/', component: homeComponent },
-//   { path: '/catalog', component: catalogComponent},
-//   { path: '/login', component: loginComponent},
-//   { path: '/register', component: registerComponent},
-//   { path: '/book-details', component: bookComponent },
 
-// ]
