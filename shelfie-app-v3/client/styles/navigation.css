@@ -1,0 +1,19 @@
+.header nav {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background-color: #f4f2e9;
+    padding: 1em 3em;
+}
+
+.header .navbar .logo{
+    font-size: 2.2em;
+    font-weight: 600;
+}
+
+.navbar ul {
+    display: flex;
+    gap: 1.3em;
+    padding-bottom: 0em;
+    font-size: 1.2em;
+}
