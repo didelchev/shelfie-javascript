@@ -1,8 +1,23 @@
 import { Navigate } from "../routes.js"
 import { render } from "../utils.js"
 
+const getBooks = () => {
+  const url = 'http://localhost:5000';
+  return fetch(url)
+    .then(response => response.json())
+    .then(data =>  data.forEach(book => console.log(book.author)
+    ))
+    .catch(error => console.log(error))
+
+}
+
+getBooks()
+
+
+
 export const catalogComponent = () => {
     document.title = 'Explore Books'
+
 
     render(`
         <main class="book-catalog">

@@ -1,9 +1,12 @@
 import express from 'express';
 import routes from './routes.js';
+import cors from 'cors'
+
 
 const app = express()
 // TO DO prevent CORS problem
 
+app.use(cors())
 
 app.use(routes)
 
