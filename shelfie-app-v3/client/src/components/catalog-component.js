@@ -8,11 +8,11 @@ const getBooks = () => {
     .then(data =>  data.forEach(book => console.log(book.author)
     ))
     .catch(error => console.log(error))
-
+    
 }
 
 getBooks()
-
+getBooks()
 
 
 export const catalogComponent = () => {
