@@ -1,10 +1,12 @@
 import { Router } from 'express';
-import testController from './testController.js';
+import homeController from '../controllers/home-controller.js';
+import catalogController from '../controllers/catalog-controller.js';
 
 
 const routes = Router();
 
-routes.use('/', testController)
+routes.use('/', homeController)
+routes.use('/catalog', catalogController)
 
 
 export default routes
