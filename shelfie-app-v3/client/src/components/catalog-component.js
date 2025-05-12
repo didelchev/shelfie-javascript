@@ -1,30 +1,55 @@
 import { Navigate } from "../routes.js"
 import { render } from "../utils.js"
-
-const getBooks = () => {
-  const url = 'http://localhost:5000';
-  return fetch(url)
-    .then(response => response.json())
-    .then(data =>  data.forEach(book => console.log(book.author)
-    ))
-    .catch(error => console.log(error))
-    
-}
-
-getBooks()
-getBooks()
+import { singleBook } from "./single-book-component.js"
 
 
 export const catalogComponent = () => {
-    document.title = 'Explore Books'
+  document.title = 'Explore Books'
+  let allBooksHTML
 
-
-    render(`
-        <main class="book-catalog">
+  const url = 'http://localhost:5000/catalog'
+  fetch(url)
+    .then(response => response.json())
+    .then((data) => {
+    const allBooksHTML = data.map(book => singleBook(book)).join('');
+     render(`
+    <main class="book-catalog">
       <h1>Explore books</h1>
       <div class="book-catalog-grid">
-        <a class="link" href="/book-details">
-          <img src="../images/book-1.jpg" alt="book cover" />
+        ${(allBooksHTML)}
+      </div>
+    </main>
+    
+    <footer>
+      <div class="footer">
+        <p>&copy; 2025 Shelfie - All rights reserved</p>
+        <div class="footer-link">
+          <a href="/privacy-policy">Privacy Policy</a>
+          <a href="/terms-of-service">Terms of Service</a>
+        </div>
+      </div>
+    </footer>
+        `) 
+    })
+    .catch(error => console.log(error))
+
+    
+     
+
+
+    
+Navigate()
+
+
+}
+
+
+
+{/* <main class="book-catalog">
+      <h1>Explore books</h1>
+      <div class="book-catalog-grid">
+      <a class="link" href="/book-details">
+          <img src="../images/book-2.jpg" alt="book cover" />
           <h4>The Hunger Games</h4>
           <p>Suzanne Collins</p>
         </a>
@@ -54,9 +79,4 @@ export const catalogComponent = () => {
           <a href="/terms-of-service">Terms of Service</a>
         </div>
       </div>
-    </footer>
-        `)
-
-    Navigate()
-
-}
+    </footer> */}

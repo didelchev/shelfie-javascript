@@ -15,7 +15,7 @@ const Router = (path) => {
           potentialPath.component()
       }
     })
-};
+}
 
 
 export const Navigate = () => {
