@@ -1,8 +1,8 @@
-import { bookComponent } from "./components/bookComponent.js";
-import { catalogComponent } from "./components/catalogComponent.js";
-import { homeComponent } from "./components/homeComponent.js";
-import { loginComponent } from "./components/loginComponent.js";
-import { registerComponent } from "./components/registerComponent.js";
+import { bookComponent } from "./components/book-component.js";
+import { catalogComponent } from "./components/catalog-component.js";
+import { homeComponent } from "./components/home-component.js";
+import { loginComponent } from "./components/login-component.js";
+import { registerComponent } from "./components/register-component.js";
 import { startRouter } from "./routes.js";
 import { useRoutes } from "./routes.js";
 
