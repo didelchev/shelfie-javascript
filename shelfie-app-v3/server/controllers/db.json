@@ -1,0 +1,34 @@
+[
+  {
+    "id": 1,
+    "title": "Harry Potter",
+    "author": "J.K Rowling",
+    "pages": 491,
+    "description": "Very Cool Book !",
+    "image": "https://toppsta.com/images/covers/5/9/0/4/9781408855904.webp?t=1709095286"
+  },
+  {
+    "id": 2,
+    "title": "Hunger Games",
+    "author": "Suzanne Collins",
+    "pages": 381,
+    "description": "Very Good Book !",
+    "image": "https://toppsta.com/images/covers/5/9/0/4/9781408855904.webp?t=1709095286"
+  },
+  {
+    "id": 3,
+    "title": "The Hobbit",
+    "author": "J.R.R Tolkien",
+    "pages": 393,
+    "description": "The best book ever !",
+    "image": "https://toppsta.com/images/covers/5/9/0/4/9781408855904.webp?t=1709095286"
+  },
+  {
+    "id": 4,
+    "title": "The Road",
+    "author": "Cormac McCarthy",
+    "pages": 531,
+    "description": "Very annoying book!",
+    "image": "https://toppsta.com/images/covers/5/9/0/4/9781408855904.webp?t=1709095286"
+  }
+]
