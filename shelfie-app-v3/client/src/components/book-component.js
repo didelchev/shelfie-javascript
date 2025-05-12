@@ -4,6 +4,15 @@ import { render } from "../utils.js"
 export const bookComponent = () => {
   document.title = 'Book Details Page'
 
+    const book = {
+        author: 'J.K Rowling',
+        image: '../../images/book-1.jpg',
+        title: 'Harry Potter',
+        pages: '393',
+        description: 'Very cool book',
+        genre: 'fantasy'
+    }
+
   render(`
     <section class="book-details">
         <div class="image-container">
