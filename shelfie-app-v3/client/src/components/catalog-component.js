@@ -5,7 +5,6 @@ import { singleBook } from "./single-book-component.js"
 
 export const catalogComponent = () => {
   document.title = 'Explore Books'
-  let allBooksHTML
 
   const url = 'http://localhost:5000/catalog'
   fetch(url)
@@ -18,16 +17,7 @@ export const catalogComponent = () => {
       <div class="book-catalog-grid">
         ${(allBooksHTML)}
       </div>
-    </main>
-    
-    <footer>
-      <div class="footer">
-        <p>&copy; 2025 Shelfie - All rights reserved</p>
-        <div class="footer-link">
-          <a href="/privacy-policy">Privacy Policy</a>
-          <a href="/terms-of-service">Terms of Service</a>
-        </div>
-      </div>
+    </main> 
     </footer>
         `) 
     })
