@@ -29,12 +29,19 @@ const request = (method, url, data) => {
 
 
 
-const get = request.bind(null, 'GET')
-const post = request.bind(null, 'POST')
-const del = request.bind(null, 'DELETE')
-const put = request.bind(null, 'PUT')
-const patch = request.bind(null, 'PATCH')
+// const get = request.bind(null, 'GET')
+// const post = request.bind(null, 'POST')
+// const del = request.bind(null, 'DELETE')
+// const put = request.bind(null, 'PUT')
+// const patch = request.bind(null, 'PATCH')
 
+
+
+const get = (url, data) => request('GET', url, data)
+const post = (url, data) => request('POST', url, data)
+const del = (url, data) => request('DELETE', url, data)
+const put = (url, data) => request('PUT', url, data)
+const patch = (url, data) => request('PATCH', url, data)
 export { 
     get,
     post,
