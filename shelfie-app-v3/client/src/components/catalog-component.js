@@ -1,16 +1,19 @@
 import { Navigate } from "../routes.js"
 import { render } from "../utils.js"
-import { singleBook } from "./single-book-component.js"
+import { singleBookComponent } from "./single-book-component.js"
 
 
 export const catalogComponent = () => {
   document.title = 'Explore Books'
-
   const url = 'http://localhost:5000/catalog'
+  
   fetch(url)
     .then(response => response.json())
     .then((data) => {
-    const allBooksHTML = data.map(book => singleBook(book)).join('');
+    const allBooksHTML = data.map(book => singleBookComponent(book)).join('');
+
+
+
      render(`
     <main class="book-catalog">
       <h1>Explore books</h1>
