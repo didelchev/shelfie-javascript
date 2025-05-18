@@ -3,14 +3,15 @@ import { catalogComponent } from "./components/catalog-component.js";
 import { homeComponent } from "./components/home-component.js";
 import { loginComponent } from "./components/login-component.js";
 import { registerComponent } from "./components/register-component.js";
+import { singleBookComponent } from "./components/single-book-component.js";
 import { startRouter } from "./routes.js";
 import { useRoutes } from "./routes.js";
 
 useRoutes('/', homeComponent)
-useRoutes('/catalog', catalogComponent)
 useRoutes('/login', loginComponent)
 useRoutes('/register', registerComponent)
-useRoutes('/book-details', bookComponent)
+useRoutes('/catalog', catalogComponent)
+useRoutes('/catalog/:bookId', singleBookComponent)
 
 
 startRouter()
