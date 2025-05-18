@@ -1,4 +1,3 @@
-const serverURL = "http://localhost:5000/catalog";
 
 const request = (method, url, data) => {
   let options = {};
@@ -23,7 +22,6 @@ const request = (method, url, data) => {
       }
       return response.json();
     })
-    .then((data) => console.log(data))
     .catch((error) => console.log(error));
 };
 
@@ -42,6 +40,7 @@ const post = (url, data) => request('POST', url, data)
 const del = (url, data) => request('DELETE', url, data)
 const put = (url, data) => request('PUT', url, data)
 const patch = (url, data) => request('PATCH', url, data)
+ 
 export { 
     get,
     post,
