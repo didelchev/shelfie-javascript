@@ -27,4 +27,19 @@ const request = (method, url, data) => {
     .catch((error) => console.log(error));
 };
 
-request("GET", serverURL);
+
+
+const get = request.bind(null, 'GET')
+const post = request.bind(null, 'POST')
+const del = request.bind(null, 'DELETE')
+const put = request.bind(null, 'PUT')
+const patch = request.bind(null, 'PATCH')
+
+export { 
+    get,
+    post,
+    del,
+    put,
+    patch
+}
+
