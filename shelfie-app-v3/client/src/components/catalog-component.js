@@ -17,11 +17,11 @@ export const catalogComponent = () => {
         ${(allBooksHTML)}
       </div>
     </main> 
-    </footer>
         `)
     })
     .catch(error => console.log(error)
     )
+
     
 Navigate()
 
