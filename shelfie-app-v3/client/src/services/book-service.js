@@ -15,6 +15,8 @@ const getOneBook = (bookId) => {
     
         
 }
+const getOne = (movieId) => get(`${serverURL}/${movieId}`).then(data => console.log(data)
+)
 
-// getOneBook(3)
-console.log(getOneBook(3))
+
+getOne()
