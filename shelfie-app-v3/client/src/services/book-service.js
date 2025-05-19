@@ -1,17 +1,11 @@
 import { get } from "./requester.js"
-const serverURL = "http://localhost:5000/catalog";
 
-const getOneBook = (bookId) => {
-     return get(serverURL)
-        .then(data =>  data.find(book => book.id === bookId))
+const baseURL = "http://localhost:5000/catalog";
 
-    
-    
-        
-}
+const getAll = () => get(baseURL)
 
-console.log(getOneBook(3).then(book => console.log(book)
-));
+const getOne = (bookId) => get(baseURL).then(data => data.find(book => book.id === bookId))
+
 
 // const getOne = (movieId) => get(`${serverURL}/${movieId}`).then(data => console.log(data)
 // )
