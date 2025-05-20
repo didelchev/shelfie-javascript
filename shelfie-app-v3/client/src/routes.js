@@ -5,14 +5,11 @@ const routes = []
 // 
 export const useRoutes = (path, component) => {
   routes.push({path, component})
-  console.log(path.split('/'))   
 }
 
 
 // Recieves a path and checks the routes array for any matches, then runs the component function
-const Router = (path) => {
-  let examplePath = "/catalog/4"
-  
+const Router = (path) => {  
 
     routes.forEach((potentialPath) => {
       if(potentialPath.path === path) {

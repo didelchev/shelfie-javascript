@@ -1,7 +1,7 @@
 import { Navigate } from "../routes.js"
 import { getAll } from "../services/book-service.js"
 import { render } from "../utils.js"
-import { singleBookComponent } from "./single-book-component.js"
+import { singleBookComponent } from "./book-template.js"
 
 
 export const catalogComponent = () => {

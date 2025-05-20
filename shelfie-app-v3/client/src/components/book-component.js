@@ -4,14 +4,14 @@ import { render } from "../utils.js"
 export const bookComponent = () => {
   document.title = 'Book Details Page'
 
-    const book = {
-        author: 'J.K Rowling',
-        image: '../../images/book-1.jpg',
-        title: 'Harry Potter',
-        pages: '393',
-        description: 'Very cool book',
-        genre: 'fantasy'
-    }
+let book = {
+    id: 2,
+    title: "Hunger Games",
+    author: "Suzanne Collins",
+    pages: 381,
+    description: "Very Good Book !",
+    image: "https://toppsta.com/images/covers/2/0/8/2/9781407132082.jpg?t=1733284922"
+}
 
   render(`
     <section class="book-details">

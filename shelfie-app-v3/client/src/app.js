@@ -3,7 +3,6 @@ import { catalogComponent } from "./components/catalog-component.js";
 import { homeComponent } from "./components/home-component.js";
 import { loginComponent } from "./components/login-component.js";
 import { registerComponent } from "./components/register-component.js";
-import { singleBookComponent } from "./components/single-book-component.js";
 import { startRouter } from "./routes.js";
 import { useRoutes } from "./routes.js";
 
@@ -11,7 +10,7 @@ useRoutes('/', homeComponent)
 useRoutes('/login', loginComponent)
 useRoutes('/register', registerComponent)
 useRoutes('/catalog', catalogComponent)
-useRoutes('/catalog/:bookId', singleBookComponent)
+useRoutes('/catalog/3', bookComponent)
 
 
 startRouter()
