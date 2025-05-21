@@ -10,7 +10,7 @@ useRoutes('/', homeComponent)
 useRoutes('/login', loginComponent)
 useRoutes('/register', registerComponent)
 useRoutes('/catalog', catalogComponent)
-useRoutes('/catalog/3', bookComponent)
+useRoutes('/catalog/:bookId', bookComponent)
 
 
 startRouter()

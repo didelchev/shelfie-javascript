@@ -5,17 +5,31 @@ const routes = []
 // 
 export const useRoutes = (path, component) => {
   routes.push({path, component})
+  console.log(routes);
+  
 }
 
 
 // Recieves a path and checks the routes array for any matches, then runs the component function
-const Router = (path) => {  
+const Router = (path) => { 
+  const dynamicRoute = path.split("/")
 
-    routes.forEach((potentialPath) => {
-      if(potentialPath.path === path) {
-          potentialPath.component()
-      }
-    })
+  if(dynamicRoute.includes("catalog") && dynamicRoute[2]){
+      let bookId = path.split("/").pop()
+      const potentialRoute = routes.find(route => route.path.includes("/catalog/:bookId"))
+      potentialRoute ? potentialRoute.component(bookId) : alert("no path")      
+      
+  }else{
+    const route = routes.find(route => route.path === path)
+    route ? route.component() : alert('No such route')    
+  }
+
+  
+    // routes.forEach((potentialPath) => {
+    //   if(potentialPath.path === path) {
+    //       potentialPath.component()
+    //   }
+    // })
 }
 
 
@@ -26,7 +40,7 @@ export const Navigate = () => {
       e.preventDefault();
 
       const linkPath = link.getAttribute("href");
-      console.log(linkPath);
+      console.log(linkPath, 'The normal path');
       
       history.pushState(null, null, link.href);
 
