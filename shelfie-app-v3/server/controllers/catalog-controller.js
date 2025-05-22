@@ -15,7 +15,7 @@ catalogController.get('/', (req, res) => {
     
 })
 
-catalogController.get('/:movieId', (req, res) => {
+catalogController.get('/:bookId', (req, res) => {
         let id  = req.params.movieId
         let sampleBook = { 
             id: 1,
@@ -26,7 +26,7 @@ catalogController.get('/:movieId', (req, res) => {
             description: 'Cool book'
         }
 
-        
+
         res.send(sampleBook)
     })
 
