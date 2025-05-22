@@ -17,9 +17,17 @@ catalogController.get('/', (req, res) => {
 
 catalogController.get('/:movieId', (req, res) => {
         let id  = req.params.movieId
-        fetch('https://pokeapi.co/api/v2/pokemon/ditto')
-            .then(response => response.json())
-            .then(data => res.send(data))
+        let sampleBook = { 
+            id: 1,
+            title: 'Atomic Habits',
+            author: "James Clear",
+            pages: '431',
+            image: "https://toppsta.com/images/covers/2/0/8/2/9781407132082.jpg?t=1733284922",
+            description: 'Cool book'
+        }
+
+        
+        res.send(sampleBook)
     })
 
 
