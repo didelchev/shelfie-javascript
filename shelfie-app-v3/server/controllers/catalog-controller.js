@@ -15,7 +15,9 @@ catalogController.get("/", (req, res) => {
 });
 
 catalogController.get("/:bookId", (req, res) => {
-  let id = req.params.movieId;
+  let id = req.params
+  console.log(id);
+  
   let sampleBook = [
     {
       id: 1,
@@ -90,9 +92,13 @@ catalogController.get("/:bookId", (req, res) => {
         "https://toppsta.com/images/covers/6/2/8/8/9781406386288.jpg?t=1695653926",
     },
   ];
+  // let requestedBook = sampleBook.find(book => book.id === id )
 
-  let reqBook = sampleBook.find(book => book.id === id)
-  console.log(reqBook)
+  // console.log(requestedBook);
+  
+
+  // res.send(requestedBook)
+
 });
 
 export default catalogController;
