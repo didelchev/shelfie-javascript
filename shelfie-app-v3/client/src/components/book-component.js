@@ -4,7 +4,7 @@ import { render } from "../utils.js"
 export const bookComponent = (bookId) => {
   document.title = 'Book Details Page'
 
-  fetch("http://localhost:5000/catalog/:movieId")
+  fetch("http://localhost:5000/catalog/:bookId")
     .then(res => res.json())
     .then(book => {
         render(`
