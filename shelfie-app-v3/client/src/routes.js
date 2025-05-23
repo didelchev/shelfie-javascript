@@ -1,47 +1,28 @@
 // Array for storing the routes
-const routes = []
+const routes = [];
 
-
-// 
+//
 export const useRoutes = (path, component) => {
-  routes.push({path, component})
-  console.log(routes);
-  
-
-  
-}
-
+  routes.push({ path, component });
+};
 
 // Recieves a path and checks the routes array for any matches, then runs the component function
-const Router = (path) => { 
-  const dynamicRoute = path.split("/")
-  
+const Router = (path) => {
+  const dynamicRoute = path.split("/");
 
-  if(dynamicRoute.includes("catalog") && dynamicRoute[2]){
-      let bookId = path.split("/").pop()
-      console.log(dynamicRoute);
-            
+  if (dynamicRoute.includes("catalog") && dynamicRoute[2]) {
+    let bookId = path.split("/").pop();
 
-      const potentialRoute = routes.find(route => route.path.includes("/catalog/:bookId"))
-      console.log(potentialRoute);
-      
+    const potentialRoute = routes.find((route) =>
+      route.path.includes("/catalog/:bookId")
+    );
 
-
-      potentialRoute ? potentialRoute.component(bookId) : alert("no path")      
-      
-  }else{
-    const route = routes.find(route => route.path === path)
-    route ? route.component() : alert('No such route')    
+    potentialRoute ? potentialRoute.component(bookId) : alert("no path");
+  } else {
+    const route = routes.find((route) => route.path === path);
+    route ? route.component() : alert("No such route");
   }
-
-  
-    // routes.forEach((potentialPath) => {
-    //   if(potentialPath.path === path) {
-    //       potentialPath.component()
-    //   }
-    // })
-}
-
+};
 
 export const Navigate = () => {
   const links = document.querySelectorAll(".link");
@@ -50,10 +31,10 @@ export const Navigate = () => {
       e.preventDefault();
 
       const linkPath = link.getAttribute("href");
-      
+
       history.pushState(null, null, link.href);
 
-      Router(linkPath)
+      Router(linkPath);
     });
   });
 };
@@ -67,7 +48,5 @@ export const startRouter = () => {
 
   Router(location.pathname);
 
-  Navigate()
+  Navigate();
 };
-
-
