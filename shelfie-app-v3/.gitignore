@@ -1,6 +1,11 @@
-# Ignore environment variables
+# Ignore environment files
 .env
+*.env
+.env.local
+.env*.local
 
-# Node.js stuff (optional)
+# Optional: Also ignore common files
 node_modules/
 dist/
+build/
+.DS_Store
