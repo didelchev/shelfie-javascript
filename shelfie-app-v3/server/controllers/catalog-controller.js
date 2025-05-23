@@ -16,7 +16,6 @@ catalogController.get("/", (req, res) => {
 
 catalogController.get("/:bookId", (req, res) => {
   let id = req.params.bookId
-  console.log(id);
   
   let sampleBook = [
     {
@@ -97,7 +96,7 @@ catalogController.get("/:bookId", (req, res) => {
   console.log(requestedBook);
   
 
-  // res.send(requestedBook)
+  res.send(requestedBook)
 
 });
 
