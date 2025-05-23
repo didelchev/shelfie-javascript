@@ -1,13 +1,13 @@
 import { Navigate } from "../routes.js"
+import { getOne } from "../services/book-service.js"
 import { render } from "../utils.js"
 
 export const bookComponent = (bookId) => {
   document.title = 'Book Details Page'
 
-  fetch(`http://localhost:5000/catalog/${bookId}`)
-    .then(res => res.json())
+  getOne(bookId)
     .then(book => {
-        render(`
+            render(`
     <section class="book-details">
         <div class="image-container">
             <img src="${book.image}" alt="book">
@@ -23,6 +23,8 @@ export const bookComponent = (bookId) => {
     `)
 
     })
+    
+
   
 
     Navigate()
