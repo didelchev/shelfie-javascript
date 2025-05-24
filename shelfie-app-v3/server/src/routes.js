@@ -1,7 +1,6 @@
 import { Router } from 'express';
-import homeController from '../controllers/home-controller.js';
-import catalogController from '../controllers/catalog-controller.js';
-
+import homeController from './controllers/home-controller.js';
+import catalogController from './controllers/catalog-controller.js';
 
 const routes = Router();
 
