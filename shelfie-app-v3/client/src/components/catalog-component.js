@@ -8,24 +8,19 @@ export const catalogComponent = () => {
   document.title = 'Explore Books'
   
  getAll()
-  .then(data => console.log(data)
-  )
-  
-
-    
-    // .then(books => {
-    //   const allBooksHTML = books.map(book => singleBookComponent(book)).join('')
-    //   render(`
-    // <main class="book-catalog">
-    //   <h1>Explore books</h1>
-    //   <div class="book-catalog-grid">
-    //     ${(allBooksHTML)}
-    //   </div>
-    // </main> 
-    //     `)
-    // })
-    // .catch(error => console.log(error)
-    // )
+    .then(books => {
+      const allBooksHTML = books.map(book => singleBookComponent(book)).join('')
+      render(`
+    <main class="book-catalog">
+      <h1>Explore books</h1>
+      <div class="book-catalog-grid">
+        ${(allBooksHTML)}
+      </div>
+    </main> 
+        `)
+    })
+    .catch(error => console.log(error)
+    )
 
     
 Navigate()
