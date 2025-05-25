@@ -5,6 +5,7 @@ import catalogController from './controllers/catalog-controller.js';
 const routes = Router();
 
 routes.use('/', homeController)
+
 routes.use('/catalog', catalogController)
 
 

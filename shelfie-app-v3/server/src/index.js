@@ -2,10 +2,18 @@ import express from 'express';
 import routes from './routes.js';
 import cors from 'cors'
 import 'dotenv/config'
+import mongoose from 'mongoose'
 
 const app = express()
+const dbUrl = 'mongodb://localhost:27017'
+// Setup DB 
+mongoose.connect(dbUrl, { dbName: books})
 
-app.use(cors())
+app.use(cors({
+    origin: '*',
+    methods: ['GET', 'POST', 'PUT', 'DELETE'],
+    allowedHeaders: ['Content-Type', 'Authorization']
+}))
 
 app.use(routes)
 
