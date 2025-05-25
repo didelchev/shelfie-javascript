@@ -1,15 +1,12 @@
-import { response, Router } from "express";
-import path from "path";
-import { fileURLToPath } from "url";
-import { title } from "process";
-const __filename = fileURLToPath(import.meta.url);
-const __dirname = path.dirname(__filename);
+import { Router } from "express";
+import { getAll } from "../services/book-service.js";
 
 const catalogController = Router();
 
 
 catalogController.get("/", (req, res) => {
-  res.send({message: "works"})
+  getAll()
+    .then(data => res.send(data))
 });
 
 catalogController.get("/:bookId", (req, res) => {
