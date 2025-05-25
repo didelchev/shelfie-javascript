@@ -7,7 +7,7 @@ import mongoose from 'mongoose'
 const app = express()
 const dbUrl = 'mongodb://localhost:27017'
 // Setup DB 
-mongoose.connect(dbUrl, { dbName: 'books'})
+mongoose.connect(dbUrl, { dbName: 'shelfie'})
     .then(() => console.log('DB Connected !'))
     .catch((err) => console.log(`DB failed to connect: ${err} !`))
 
