@@ -1,21 +1,21 @@
 import express from 'express';
 import routes from './routes.js';
-import cors from 'cors'
 import 'dotenv/config'
 import mongoose from 'mongoose'
+import { corsMiddleware } from './middleware/cors-middleware.js';
 
 const app = express()
-const dbUrl = 'mongodb://localhost:27017'
-// Setup DB 
+
+
+app.use(express.urlencoded( {extended: false}))
+
+app.use(corsMiddleware)
+
+const dbUrl = process.env.MONGO_URI
 mongoose.connect(dbUrl, { dbName: 'shelfie'})
     .then(() => console.log('DB Connected !'))
     .catch((err) => console.log(`DB failed to connect: ${err} !`))
 
-app.use(cors({
-    origin: '*',
-    methods: ['GET', 'POST', 'PUT', 'DELETE'],
-    allowedHeaders: ['Content-Type', 'Authorization']
-}))
 
 app.use(routes)
 
