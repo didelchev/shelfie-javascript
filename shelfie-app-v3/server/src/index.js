@@ -1,11 +1,10 @@
 import express from 'express';
 import routes from './routes.js';
-import 'dotenv/config'
 import mongoose from 'mongoose'
-import { corsMiddleware } from './middleware/cors-middleware.js';
+import 'dotenv/config'
+import { corsMiddleware } from './middlewares/cors-middleware.js';
 
 const app = express()
-
 
 app.use(express.urlencoded( {extended: false}))
 
