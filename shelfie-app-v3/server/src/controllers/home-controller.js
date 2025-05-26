@@ -4,7 +4,7 @@ const homeController = Router()
 
 
 homeController.get("/", (req, res) => {
-    res.send('This is the home controller speaking')
+    res.send('This is the home controller.')
 })
 
 
