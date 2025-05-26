@@ -14,7 +14,7 @@ const request = (method, url, data) => {
     options.body = JSON.stringify(data);
   }
 
-  return fetch(url, data)
+  return fetch(url, options)
     .then((response) => {
       if (!response.ok) {
         throw new Error("Failed to fetch resources");
