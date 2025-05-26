@@ -6,8 +6,9 @@ const catalogController = Router();
 
 catalogController.get("/", (req, res) => {
   getAll()
-    .then(data => res.send(data))
+    .then(data => res.json(data))
 });
+
 
 catalogController.get("/:bookId", (req, res) => {
   let id = req.params.bookId
