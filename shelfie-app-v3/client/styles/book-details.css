@@ -21,8 +21,16 @@
     flex-grow: 1;
 }
 
-.book-description p {
+.book-description p{
     font-size: 1.2em;
     margin-bottom: 0;
     padding-bottom: 1em;
+}
+
+.book-description .label {
+    font-weight: 600;
+}
+
+.book-description a {
+    text-decoration:underline;
 }

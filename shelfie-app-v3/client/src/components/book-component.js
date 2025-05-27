@@ -7,6 +7,7 @@ export const bookComponent = (bookId) => {
 
   getOne(bookId)
     .then(book => {
+        console.log(book.genre) // TODO : Make each book genre a single hyperlink.
             render(`
     <section class="book-details">
         <div class="image-container">
@@ -14,9 +15,9 @@ export const bookComponent = (bookId) => {
         </div>
         <div class="book-description">
             <h1>${book.title}</h1>
-            <h4>${book.author}</h4>
-            <p>Pages: ${book.pages}</p>
-            <p>Genre: <a href="#">${book.genre.join(", ")}</a></p>
+            <h3>${book.author}</h3>
+            <p><span class="label">Pages:</span> ${book.pages}</p>
+            <p><span class="label">Genre:</span> <a href="#">${(book.genre).join(", ")}</a></p> 
             <p>${book.description}</p>
         </div>
     </section>
