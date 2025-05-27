@@ -16,7 +16,7 @@ export const bookComponent = (bookId) => {
             <h1>${book.title}</h1>
             <h4>${book.author}</h4>
             <p>Pages: ${book.pages}</p>
-            <p>Genre: ${book.genre}</p>
+            <p>Genre: <a href="#">${book.genre.join(", ")}</a></p>
             <p>${book.description}</p>
         </div>
     </section>
