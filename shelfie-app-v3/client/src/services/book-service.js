@@ -6,3 +6,5 @@ export const getAll = () => get(baseURL)
 
 export const getOne = (bookId) => get(`${baseURL}/${bookId}`)
 
+export const getLatest =() => get(baseURL)
+
