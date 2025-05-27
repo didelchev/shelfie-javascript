@@ -8,7 +8,7 @@ export const homeComponent = () => {
         <div class="welcome-text">
           <h1>Welcome to Shelfie</h1>
           <h2>
-            Lorem, ipsum dolor sit amet consectetur adipisicing elit. Eius, amet.
+            Dive into a world of books. Organize your collection and find new reads.
           </h2>
           <div class="action-buttons">
             <a class="link" href="/login">Login</a>
