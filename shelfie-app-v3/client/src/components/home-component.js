@@ -40,7 +40,6 @@ export const homeComponent = () => {
           ${latestBooksHTML}
         </div>
       </section>
-    
     <footer>
       <div class="footer">
         <p>&copy; 2025 Shelfie - All rights reserved</p>
