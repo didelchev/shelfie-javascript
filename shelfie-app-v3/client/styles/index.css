@@ -3,7 +3,7 @@
   height: calc(100vh - 76.2px);
   padding:5em  7em 0 7em;
   gap: 2em;
-  grid-template-columns: 0.6fr 1fr;
+  grid-template-columns: 0.6fr 0.9fr;
 }
 
 
@@ -24,9 +24,13 @@
     font-size: 4em;
 }
 
+.welcome-text h2{
+    font-size: 1.9em;
+}
+
 .welcome-text .action-buttons{
     display: flex;
-    gap: 2em;
+    gap: 4em;
 }
 
 .action-buttons > a {
