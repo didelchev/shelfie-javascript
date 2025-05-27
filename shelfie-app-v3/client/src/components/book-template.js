@@ -1,4 +1,4 @@
-export const singleBookComponent = (book) => {
+export const bookTemplateComponent = (book) => {
 return`
     <div class='book'>
         <a class="link" href="./catalog/${book._id}">

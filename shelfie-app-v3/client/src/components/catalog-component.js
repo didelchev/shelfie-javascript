@@ -1,7 +1,7 @@
 import { Navigate } from "../routes.js"
 import { getAll } from "../services/book-service.js"
 import { render } from "../utils.js"
-import { singleBookComponent } from "./book-template.js"
+import { bookTemplateComponent } from "./book-template.js"
 
 
 export const catalogComponent = () => {
@@ -9,7 +9,7 @@ export const catalogComponent = () => {
   
  getAll()
     .then(books => {
-      const allBooksHTML = books.map(book => singleBookComponent(book)).join('')
+      const allBooksHTML = books.map(book => bookTemplateComponent(book)).join('')
       render(`
     <main class="book-catalog">
       <h1>Explore books</h1>
