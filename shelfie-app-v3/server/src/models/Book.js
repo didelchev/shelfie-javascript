@@ -17,7 +17,7 @@ const bookSchema = new Schema({
         type: String
     },
     genre: {
-        type: String
+        type: Array
     }
 })
 
