@@ -24,7 +24,7 @@ export const bookComponent = (bookId) => {
     `)
 
     })
-    
+    .catch(err => alert(err))
 
   
 
