@@ -1,10 +1,19 @@
 import { Navigate } from "../routes.js"
+import { getLatest } from "../services/book-service.js"
 import { render } from "../utils.js"
+import { bookTemplateComponent } from "./book-template.js"
 
 export const homeComponent = () => {
   document.title = 'Shelfie'
 
-  render(`<section class="main-content">
+  getLatest()
+    .then(books => {
+        const latestBooks = books.slice(-4)
+        console.log(latestBooks);
+        
+        const latestBooksHTML = latestBooks.map(book => bookTemplateComponent(book)).join('')
+
+        render(`<section class="main-content">
         <div class="welcome-text">
           <h1>Welcome to Shelfie</h1>
           <h2>
@@ -26,28 +35,9 @@ export const homeComponent = () => {
         </p>
       </section>
       <section class="popular-books">
-        <h2>Popular Books</h2>
+        <h2>Latest Books</h2>
         <div class="popular-books-grid">
-          <a class="link" href='/book-details'>
-            <img src="../images/book-1.jpg" alt="example books">
-            <h4>The Hunger Games</h4>
-            <p>Suzanne Collins</p>
-          </a>
-          <a class="link" href="/book-details">
-            <img src="../images/book-1.jpg" alt="example books">
-            <h4>Harry Potter and the Philosopher's Stone</h4>
-            <p>J.K.Rowling</p>
-          </a>
-          <a class="link" href='/book-details'>
-            <img src="../images/book-1.jpg" alt="example books">
-            <h4>The Hobbit</h4>
-            <p>J.R.R.Tolkien</p>
-          </a>
-          <a class="link" href='/book-details'>
-            <img src="../images/book-1.jpg" alt="example books">
-            <h4>The Road</h4>
-            <p>Cormac McCarthy</p>
-          </a>
+          ${latestBooksHTML}
         </div>
       </section>
     
@@ -62,4 +52,10 @@ export const homeComponent = () => {
     </footer>
     `)
     Navigate()
+
+        
+    })
+
+
+  
 }
