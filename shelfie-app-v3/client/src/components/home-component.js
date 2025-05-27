@@ -20,19 +20,9 @@ export const homeComponent = () => {
         </div>
       </section>
       <section class="app-description">
-        <h4>Description</h4>
+        <h3>Description</h3>
         <p>
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. Aliquam
-          dolorem, eligendi nemo quidem quaerat expedita incidunt illum. Nobis
-          quod assumenda, sit expedita ipsum vel consequatur, reiciendis explicabo
-          delectus veniam atque doloremque modi tempore. Unde, dolore in debitis
-          doloribus temporibus officia nobis, nesciunt beatae repellat aut
-          dignissimos atque quasi, numquam nemo. Enim adipisci modi exercitationem
-          tempore harum quasi, nobis molestias? Modi culpa impedit sequi atque!
-          Iure fuga mollitia magni nam beatae, natus facilis eum debitis alias
-          nesciunt repellendus quae fugiat accusantium quaerat praesentium culpa
-          quasi. Labore tempora impedit voluptas tempore quod enim id iure a
-          doloremque harum. Minus vero sapiente incidunt.
+          Shelfie is your ultimate digital companion for every book lover. Seamlessly organize your personal library, track your reading progress, and discover new literary adventures tailored to your tastes.<br> Connect with a vibrant community of fellow readers, share recommendations, and delve deeper into the stories that matter to you. Whether you're a casual reader or a dedicated bibliophile, Shelfie helps you celebrate and manage your world of books with ease and joy.
         </p>
       </section>
       <section class="popular-books">

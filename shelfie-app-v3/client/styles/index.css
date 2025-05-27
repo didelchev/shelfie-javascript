@@ -40,13 +40,14 @@
     padding: 0.5em 1.5em;
 }
 
-.app-description h4{ 
+.app-description h3{ 
     font-weight: 600;
 }
 .app-description { 
     padding: 3em 7em;
     text-align: center;
-    font-size: 1.6em;
+    font-size: 1.5em;
+    line-height: 1.65;
     background-color: #f4f2e9;
 }
 
