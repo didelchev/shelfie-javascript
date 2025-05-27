@@ -35,7 +35,7 @@ export const homeComponent = () => {
         </p>
       </section>
       <section class="popular-books">
-        <h2>Latest Books</h2>
+        <h2>Recently Added Books</h2>
         <div class="popular-books-grid">
           ${latestBooksHTML}
         </div>
