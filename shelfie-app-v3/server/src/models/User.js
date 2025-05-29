@@ -1,5 +1,6 @@
 import { model, Schema } from "mongoose";
-import { SALT_ROUNDS } from "../constants";
+import { SALT_ROUNDS } from "../constants.js";
+import bcrypt from 'bcrypt'
 
 const userSchema = new Schema({
     username: {

@@ -7,9 +7,9 @@ const authController = Router()
 
 
 authController.get('/register', (req,res) => {
-    register('peter.ivanov', 'ivanov.peter@abv.bg', '4312')
+    register('jola.davcheva', 'jola.davcheva@abv.bg', '123456')
         .then(() => console.log('Succes'))
-        .catch((err) => console.log('User already exists'))
+        .catch((err) => console.log(err))
 
 })
 
