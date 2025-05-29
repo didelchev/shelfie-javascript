@@ -11,6 +11,7 @@ app.use(express.urlencoded( {extended: false}))
 app.use(corsMiddleware)
 
 const dbUrl = process.env.MONGO_URI
+
 mongoose.connect(dbUrl, { dbName: 'shelfie'})
     .then(() => console.log('DB Connected !'))
     .catch((err) => console.log(`DB failed to connect: ${err} !`))
