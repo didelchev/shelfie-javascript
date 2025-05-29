@@ -1,4 +1,5 @@
 import { model, Schema } from "mongoose";
+import { SALT_ROUNDS } from "../constants";
 
 const userSchema = new Schema({
     username: {
@@ -14,6 +15,12 @@ const userSchema = new Schema({
         required: true,
         minLength: [4, "Your password is too short !"]
     }
+})
+
+userSchema.pre('save', async function() {
+    const hash = await bcrypt.hash(this.password, SALT_ROUNDS)
+
+    this.password = hash
 })
 
 const User = model('User', userSchema)
