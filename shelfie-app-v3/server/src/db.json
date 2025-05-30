@@ -191,9 +191,25 @@
     "genre": ["Mystery", "Thriller", "Mystery Thriller", "Fiction", "Adult", "Suspense", "Crime", "Contemporary"],
     "description": "Nicole “Nic” Monroe is in a rut. At twenty-four, she lives alone in a dinky apartment in her hometown of Mishawaka, Indiana, she’s just gotten a DWI, and she works the same dead-end job she’s been working since high school, a job she only has because her boss is a family friend and feels sorry for her. Everyone has felt sorry for her for the last seven years—since the day her older sister, Kasey, vanished without a trace.On the night Kasey went missing, her car was found over a hundred miles from home. The driver’s door was open and her purse was untouched in the seat next to it. The only real clue in her disappearance was Jules Connor, another young woman from the same area who disappeared in the same way, two weeks earlier. But with so little for the police to go on, both their cases eventually went cold.Nic wants nothing more than to move on—from her sister’s disappearance and the state it’s left her in. But then one day, Jules’s sister, Jenna Connor, walks into her life and offers Nic something she hasn’t felt in a long hope. What follows is a gripping tale of two sisters who will do anything to find their missing halves, even if it means destroying everything they’ve ever known."
   },
-  {
+{
     "title": "Birthday Girl",
     "author": "Penelope Douglas",
+    "pages": 349,
+    "image": "https://images-na.ssl-images-amazon.com/images/S/compressed.photo.goodreads.com/books/1523361696i/39555142.jpg",
+    "genre": ["Romance", "Contemporary", "New Adult", "Dark Romance", "Adult", "Slow Burn", "Fiction", "Forced Proximity"],
+    "description": "JORDANHe took me in when I had nowhere else to go. He doesn’t use me, hurt me, or forget about me. He listens to me, protects me, and sees me. I can feel his eyes on me over the breakfast table, and my heart pumps so hard when I hear him pull in the driveway after work.I have to stop this. It can’t happen.My sister once told me there are no good men, and if you find one, he’s probably unavailable. Only Pike Lawson isn’t the unavailable one.I am.PIKEI took her in, because I thought I was helping. As the days go by, though, it’s becoming anything but easy. I have to stop my mind from drifting to her and stop holding my breath every time I bump into her in the house. I can’t touch her, and I shouldn’t want to.But we’re not free to give into this. She’s nineteen, and I’m thirty-eight.And her boyfriend’s father.Unfortunately, they both just moved into my house."
+  },
+{
+    "title": "Be Useful: Seven Tools for Life",
+    "author": "Arnold Schwarzenegger",
+    "pages": 288,
+    "image": "https://images-na.ssl-images-amazon.com/images/S/compressed.photo.goodreads.com/books/1685351182i/125063314.jpg",
+    "genre": ["Nonfiction","Self Help","Business","Philosophy","Memoir","Personal Development","Biography"],
+    "description": "The seven rules to follow to realize your true purpose in life—distilled by Arnold Schwarzenegger from his own journey of ceaseless reinvention and extraordinary achievement, and available for absolutely anyone.The world’s greatest bodybuilder. The world’s highest-paid movie star. The leader of the world’s sixth-largest economy. That these are the same person sounds like the setup to a joke, but this is no joke. This is Arnold Schwarzenegger. And this did not happen by accident.Arnold’s stratospheric success happened as part of a process. As the result of clear vision, big thinking, hard work, direct communication, resilient problem-solving, open-minded curiosity, and a commitment to giving back. All of it guided by the one lesson Arnold’s father hammered into him above be useful. As Arnold conquered every realm he entered, he kept his father’s adage close to his heart.Written with his uniquely earnest, blunt, powerful voice, Be Useful takes readers on an inspirational tour through Arnold’s tool kit for a meaningful life. He shows us how to put those tools to work, in service of whatever fulfilling future we can dream up for ourselves. He brings his insights to vivid life with compelling personal stories, life-changing successes and life-threatening failures alike—some of them famous; some told here for the first time ever.Too many of us struggle to disconnect from our self-pity and connect to our purpose. At an early age, Arnold forged the mental tools to build the ladder out of the poverty and narrow-mindedness of his rural Austrian hometown, tools he used to add rung after rung from there. Now he shares that wisdom with all of us. As he puts it, no one is going to come rescue you—you only have yourself. The good news, it turns out, is that you are all you need."
+  },
+{
+    "title": "",
+    "author": "",
     "pages": 349,
     "image": "https://images-na.ssl-images-amazon.com/images/S/compressed.photo.goodreads.com/books/1523361696i/39555142.jpg",
     "genre": ["Romance", "Contemporary", "New Adult", "Dark Romance", "Adult", "Slow Burn", "Fiction", "Forced Proximity"],
