@@ -39,6 +39,10 @@ export const Navigate = () => {
   });
 };
 
+export const Redirect = (path) => {
+  Router(path)
+}
+ 
 export const startRouter = () => {
   window.addEventListener("load", () => {
     window.addEventListener("popstate", () => {

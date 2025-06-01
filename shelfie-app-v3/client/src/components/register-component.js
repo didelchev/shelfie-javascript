@@ -1,4 +1,4 @@
-import { Navigate } from "../routes.js";
+import { Navigate, Redirect } from "../routes.js";
 import { register } from "../services/auth-service.js";
 import { render, showError } from "../utils.js";
 
@@ -51,6 +51,7 @@ export const registerComponent = () => {
           }else{
             showError(response.message)
             e.target.reset()
+            Redirect('/login')
           }
           
         })
