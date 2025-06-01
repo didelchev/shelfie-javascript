@@ -1,12 +1,13 @@
 import { Navigate } from "../routes.js";
+import { register } from "../services/auth-service.js";
 import { render } from "../utils.js";
 
 export const registerComponent = () => {
   document.title = "Register Page";
-
+ 
   render(`
     <section class="register-container">
-      <form action="#" class="register-form">
+      <form class="register-form">
         <h2>Register</h2>
         <label for="email">Email</label>
         <input type="text" id="email" name="email" />
@@ -14,7 +15,7 @@ export const registerComponent = () => {
         <input type="password" id="password" name="password" />
         <label for="re-password">Repeat Password</label>
         <input type="password" id="re-password" name="re-password" />
-        <button type="submit">Register</button>
+        <button class ='submit' type="submit">Register</button>
       </form>
     </section>
     <footer>
@@ -27,5 +28,27 @@ export const registerComponent = () => {
       </div>
     </footer>
     `);
+
+    const form = document.querySelector('.register-form')
+    form.addEventListener('submit', (e) => {
+      e.preventDefault()
+      const formData = new FormData(form)
+      const data = Object.fromEntries(formData)
+
+      const { email, password,['re-password']: rePassword } = data
+
+      if(password !== rePassword){
+        alert('Passwords missmatch')
+        return
+      }
+
+      register(email, password)
+        .then(response => console.log(response))
+        .catch(err => console.log(err))
+        
+    })
+
+
+    
   Navigate();
 };
