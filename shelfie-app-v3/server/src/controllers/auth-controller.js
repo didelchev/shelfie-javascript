@@ -9,8 +9,8 @@ authController.post("/register", (req,res) => {
     const { email,username, password, rePassword } = req.body
 
     register(email,username,password,rePassword)
-        .then(() => res.json({message: "User registered !", status: 200}))
-        .catch(() => res.json({message: "User exists!", status: 403}))
+        .then(() => res.json({message: "User successfully registered !", status: 200}))
+        .catch(() => res.json({message: "User already exists!", status: 403}))
 })
 
 
