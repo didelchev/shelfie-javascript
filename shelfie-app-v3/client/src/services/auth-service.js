@@ -8,9 +8,8 @@ export const register = (email, password) => {
         email,
         password
     }
-    post(baseURL, data)
-        .then(res => res.json())
-        .then(result => console.log(result))
+
+    return post(baseURL, data)
+        
 }
 
-register('ivan', '1234')
