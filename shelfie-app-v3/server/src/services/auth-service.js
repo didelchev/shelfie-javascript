@@ -1,5 +1,6 @@
 import User from "../models/User.js";
 import bcrypt from 'bcrypt'
+import jwt from 'jsonwebtoken'
 
 
 export const register = (email, username, password) => {
@@ -17,14 +18,30 @@ export const register = (email, username, password) => {
 };
 
 export const login = async (email, password) => {
-    //Check if user exists
+    const user = await User.findOne({email})
+    const JWT_SECRET = process.env.JWT_SECRET
 
+    //Check if user exists
+    if(!user){
+      throw new Error('User does not exists !')
+    }
     //Validate password with bcrypt
     const isValid = await bcrypt.compare(password, user.password)
 
+    if(!isValid){
+      throw new Error('Password does not match !')
+    }
+
+    const payload = {
+      _id: user._id,
+      email
+    }
+
     //Generate JWT Token npm install jsonwebtoken
+    const token = jwt.sign(payload, JWT_SECRET, {expiresIn: '2h'})
 
     //Return JWT Token
+    return token
 };
 
 export const logout = () => {

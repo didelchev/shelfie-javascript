@@ -40,7 +40,7 @@ export const registerComponent = () => {
       const { email, username,password,['re-password']: rePassword } = data
 
       if(password !== rePassword){
-        alert('Passwords missmatch')
+        showError('Passwords missmatch')
         return
       }
 
@@ -55,7 +55,7 @@ export const registerComponent = () => {
           }
           
         })
-        .catch(err=> console.log(err))
+        .catch(err=> showError(err))
 
     })
 

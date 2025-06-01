@@ -40,7 +40,8 @@ export const Navigate = () => {
 };
 
 export const Redirect = (path) => {
-  Router(path)
+    history.pushState(null,null, path)
+    Router(path)
 }
  
 export const startRouter = () => {

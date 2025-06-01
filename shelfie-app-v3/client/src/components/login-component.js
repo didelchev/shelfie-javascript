@@ -1,4 +1,5 @@
-import { Navigate } from "../routes.js"
+import { Navigate, Redirect } from "../routes.js"
+import { login } from "../services/auth-service.js"
 import { render } from "../utils.js"
 
 export const loginComponent = () => {
@@ -6,7 +7,7 @@ export const loginComponent = () => {
 
   render(`
     <section class="login-container">
-      <form action="#" class="login-form">
+      <form class="login-form">
         <h2>Login</h2>
         <label for="email">Email</label>
         <input type="text" id="email" name="email" />
@@ -25,5 +26,23 @@ export const loginComponent = () => {
         </div>
       </footer>
     `)
+
+    const form = document.querySelector('.login-form')
+    form.addEventListener('submit', (e) => {
+      e.preventDefault()
+      const formData = new FormData(form)
+      const data = Object.fromEntries(formData)
+
+      const { email, password } = data
+
+      login(email,password)
+        .then(token => {
+          document.cookie = `auth=${token}`
+          Redirect("/")
+        })
+        .catch(err => console.log(err))
+
+
+    })
     Navigate()
 }

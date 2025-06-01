@@ -2,7 +2,6 @@ import { Router } from "express";
 import { login, register } from "../services/auth-service.js";
 
 
-
 const authController = Router()
 
 authController.post("/register", (req,res) => {
@@ -14,13 +13,12 @@ authController.post("/register", (req,res) => {
 })
 
 
-authController.get('/register', (req,res) => {
+authController.post("/login", async (req,res) => {
+    const { email, password } = req.body
+
+    const token = await login(email, password)
     
-
-})
-
-authController.get('/login', (req,res) => {
-    login()
+    res.json(token)
 })
 
 
