@@ -11,6 +11,8 @@ export const registerComponent = () => {
         <h2>Register</h2>
         <label for="email">Email</label>
         <input type="text" id="email" name="email" />
+        <label for="username">Username</label>
+        <input type="text" id="username" name="username" />
         <label for="password">Password</label>
         <input type="password" id="password" name="password" />
         <label for="re-password">Repeat Password</label>
@@ -35,16 +37,23 @@ export const registerComponent = () => {
       const formData = new FormData(form)
       const data = Object.fromEntries(formData)
 
-      const { email, password,['re-password']: rePassword } = data
+      const { email, username,password,['re-password']: rePassword } = data
 
       if(password !== rePassword){
         alert('Passwords missmatch')
         return
       }
 
-      register(email, password)
-        .then(response => console.log(response))
-        .catch(err => console.log(err))
+      register(email, username, password, rePassword)
+        .then(response => {
+          if(response.status != 200){
+            alert('User exists!')
+          }else{
+            alert('Success !')
+          }
+          
+        })
+        .catch(err=> console.log(err))
         
     })
 
