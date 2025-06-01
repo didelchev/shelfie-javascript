@@ -11,7 +11,16 @@ export const register = (email, username, password, rePassword) => {
         rePassword
     }
 
-    return post(baseURL, data)
+    return post(`${baseURL}/register`, data)
         
+}
+
+export const login = ( email, password) => {
+    const data = {
+        email,
+        password
+    }
+
+    return post(`${baseURL}/login`, data)
 }
 
