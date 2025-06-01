@@ -2,13 +2,13 @@ import User from "../models/User.js";
 import bcrypt from 'bcrypt'
 
 
-export const register = (username, email, password) => {
+export const register = (email, username, password) => {
   return User.countDocuments({ email })
     .then((count) => {
       if (count > 0) {
         throw new Error("User already exists");
       }
-      return User.create({ username, email, password });
+      return User.create({ email, username, password });
     })
     .catch((err) => {
       console.log(`Registration error: ${err}`);

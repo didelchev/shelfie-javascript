@@ -3,11 +3,11 @@ import { SALT_ROUNDS } from "../constants.js";
 import bcrypt from 'bcrypt'
 
 const userSchema = new Schema({
-    username: {
+    email: {
         type: String,
         required: true
     },
-    email: {
+    username: {
         type: String,
         required: true
     },
