@@ -5,7 +5,7 @@ import { login, register } from "../services/auth-service.js";
 
 const authController = Router()
 
-authController.post("/", (req,res) => {
+authController.post("/register", (req,res) => {
     const { email,username, password, rePassword } = req.body
 
     register(email,username,password,rePassword)
@@ -15,9 +15,7 @@ authController.post("/", (req,res) => {
 
 
 authController.get('/register', (req,res) => {
-    register('jola.davcheva', 'jola.davcheva@abv.bg', '123456')
-        .then(() => console.log('Succes'))
-        .catch((err) => console.log(err))
+    
 
 })
 
