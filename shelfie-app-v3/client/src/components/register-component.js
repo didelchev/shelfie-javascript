@@ -1,6 +1,6 @@
 import { Navigate } from "../routes.js";
 import { register } from "../services/auth-service.js";
-import { render } from "../utils.js";
+import { render, showError } from "../utils.js";
 
 export const registerComponent = () => {
   document.title = "Register Page";
@@ -47,14 +47,15 @@ export const registerComponent = () => {
       register(email, username, password, rePassword)
         .then(response => {
           if(response.status != 200){
-            alert('User exists!')
+            showError(response.message)
           }else{
-            alert('Success !')
+            showError(response.message)
+            e.target.reset()
           }
           
         })
         .catch(err=> console.log(err))
-        
+
     })
 
 
