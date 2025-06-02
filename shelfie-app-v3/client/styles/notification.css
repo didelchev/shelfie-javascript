@@ -1,6 +1,6 @@
 #notifications {
     position: absolute;
-    top: 0;
+    top: 0%;
     left: 50%;
     transform: translateX(-50%);
     text-align: center;
@@ -23,5 +23,5 @@
 }
 
 #errorBox>span {
-    background: rgb(101, 21, 250);
+    background: rgb(132, 191, 239);
 }

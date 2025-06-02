@@ -1,6 +1,6 @@
 import { Navigate, Redirect } from "../routes.js"
 import { login } from "../services/auth-service.js"
-import { render } from "../utils.js"
+import { render, showError } from "../utils.js"
 
 export const loginComponent = () => {
   document.title = 'Login Page'
@@ -38,6 +38,7 @@ export const loginComponent = () => {
       login(email,password)
         .then(token => {
           document.cookie = `auth=${token}`
+          showError('Success !')
           Redirect("/")
         })
         .catch(err => console.log(err))

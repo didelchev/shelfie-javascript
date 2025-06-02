@@ -50,8 +50,7 @@ export const registerComponent = () => {
             showError(response.message)
           }else{
             showError(response.message)
-            e.target.reset()
-            Redirect('/login')
+            Redirect('/')
           }
           
         })

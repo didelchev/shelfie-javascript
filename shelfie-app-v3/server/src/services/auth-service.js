@@ -37,7 +37,7 @@ export const login = async (email, password) => {
       email
     }
 
-    //Generate JWT Token npm install jsonwebtoken
+    //Generate JWT Token
     const token = jwt.sign(payload, JWT_SECRET, {expiresIn: '2h'})
 
     //Return JWT Token
