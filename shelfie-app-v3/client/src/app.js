@@ -11,6 +11,7 @@ useRoutes('/login', loginComponent)
 useRoutes('/register', registerComponent)
 useRoutes('/catalog', catalogComponent)
 useRoutes('/catalog/:bookId', bookComponent)
+useRoutes('/logout', bookComponent)
 
 
 startRouter()
