@@ -1,19 +1,28 @@
+import { getUserData } from "../utils.js";
 
 const request = (method, url, data) => {
-  let options = {};
+  let options = {
+    method, 
+    headers: {}};
 
-  if (method != "GET") {
-    options = {
-      method,
-      credentials: 'include',
-      headers: {
-        "content-type": "application/json",
-      },
-    };
-  }
+  // if (method != "GET") {
+  //   options = {
+  //     method,
+  //     headers: {
+  //       "content-type": "application/json",
+  //     },
+  //   };
+  // }
 
   if (data) {
+    options.headers["content-type"] = "application/json"
     options.body = JSON.stringify(data);
+  }
+
+  const userData = getUserData()
+
+  if (userData != null){
+    options.headers["X-Authorization"] = userData.accessToken
   }
 
   return fetch(url, options)
@@ -25,15 +34,6 @@ const request = (method, url, data) => {
     })
     .catch((error) => console.log(error));
 };
-
-
-
-// const get = request.bind(null, 'GET')
-// const post = request.bind(null, 'POST')
-// const del = request.bind(null, 'DELETE')
-// const put = request.bind(null, 'PUT')
-// const patch = request.bind(null, 'PATCH')
-
 
 
 const get = (url, data) => request('GET', url, data)
