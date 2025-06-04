@@ -5,6 +5,7 @@ const request = (method, url, data) => {
   if (method != "GET") {
     options = {
       method,
+      credentials: 'include',
       headers: {
         "content-type": "application/json",
       },
