@@ -6,6 +6,20 @@ export const render = (component) => {
 }
 
 
+
+export const getUserData = () => {
+  return JSON.parse(localStorage.getItem('user'))
+}
+
+export const saveUserData = (data) => {
+  localStorage.setItem('user', JSON.stringify(data))
+}
+
+export const clearUserData = () => {
+  localStorage.removeItem('user')
+}
+
+
 export function showError(message) {
   const notifications = document.getElementById('notifications');
   const errorBox = document.getElementById('errorBox');

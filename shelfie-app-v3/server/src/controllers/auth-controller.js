@@ -17,19 +17,13 @@ authController.post("/login", async (req,res) => {
     const { email, password } = req.body
 
     try{
-        const token = await login(email, password)
-        const cookie = res.cookie('auth', token, {httpOnly: true})
-        console.log(cookie)
+        const result = await login(email, password)
+        res.json(result)
 
-        res.json(cookie)
     }catch(err){
         console.log(err)
     }
     
 })
-
-
-
-
 
 export default authController
