@@ -3,17 +3,17 @@ import routes from './routes.js';
 import mongoose from 'mongoose'
 import 'dotenv/config'
 import { corsMiddleware } from './middlewares/cors-middleware.js';
+import { authMiddleware } from './middlewares/auth-middleware.js';
 
 const app = express()
 
 app.use(express.json());
 
-app.use(express.urlencoded( {extended: false}))
+app.use(authMiddleware);
 
+app.use(corsMiddleware);
 
-app.use(corsMiddleware)
-
-const dbUrl = process.env.MONGO_URI
+const dbUrl = process.env.MONGO_URI;
 
 mongoose.connect(dbUrl, { dbName: 'shelfie'})
     .then(() => console.log('DB Connected !'))

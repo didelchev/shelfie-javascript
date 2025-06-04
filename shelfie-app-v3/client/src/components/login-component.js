@@ -36,10 +36,8 @@ export const loginComponent = () => {
       const { email, password } = data
 
       login(email,password)
-        .then(token => {
-          document.cookie = `auth=${token}`
-          showError('Success !')
-          Redirect("/")
+        .then(cookie => {
+          console.log(cookie)
         })
         .catch(err => console.log(err))
 
