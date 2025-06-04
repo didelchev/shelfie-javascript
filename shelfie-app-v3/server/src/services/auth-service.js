@@ -40,8 +40,11 @@ export const login = async (email, password) => {
     //Generate JWT Token
     const token = jwt.sign(payload, JWT_SECRET, {expiresIn: '2h'})
 
-    //Return JWT Token
-    return token
+    return {
+      _id: user.id,
+      email: user.email,
+      accessToken: token
+    }     
 };
 
 export const logout = () => {
