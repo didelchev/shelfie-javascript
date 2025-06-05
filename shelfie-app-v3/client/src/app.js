@@ -4,16 +4,22 @@ import { homeComponent } from "./components/home-component.js";
 import { loginComponent } from "./components/login-component.js";
 import { logoutComponent } from "./components/logout-component.js";
 import { registerComponent } from "./components/register-component.js";
-import { startRouter } from "./routes.js";
+import { Redirect, startRouter } from "./routes.js";
 import { useRoutes } from "./routes.js";
+import { logout } from "./services/auth-service.js";
 
 useRoutes('/', homeComponent)
 useRoutes('/login', loginComponent)
 useRoutes('/register', registerComponent)
 useRoutes('/catalog', catalogComponent)
 useRoutes('/catalog/:bookId', bookComponent)
-useRoutes('/logout', logoutComponent)
 
+
+
+document.getElementById('logout').addEventListener('click', () => {
+    logout()
+    Redirect('/')
+})
 
 startRouter()
 

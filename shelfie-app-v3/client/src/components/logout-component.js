@@ -1,5 +1,7 @@
-import { clearUserData } from "../utils.js"
+import { Redirect } from "../routes.js"
+import { logout } from "../services/auth-service.js"
 
 export const logoutComponent = () => {
-    clearUserData()
+    logout()
+    Redirect('/')    
 }

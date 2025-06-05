@@ -1,3 +1,4 @@
+import { clearUserData } from "../utils.js"
 import { get, post } from "./requester.js"
 
 const baseURL = 'http://localhost:5000/auth'
@@ -24,3 +25,6 @@ export const login = ( email, password) => {
     return post(`${baseURL}/login`, data)
 }
 
+export const logout = () => {
+    clearUserData()
+}
