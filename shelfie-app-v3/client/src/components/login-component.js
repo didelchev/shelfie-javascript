@@ -36,8 +36,8 @@ export const loginComponent = () => {
       const { email, password } = data
 
       login(email,password)
-        .then(token => {
-            saveUserData(token)
+        .then(data => {
+            saveUserData(data)
             showMessage('Login Successful')
             Redirect('/')
         })

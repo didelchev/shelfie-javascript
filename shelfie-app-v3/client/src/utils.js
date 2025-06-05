@@ -6,7 +6,6 @@ export const render = (component) => {
 }
 
 
-
 export const getUserData = () => {
   return JSON.parse(localStorage.getItem('user'))
 }
@@ -21,7 +20,7 @@ export const clearUserData = () => {
 
 
 export function showMessage(message) {
-  const notifications = document.getElementById('notifications');
+  // const notifications = document.getElementById('notifications');
   const errorBox = document.getElementById('errorBox');
   const errorBoxText = errorBox.querySelector('span'); // Select the span inside errorBox
 
