@@ -17,3 +17,7 @@
     padding-bottom: 0em;
     font-size: 1.2em;
 }
+
+.navbar .user{
+    display: none;
+}
