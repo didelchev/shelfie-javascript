@@ -4,12 +4,21 @@ import { login, register } from "../services/auth-service.js";
 
 const authController = Router()
 
-authController.post("/register", (req,res) => {
+authController.post("/register", async (req,res) => {
     const { email,username, password, rePassword } = req.body
 
-    register(email,username,password,rePassword)
-        .then(() => res.json({message: "User successfully registered !", status: 200}))
-        .catch(() => res.json({message: "User already exists!", status: 403}))
+    try{
+        await register(email, username, password)
+    }catch(err){
+        console.log(err)
+    }
+
+    const result = await login(email, password)
+    res.json(result)
+
+
+        
+
 })
 
 

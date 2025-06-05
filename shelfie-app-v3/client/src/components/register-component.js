@@ -1,10 +1,10 @@
 import { Navigate, Redirect } from "../routes.js";
 import { register } from "../services/auth-service.js";
-import { render, showError } from "../utils.js";
+import { render, saveUserData, showMessage } from "../utils.js";
 
 export const registerComponent = () => {
   document.title = "Register Page";
- 
+
   render(`
     <section class="register-container">
       <form class="register-form">
@@ -31,34 +31,27 @@ export const registerComponent = () => {
     </footer>
     `);
 
-    const form = document.querySelector('.register-form')
-    form.addEventListener('submit', (e) => {
-      e.preventDefault()
-      const formData = new FormData(form)
-      const data = Object.fromEntries(formData)
+  const form = document.querySelector(".register-form");
+  form.addEventListener("submit", (e) => {
+    e.preventDefault();
+    const formData = new FormData(form);
+    const data = Object.fromEntries(formData);
 
-      const { email, username,password,['re-password']: rePassword } = data
+    const { email, username, password, ["re-password"]: rePassword } = data;
 
-      if(password !== rePassword){
-        showError('Passwords missmatch')
-        return
-      }
+    if (password !== rePassword) {
+      showMessage("Passwords missmatch");
+      return;
+    }
 
-      register(email, username, password, rePassword)
-        .then(response => {
-          if(response.status != 200){
-            showError(response.message)
-          }else{
-            showError(response.message)
-            Redirect('/')
-          }
-          
-        })
-        .catch(err=> showError(err))
+    register(email, username, password, rePassword)
+      .then((data) => {
+        saveUserData(data);
+        showMessage("Login Successful");
+        Redirect("/");
+      })
+      .catch((err) => showMessage(err));
+  });
 
-    })
-
-
-    
   Navigate();
 };

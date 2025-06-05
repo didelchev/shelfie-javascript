@@ -3,18 +3,14 @@ import bcrypt from 'bcrypt'
 import jwt from 'jsonwebtoken'
 
 
-export const register = (email, username, password) => {
-  return User.countDocuments({ email })
-    .then((count) => {
-      if (count > 0) {
-        throw new Error("User already exists");
-      }
-      return User.create({ email, username, password });
-    })
-    .catch((err) => {
-      console.log(`Registration error: ${err}`);
-      throw err;
-    });
+export const register = async(email, username, password) => {
+  const userCount = await User.countDocuments({ email });
+
+    if (userCount > 0) {
+        throw new Error('User already exists');
+    }
+
+    return User.create({ email, username, password });
 };
 
 export const login = async (email, password) => {

@@ -20,7 +20,7 @@ export const clearUserData = () => {
 }
 
 
-export function showError(message) {
+export function showMessage(message) {
   const notifications = document.getElementById('notifications');
   const errorBox = document.getElementById('errorBox');
   const errorBoxText = errorBox.querySelector('span'); // Select the span inside errorBox
