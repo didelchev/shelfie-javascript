@@ -1,6 +1,6 @@
 import { Navigate } from "../routes.js"
 import { getOne } from "../services/book-service.js"
-import { render } from "../utils.js"
+import { render } from "../utils/render.js"
 
 export const bookComponent = (bookId) => {
   document.title = 'Book Details Page'

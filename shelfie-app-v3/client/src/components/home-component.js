@@ -1,6 +1,6 @@
 import { Navigate } from "../routes.js"
 import { getLatest } from "../services/book-service.js"
-import { render } from "../utils.js"
+import { render } from "../utils/render.js"
 import { bookTemplateComponent } from "./book-template.js"
 
 export const homeComponent = () => {
@@ -8,9 +8,7 @@ export const homeComponent = () => {
 
   getLatest()
     .then(books => {
-        const latestBooks = books.slice(-4)
-        console.log(latestBooks);
-        
+        const latestBooks = books.slice(-4)        
         const latestBooksHTML = latestBooks.map(book => bookTemplateComponent(book)).join('')
 
         render(`<section class="main-content">

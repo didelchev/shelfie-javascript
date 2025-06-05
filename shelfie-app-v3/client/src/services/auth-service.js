@@ -1,4 +1,4 @@
-import { clearUserData } from "../utils.js"
+import { clearUserData } from "../utils/user-data.js"
 import { get, post } from "./requester.js"
 
 const baseURL = 'http://localhost:5000/auth'

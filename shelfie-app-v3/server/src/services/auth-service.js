@@ -43,6 +43,3 @@ export const login = async (email, password) => {
     }     
 };
 
-export const logout = () => {
-  "Logout Works";
-};

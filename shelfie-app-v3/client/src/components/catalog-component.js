@@ -1,6 +1,6 @@
 import { Navigate } from "../routes.js"
 import { getAll } from "../services/book-service.js"
-import { render } from "../utils.js"
+import { render } from "../utils/render.js"
 import { bookTemplateComponent } from "./book-template.js"
 
 

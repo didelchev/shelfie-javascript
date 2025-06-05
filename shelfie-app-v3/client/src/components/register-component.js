@@ -1,6 +1,8 @@
 import { Navigate, Redirect } from "../routes.js";
 import { register } from "../services/auth-service.js";
-import { render, saveUserData, showMessage } from "../utils.js";
+import { showMessage } from "../utils/notification.js";
+import { render } from "../utils/render.js";
+import { saveUserData } from "../utils/user-data.js";
 
 export const registerComponent = () => {
   document.title = "Register Page";
@@ -46,7 +48,7 @@ export const registerComponent = () => {
 
     register(email, username, password, rePassword)
       .then((data) => {
-        saveUserData(data);
+        saveUserData(data)
         showMessage("Login Successful");
         Redirect("/");
       })

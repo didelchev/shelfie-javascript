@@ -1,4 +1,4 @@
-import { getUserData } from "../utils.js";
+import { getUserData } from "../utils/user-data.js";
 
 const request = (method, url, data) => {
   let options = {
