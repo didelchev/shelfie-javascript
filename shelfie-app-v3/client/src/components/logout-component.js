@@ -1,7 +1,7 @@
-import { Redirect } from "../routes.js"
-import { logout } from "../services/auth-service.js"
+// import { Redirect } from "../routes.js"
+// import { logout } from "../services/auth-service.js"
 
-export const logoutComponent = () => {
-    logout()
-    Redirect('/')    
-}
+// export const logoutComponent = () => {
+//     logout()
+//     Redirect('/')    
+// }
