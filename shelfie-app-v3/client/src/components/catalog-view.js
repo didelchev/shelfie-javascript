@@ -13,7 +13,7 @@ const catalogTemplate = (books) => html`
     </main> 
 `
 
-export const catalogView = () => {
+export const showCatalogView = () => {
   getAll()
     .then(books => {
       render(catalogTemplate(books))
