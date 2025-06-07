@@ -1,9 +1,36 @@
-import { html,render } from "../lib.js"
-
-
-
-const profileTemplate = html`
-   <section class="profile-container">
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="../../styles/main.css" />
+    <title>Shelfie TEST</title>
+  </head>
+  <body>
+    <section id="notifications">
+      <div id="errorBox" class="notification">
+        <span class="msg">MESSAGE</span>
+      </div>
+    </section>
+    <header class="header">
+      <nav class="navbar">
+        <a class="logo" href="/">Shelfie</a>
+        <!--Fix logo class for proper reloading-->
+        <ul class="guest">
+          <li><a href="/catalog" class="link">Browse</a></li>
+          <li><a href="/login" class="link">Login</a></li>
+          <li><a href="/register" class="link">Register</a></li>
+          <li><a href="/profile" class="link">My Profile</a></li>
+        </ul>
+        <ul class="user">
+          <li><a href="/catalog" class="link">Browse</a></li>
+          <li><a href="/profile" class="link">My Profile</a></li>
+          <li><a href="javascript:void(0)" id="logout">Logout</a></li>
+        </ul>
+      </nav>
+    </header>
+    <div id="root">
+      <section class="profile-container">
         <div class="user-info">
           <img src="../../images/profile-blank.webp" alt="Profile picture" />
           <h2>John Doe</h2>
@@ -56,10 +83,7 @@ const profileTemplate = html`
           </section>
         </section>
       </section>
-`
-
-export const showProfileView = () => {
-  document.title = 'My Profile'
-    render(profileTemplate)
-    Navigate()
-}
+    </div>
+    <script src="/src/app.js" type="module"></script>
+  </body>
+</html>
