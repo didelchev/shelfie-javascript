@@ -14,6 +14,7 @@ const catalogTemplate = (books) => html`
 `
 
 export const showCatalogView = () => {
+  document.title = 'Explore'
   getAll()
     .then(books => {
       render(catalogTemplate(books))

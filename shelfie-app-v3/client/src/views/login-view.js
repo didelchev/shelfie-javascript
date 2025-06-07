@@ -38,6 +38,7 @@ const loginTemplate = (loginHandler) => html`
 
 
 export const showLoginView = () => {
+  document.title = 'Login'
     const loginHandler = (e) => {
         e.preventDefault()
 

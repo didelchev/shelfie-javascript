@@ -33,6 +33,7 @@ const registerTemplate = (registerHandler) => html`
 
 
 export const showRegisterView = () => {
+    document.title = 'Register'
     const registerHandler = (e) => {
         e.preventDefault()
 
