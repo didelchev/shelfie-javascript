@@ -1,0 +1,51 @@
+.profile-container {
+    display: flex;
+    flex-direction: column;
+    outline: 1px solid grey;
+    width: 50%;
+    margin: 5em auto;
+}
+
+
+.user-info{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    margin-top: 2em;
+}
+
+.user-info p {
+    padding: 0;
+}
+
+.user-info img { 
+    aspect-ratio: 1/1;
+    width: 150px;
+    border-radius: 50%;
+}
+
+
+.profile-container .books{
+    padding: 2em;
+    text-align: center;
+}
+
+
+.books > section > h3{
+    margin-top: 0.5em;
+    text-align: left;
+}
+
+
+.books > section > div {
+    outline: 1px solid black;
+    display: flex;
+    flex-wrap:nowrap;
+    gap: 2em;
+    padding: 2em;
+}
+
+.books > section > div > .single-book{
+    flex: 0 1 100px;
+}
