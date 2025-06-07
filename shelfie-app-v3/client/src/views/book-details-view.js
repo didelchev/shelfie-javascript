@@ -7,6 +7,7 @@ export const bookDetailsTemplate = (book) => html`
 <section class="book-details">
         <div class="image-container">
             <img src="${book.image}" alt="book">
+            <!--If user is auth display buttons -->
         </div>
         <div class="book-description">
             <h1>${book.title}</h1>

@@ -30,9 +30,9 @@ authController.post("/login", async (req,res) => {
         res.json(result)
 
     }catch(err){
-        console.log(err)
+        res.status(401).json({ message: "Invalid email or password" })
     }
     
 })
 
-export default authController
+export default authController   

@@ -6,7 +6,7 @@
 // import { saveUserData } from "../utils/user-data.js"
 
 import { render,html } from "../lib.js"
-import { Redirect } from "../routes.js"
+import { Navigate, Redirect } from "../routes.js"
 import { login } from "../services/auth-service.js"
 import { showMessage } from "../utils/notification.js"
 import { updateNav } from "../utils/update-nav.js"

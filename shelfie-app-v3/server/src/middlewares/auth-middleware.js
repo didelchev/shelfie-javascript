@@ -3,18 +3,24 @@ import jwt from "jsonwebtoken";
 export const authMiddleware = async (req, res, next) => {
   const token = req.header("X-Authorization")
   const JWT_SECRET = process.env.JWT_SECRET;
-  next()
 
-//   if (!token) {
-//     next();
-//   }
+  if (!token) {
+    return next();
+  }
+  
+  const decodedToken = jwt.verify(token, JWT_SECRET)
 
-//   try {
-//     const decoded = jwt.verify(token, JWT_SECRET);
-//     req.user = decoded;
-//     req.isAuthenticated = true;
-//     next();
-//   } catch (err) {
-//     return res.status(401).json({ message: "Invalid token !" });
-//   }
-};
+  const user = { 
+    _id: decodedToken._id,
+    email: decodedToken.email
+  }
+
+  req.user = user
+  req.isAuthenticated = true
+  res.locals.userId = user._id;
+  res.locals.userEmail = user.email;
+  res.locals.isAuthenticated = true;
+
+  console.log(res.locals)
+  
+}
