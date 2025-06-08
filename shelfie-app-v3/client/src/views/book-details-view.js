@@ -1,6 +1,8 @@
 import { Navigate } from "../routes.js"
-import { getOne } from "../services/book-service.js"
+import { addBook, getOne } from "../services/book-service.js"
 import { render,html } from "../lib.js"
+import { showMessage } from "../utils/notification.js"
+import { getUserData } from "../utils/user-data.js"
 
 
 export const bookDetailsTemplate = (book) => html`
@@ -9,7 +11,6 @@ export const bookDetailsTemplate = (book) => html`
             <img src="${book.image}" alt="book">
             <!--If user is auth display buttons -->
             <div class='wrapper'>
-                <!-- <label for='books'>Choose a shelf:</label> -->
                 <select name='books' id='books'>
                     <option value='read'>Read</options>
                     <option value='curr-reading'>Currently Reading</options>
@@ -27,11 +28,24 @@ export const bookDetailsTemplate = (book) => html`
     </section> 
 `
 
+const saveSelectedBook = (book) => {
+    const options= document.getElementById('books')
+    options.addEventListener('change', (e) => {
+        const bookId = book._id
+        const user = getUserData()
+        addBook(bookId, user)
+            .then((res) => showMessage(res.message))
+            .catch((err) => showMessage(err))
+    })
+}
+
+
 
 export const showBookDetailsView = (bookId) => {
     getOne(bookId)
         .then(book => {
             render(bookDetailsTemplate(book))
+            saveSelectedBook(book)
             Navigate()
         })
 }
