@@ -8,6 +8,14 @@ export const bookDetailsTemplate = (book) => html`
         <div class="image-container">
             <img src="${book.image}" alt="book">
             <!--If user is auth display buttons -->
+            <div class='wrapper'>
+                <!-- <label for='books'>Choose a shelf:</label> -->
+                <select name='books' id='books'>
+                    <option value='read'>Read</options>
+                    <option value='curr-reading'>Currently Reading</options>
+                     <option value='to-read'>Want to Read</options>
+                </select>
+            </div>
         </div>
         <div class="book-description">
             <h1>${book.title}</h1>
