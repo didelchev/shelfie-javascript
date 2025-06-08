@@ -21,6 +21,6 @@ export const authMiddleware = async (req, res, next) => {
   res.locals.userEmail = user.email;
   res.locals.isAuthenticated = true;
 
-  console.log(res.locals)
+  return next()
   
 }
