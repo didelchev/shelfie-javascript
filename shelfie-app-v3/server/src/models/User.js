@@ -1,4 +1,4 @@
-import { model, Schema } from "mongoose";
+import { model, Schema, Types } from "mongoose";
 import { SALT_ROUNDS } from "../constants.js";
 import bcrypt from 'bcrypt'
 
@@ -15,7 +15,11 @@ const userSchema = new Schema({
         type: String,
         required: true,
         minLength: [4, "Your password is too short !"]
-    }
+    },
+    readList: [{
+        type: Types.ObjectId,
+        ref: 'Books'
+    }]
 })
 
 userSchema.pre('save', async function() {
