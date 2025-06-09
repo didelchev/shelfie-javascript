@@ -13,8 +13,8 @@ export const bookDetailsTemplate = (book) => html`
             <div class='wrapper'>
                 <select name='books' id='books'>
                     <option value='read'>Read</options>
-                    <option value='curr-reading'>Currently Reading</options>
-                     <option value='to-read'>Want to Read</options>
+                    <option value='currReading'>Currently Reading</options>
+                    <option value='toRead'>Want to Read</options>
                 </select>
             </div>
         </div>
@@ -32,8 +32,8 @@ const saveSelectedBook = (book) => {
     const options= document.getElementById('books')
     options.addEventListener('change', (e) => {
         const bookId = book._id
-        const user = getUserData()
-        addBook(bookId, user)
+        const shelfOption = {shelf : e.currentTarget.value}
+        addBook(bookId, shelfOption)
             .then((res) => showMessage(res.message))
             .catch((err) => showMessage(err))
     })

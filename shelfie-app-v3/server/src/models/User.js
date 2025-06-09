@@ -16,7 +16,15 @@ const userSchema = new Schema({
         required: true,
         minLength: [4, "Your password is too short !"]
     },
-    readList: [{
+    read: [{
+        type: Types.ObjectId,
+        ref: 'Books'
+    }],
+    currReading: [{
+        type: Types.ObjectId,
+        ref: 'Books'
+    }],
+    toRead: [{
         type: Types.ObjectId,
         ref: 'Books'
     }]
