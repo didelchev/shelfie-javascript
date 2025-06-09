@@ -43,9 +43,10 @@ export const showRegisterView = () => {
             .then(data => {
                 saveUserData(data)
                 showMessage('Register Successful')
-                updateNav()
                 Redirect('/')
+                updateNav()
             })
+            .catch(err => showMessage(err))
     }
 
     render(registerTemplate(registerHandler))

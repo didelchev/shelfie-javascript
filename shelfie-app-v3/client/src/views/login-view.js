@@ -48,9 +48,10 @@ export const showLoginView = () => {
             .then(data => {
                 saveUserData(data)
                 showMessage('Login Successfull !')
-                updateNav()
                 Redirect('/')
+                updateNav()
             })
+            .catch(err => showMessage(err)) 
     }
     render(loginTemplate(loginHandler))
     Navigate()
