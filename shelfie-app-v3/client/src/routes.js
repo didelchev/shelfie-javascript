@@ -33,7 +33,6 @@ export const Navigate = () => {
       const linkPath = link.getAttribute("href");
 
       history.pushState(null, null, link.href);
-      console.log(linkPath)
       Router(linkPath);
     });
   });
