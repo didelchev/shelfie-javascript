@@ -40,16 +40,20 @@ const profileTemplate = (books) => html`
 
 
 export const showProfileView = () => {
+  // Get the user data from DB
   getUserCredentials()
     .then(user => {
+      // For each collection returnes an array of its books after the promise resloves 
       const readBooks = Promise.all(user.read.map(bookId => getOne(bookId)));
       const toReadBooks = Promise.all(user.toRead.map(bookId => getOne(bookId)));
       const currReadingBooks = Promise.all(user.currReading.map(bookId => getOne(bookId)));
 
+      // Waits for all the promises to reslove 
       return Promise.all([readBooks, toReadBooks, currReadingBooks])
       // console.log(toReadBooks)
     })
     .then(([read, toRead, currReading]) => {
+      //Destrucutre the values into varaiables and adds a status property for each book in the arrays
       const allBooks = [
         ...toRead.map(book => ({...book, status: 'to-read'})),
         ...read.map(book => ({...book, status: 'read'})),
@@ -63,9 +67,3 @@ export const showProfileView = () => {
 
 
 }
-// export const showProfileView = () => {
-//   getUserCredentials()
-//     .then(user => user.toRead.map(bookId => getOne(bookId).then(book => {
-//       render(profileTemplate(bookTemplate(book)))
-//     })))
-// }
