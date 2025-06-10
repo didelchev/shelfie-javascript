@@ -28,3 +28,7 @@ export const login = ( email, password) => {
 export const logout = () => {
     clearUserData()
 }
+
+export const getUserCredentials = () => {
+    return get(`http://localhost:5000/profile`)
+}
