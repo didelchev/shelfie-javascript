@@ -37,9 +37,12 @@ catalogController.post("/:bookId", async (req, res) => {
     throw new Error('User does not exists')
   }
 
-  allLists.forEach(list => {
-    user[list] = user[list].filter(id => !id.equals(bookId))
-  })
+  // allLists.forEach(list => {
+  //   user[list] = user[list].filter(id => !id.equals(bookId))
+  // })
+  user.read = await user.read.filter(id => !id.equals(bookId));
+  user.currReading = await user.currReading.filter(id => !id.equals(bookId));
+  user.toRead = await user.toRead.filter(id => !id.equals(bookId));
 
   user[requestList].push(bookId)
   
