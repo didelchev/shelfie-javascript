@@ -5,7 +5,9 @@ const profileController = Router()
 
 
 profileController.get('/', async (req,res)=> {
-res.json({message: "works"})
+const userId = '68482e7f2dff3c06bd7076f8'
+const user = await getUserById(userId)
+res.json(user)
 })
 
 
