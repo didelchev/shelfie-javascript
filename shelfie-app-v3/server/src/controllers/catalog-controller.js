@@ -1,11 +1,12 @@
 import { Router } from "express";
-import { getAll, getOne } from "../services/book-service.js";
+import { addToBookList, getAll, getOne } from "../services/book-service.js";
 import { getUserById } from "../services/user-service.js";
 
 const catalogController = Router();
 
 
 catalogController.get("/", (req, res) => {
+  // add error handling
   getAll()
     .then(data => res.json(data))
 });
@@ -13,45 +14,27 @@ catalogController.get("/", (req, res) => {
 
 catalogController.get("/:bookId", (req, res) => {
   let id = req.params.bookId
-
-  getOne(id).then(data => res.json(data))
+// add error handling
+  getOne(id)
+    .then(data => res.json(data))
     
 
 });
 
 catalogController.post("/:bookId", async (req, res) => {
   const bookId = req.params.bookId
-
   const userId = req.user._id
-
   const requestList = req.body.shelf
 
-  const allLists = ['read', 'currReading', 'toRead']
+  console.log(userId)
 
-  if(!allLists.includes(requestList)){
-    throw new Error("A shelf with that name doesn't exist")
-  }
 
-  const user = await getUserById(userId) // check if user exists
-  if(!user) {
-    throw new Error('User does not exists')
-  }
-
-  // allLists.forEach(list => {
-  //   user[list] = user[list].filter(id => !id.equals(bookId))
-  // })
-  user.read = await user.read.filter(id => !id.equals(bookId));
-  user.currReading = await user.currReading.filter(id => !id.equals(bookId));
-  user.toRead = await user.toRead.filter(id => !id.equals(bookId));
-
-  user[requestList].push(bookId)
-  
-  await user.save()
-
+try {
+  await addToBookList(userId, bookId, requestList)
   res.json({message: 'Book has been successfully added !'})
-
-  return user
-
+} catch (error) {
+  res.status(400).json({message: error.message})
+}
 
 })
 
