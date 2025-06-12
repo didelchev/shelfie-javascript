@@ -1,5 +1,6 @@
 import Book from "../models/Book.js";
 import User from "../models/User.js";
+import mongoose from "mongoose";
 
 const getAll = () => Book.find().lean();
 
@@ -16,19 +17,36 @@ const addToBookList = async (userId, bookId, bookList) => {
     throw new Error("User does not exist");
   }
 
-  await User.updateOne(
-    { _id: userId },
-    {
-      $pull: {  
-        read: bookId,
-        currReading: bookId,
-        toRead: bookId,
-      },
-      $addToSet: {
-        [bookList]: bookId,
-      },    
-    }
-  );
+
+
+  const bookObjectId = new mongoose.Types.ObjectId(bookId);
+
+  try {
+    // Step 1: Remove the book from all shelves
+    await User.updateOne(
+      { _id: userId },
+      {
+        $pull: {
+          read: bookObjectId,
+          currReading: bookObjectId,
+          toRead: bookObjectId,
+        },
+      }
+    );
+
+    // Step 2: Add the book to the desired shelf
+    await User.updateOne(
+      { _id: userId },
+      {
+        $addToSet: {
+          [bookList]: bookObjectId,
+        },
+      }
+    );
+
+  } catch (err) {
+    console.error(err);
+  }
 };
 
 export { 

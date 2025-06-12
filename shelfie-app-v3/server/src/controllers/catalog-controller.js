@@ -26,7 +26,6 @@ catalogController.post("/:bookId", async (req, res) => {
   const userId = req.user._id
   const requestList = req.body.shelf
 
-  console.log(userId)
 
 
 try {
