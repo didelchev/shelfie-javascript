@@ -2,16 +2,17 @@ import express from 'express';
 import routes from './routes.js';
 import mongoose from 'mongoose'
 import 'dotenv/config'
-import { corsMiddleware } from './middlewares/cors-middleware.js';
 import { authMiddleware } from './middlewares/auth-middleware.js';
+import cors from 'cors'
 
 const app = express()
+
+app.use(cors());
 
 app.use(express.json());
 
 app.use(authMiddleware);
 
-app.use(corsMiddleware);
 
 const dbUrl = process.env.MONGO_URI;
 
