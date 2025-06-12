@@ -8,7 +8,8 @@ export const authMiddleware = async (req, res, next) => {
     return next();
   }
   
-  const decodedToken = jwt.verify(token, JWT_SECRET)
+  try {
+    const decodedToken = jwt.verify(token, JWT_SECRET,)
 
   const user = { 
     _id: decodedToken._id,
@@ -22,5 +23,13 @@ export const authMiddleware = async (req, res, next) => {
   res.locals.isAuthenticated = true;
 
   return next()
+    
+  } catch (err) {
+    if(err.name = 'TokenExpiredError'){
+      return res.status(401).json({message: "Token expired !"})
+    }else{
+      return res.status(401).json({message: "Invalid token !"})
+    }
+  }
   
 }

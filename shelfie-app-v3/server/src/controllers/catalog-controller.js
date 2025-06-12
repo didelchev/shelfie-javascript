@@ -6,9 +6,9 @@ const catalogController = Router();
 
 
 catalogController.get("/", (req, res) => {
-  // add error handling
   getAll()
     .then(data => res.json(data))
+  
 });
 
 
