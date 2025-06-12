@@ -1,13 +1,14 @@
 import Book from "../models/Book.js";
 import User from "../models/User.js";
-import mongoose from "mongoose";
 
 const getAll = () => Book.find().lean();
 
 const getOne = (bookId) => Book.findById(bookId);
 
 const addToBookList = async (userId, bookId, bookList) => {
+
   const allLists = ["read", "currReading", "toRead"];
+
   if (!allLists.includes(bookList)) {
     throw new Error("A shelf with that name doesn't exist");
   }
@@ -17,35 +18,31 @@ const addToBookList = async (userId, bookId, bookList) => {
     throw new Error("User does not exist");
   }
 
-
-
-  const bookObjectId = new mongoose.Types.ObjectId(bookId);
-
   try {
-    // Step 1: Remove the book from all shelves
+    //  Remove the book from all lists
     await User.updateOne(
       { _id: userId },
       {
         $pull: {
-          read: bookObjectId,
-          currReading: bookObjectId,
-          toRead: bookObjectId,
+          read: bookId,
+          currReading: bookId,
+          toRead: bookId,
         },
       }
     );
 
-    // Step 2: Add the book to the desired shelf
+    //  Add the book to the desired list
     await User.updateOne(
       { _id: userId },
       {
         $addToSet: {
-          [bookList]: bookObjectId,
+          [bookList]: bookId,
         },
       }
     );
 
   } catch (err) {
-    console.error(err);
+    throw new Error('Failed to add book to desired shelf !')
   }
 };
 

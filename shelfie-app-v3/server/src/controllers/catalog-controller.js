@@ -26,8 +26,6 @@ catalogController.post("/:bookId", async (req, res) => {
   const userId = req.user._id
   const requestList = req.body.shelf
 
-
-
 try {
   await addToBookList(userId, bookId, requestList)
   res.json({message: 'Book has been successfully added !'})
@@ -38,19 +36,3 @@ try {
 })
 
 export default catalogController;
-
-
- // try {
-  // console.log(user)
-
-  // if(user[requestedShelf].includes(bookId)){
-  //     throw new Error('Book is already in the list !')
-  // }
-  //     user[requestedShelf].push(bookId)
-  //     await user.save()
-  //     res.status(200).json({message: 'Successfully added book !'})
-    
-  // } catch (error) {
-  //   res.json({message: 'Book is already in the list !' })
-    
-  // }
