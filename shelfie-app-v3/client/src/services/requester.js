@@ -1,25 +1,21 @@
-import { getUserData } from "../utils/user-data.js";
+import { Redirect } from "../routes.js";
+import { showMessage } from "../utils/notification.js";
+import { updateNav } from "../utils/update-nav.js";
+import { clearUserData, getUserData } from "../utils/user-data.js";
 
 const request = (method, url, data) => {
+
+  const userData = getUserData()
+
   let options = {
     method, 
     headers: {}};
-
-  // if (method != "GET") {
-  //   options = {
-  //     method,
-  //     headers: {
-  //       "content-type": "application/json",
-  //     },
-  //   };
-  // }
 
   if (data) {
     options.headers["content-type"] = "application/json"
     options.body = JSON.stringify(data);
   }
 
-  const userData = getUserData()
 
   if (userData != null){
     options.headers["X-Authorization"] = userData.accessToken
@@ -27,12 +23,20 @@ const request = (method, url, data) => {
 
   return fetch(url, options)
     .then((response) => {
-      if (!response.ok) {
-        throw new Error("Failed to fetch resources");
+      if(response.status === 401) {
+        clearUserData()
+        updateNav()
+        return Promise.reject('Session expired, please login again.')
       }
-      return response.json();
+      if(!response.ok){
+        return Promise.reject('Failed to fetch resource   ')
+      }
+      return response.json(); 
     })
-    .catch((error) => console.log(error));
+    .catch((error) => {
+      showMessage(error)
+      throw error
+    });
 };
 
 

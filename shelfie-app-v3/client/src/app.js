@@ -13,7 +13,10 @@ import { showMessage } from "./utils/notification.js";
 import { updateNav } from "./utils/update-nav.js";
 import { showProfileView } from "./views/profile-view.js";
 
+
+
 updateNav()
+
 
 useRoutes('/', showHomeView)
 useRoutes('/login', showLoginView)
