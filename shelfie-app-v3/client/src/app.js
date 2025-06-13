@@ -18,12 +18,12 @@ import { showProfileView } from "./views/profile-view.js";
 updateNav()
 
 
-useRoutes('/', showHomeView)
-useRoutes('/login', showLoginView)
-useRoutes('/register', showRegisterView)
-useRoutes('/catalog', showCatalogView)
-useRoutes('/catalog/:bookId', showBookDetailsView)
-useRoutes('/profile', showProfileView)
+useRoutes('/', showHomeView, {isLoggedIn: false })
+useRoutes('/login', showLoginView , { isLoggedIn: true })
+useRoutes('/register', showRegisterView, { isLoggedIn: true })
+useRoutes('/catalog', showCatalogView, { isLoggedIn: false })
+useRoutes('/catalog/:bookId', showBookDetailsView, { isLoggedIn: false })
+useRoutes('/profile', showProfileView, { isLoggedIn: false })
 
 
 
