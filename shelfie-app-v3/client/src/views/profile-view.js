@@ -8,11 +8,12 @@ import { profileBooksTemplate } from "./book-profile-template.js"
 
 
 
-const profileTemplate = (books) => html`
+const profileTemplate = (books, user) => html`
    <section class="profile-container">
         <div class="user-info">
           <img src="../../images/profile-blank.webp" alt="Profile picture" />
-          <h2></h2>
+          <h2>${user.username}</h2>
+          <h3>${user.email}</h3>
         </div>
         <section class="books">
           <section class="read-section">
@@ -48,12 +49,15 @@ export const showProfileView = () => {
       const readBooks = Promise.all(user.read.map(bookId => getOne(bookId)));
       const toReadBooks = Promise.all(user.toRead.map(bookId => getOne(bookId)));
       const currReadingBooks = Promise.all(user.currReading.map(bookId => getOne(bookId)));
+      
+      //Get user data
+      const { email, username } = user
+      const userData = { email, username}
 
       // Waits for all the promises to reslove 
-      return Promise.all([readBooks, toReadBooks, currReadingBooks])
-      // console.log(toReadBooks)
+      return Promise.all([readBooks, toReadBooks, currReadingBooks, userData])
     })
-    .then(([read, toRead, currReading]) => {
+    .then(([read, toRead, currReading, userData]) => {
       //Destrucutre the values into varaiables and adds a status property for each book in the arrays
       const allBooks = [
         ...toRead.map(book => ({...book, status: 'to-read'})),
@@ -61,7 +65,7 @@ export const showProfileView = () => {
         ...currReading.map(book => ({...book, status: 'currReading'}))
       ]
 
-      render(profileTemplate(allBooks))
+      render(profileTemplate(allBooks, userData))
       Navigate()
     }) 
     
