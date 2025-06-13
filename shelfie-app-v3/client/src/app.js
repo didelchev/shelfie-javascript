@@ -12,6 +12,7 @@ import { logout } from "./services/auth-service.js";
 import { showMessage } from "./utils/notification.js";
 import { updateNav } from "./utils/update-nav.js";
 import { showProfileView } from "./views/profile-view.js";
+import { show404View } from "./views/404-view.js";
 
 
 
@@ -24,6 +25,7 @@ useRoutes('/register', showRegisterView, { isLoggedIn: true })
 useRoutes('/catalog', showCatalogView, { isLoggedIn: false })
 useRoutes('/catalog/:bookId', showBookDetailsView, { isLoggedIn: false })
 useRoutes('/profile', showProfileView, { isLoggedIn: false })
+useRoutes('/asd', show404View, { isLoggedIn: false })
 
 
 
