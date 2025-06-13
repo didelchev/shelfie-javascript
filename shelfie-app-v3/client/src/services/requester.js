@@ -26,7 +26,8 @@ const request = (method, url, data) => {
       if(response.status === 401) {
         clearUserData()
         updateNav()
-        return Promise.reject('Session expired, please login again.')
+        Redirect('/login')
+        return Promise.reject('Unauthorized - please login to your account !')
       }
       if(!response.ok){
         return Promise.reject('Failed to fetch resource   ')

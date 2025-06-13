@@ -1,4 +1,5 @@
 import { html,render } from "../lib.js"
+import { Navigate } from "../routes.js"
 import { getUserCredentials } from "../services/auth-service.js"
 import { getOne } from "../services/book-service.js"
 import { showMessage } from "../utils/notification.js"
@@ -61,6 +62,7 @@ export const showProfileView = () => {
       ]
 
       render(profileTemplate(allBooks))
+      Navigate()
     }) 
     
     .catch(err => showMessage(err))

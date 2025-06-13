@@ -33,3 +33,10 @@ export const authMiddleware = async (req, res, next) => {
   }
   
 }
+
+export const isAuth = (req, res, next) => {
+  if(!req.isAuthenticated){
+    return res.status(401).json({message: "Unauthorized !"})
+  }
+  return next()
+}

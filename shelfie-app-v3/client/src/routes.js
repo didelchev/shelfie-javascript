@@ -49,8 +49,5 @@ export const startRouter = () => {
       Router(location.pathname);
     });
   });
-
   Router(location.pathname);
-
-  Navigate();
 };

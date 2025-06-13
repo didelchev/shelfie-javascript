@@ -23,29 +23,3 @@ export const showCatalogView = () => {
 }
 
 
-
-
-
-// export const catalogComponent = () => {
-//   document.title = 'Explore Books'
-  
-//  getAll()
-//     .then(books => {
-//       const allBooksHTML = books.map(book => bookTemplateComponent(book)).join('')
-//       render(`
-//     <main class="book-catalog">
-//       <h1>Explore books</h1>
-//       <div class="book-catalog-grid">
-//         ${(allBooksHTML)}
-//       </div>
-//     </main> 
-//         `)
-//     })
-//     .catch(error => console.log(error)
-//     )
-
-    
-// Navigate()
-
-
-// }
