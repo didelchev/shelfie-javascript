@@ -5,18 +5,21 @@ import { showMessage } from "../utils/notification.js"
 import { getUserData } from "../utils/user-data.js"
 
 
-export const bookDetailsTemplate = (book) => html`
+export const bookDetailsTemplate = (book, isLogged) => html`
 <section class="book-details">
         <div class="image-container">
             <img src="${book.image}" alt="book">
             <!--If user is auth display buttons -->
-            <div class='wrapper'>
-                <select name='books' id='books'>
-                    <option value='read'>Read</options>
-                    <option value='currReading'>Currently Reading</options>
-                    <option value='toRead'>Want to Read</options>
-                </select>
+                <div class='wrapper'>
+                ${isLogged() ? html`
+                    <select name='books' id='books'>
+                        <option value='read'>Read</option>
+                        <option value='currReading'>Currently Reading</option>
+                        <option value='toRead'>Want to Read</option>
+                    </select>`: null}
+                
             </div>
+
         </div>
         <div class="book-description">
             <h1>${book.title}</h1>
@@ -30,6 +33,10 @@ export const bookDetailsTemplate = (book) => html`
 
 const saveSelectedBook = (book) => {
     const options= document.getElementById('books')
+
+    if(!options){
+        return
+    }
     options.addEventListener('change', (e) => {
         const bookId = book._id
         const shelfOption = {shelf : e.currentTarget.value}
@@ -39,12 +46,23 @@ const saveSelectedBook = (book) => {
     })
 }
 
+const isLogged = () => {
+    const user = getUserData()
+
+    if(!user){
+        return false
+    }
+
+    return true
+}
+
 
 
 export const showBookDetailsView = (bookId) => {
     getOne(bookId)
         .then(book => {
-            render(bookDetailsTemplate(book))
+            render(bookDetailsTemplate(book, isLogged))
+            isLogged()
             saveSelectedBook(book)
             Navigate()
         })
