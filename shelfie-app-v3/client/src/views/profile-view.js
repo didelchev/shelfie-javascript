@@ -4,7 +4,7 @@ import { getUserCredentials } from "../services/auth-service.js"
 import { getOne } from "../services/book-service.js"
 import { showMessage } from "../utils/notification.js"
 import { getUserData } from "../utils/user-data.js"
-import { bookTemplate } from "./book-template.js"
+import { profileBooksTemplate } from "./book-profile-template.js"
 
 
 
@@ -18,19 +18,19 @@ const profileTemplate = (books) => html`
           <section class="read-section">
             <h3>Read</h3>
             <div class="read">
-            ${books.filter(book => book.status === 'read').map(book => bookTemplate(book))}
+            ${books.filter(book => book.status === 'read').map(book => profileBooksTemplate(book))}
             </div>
           </section>
           <section class="currently-reading-section">
             <h3>Currently Reading</h3>
             <div class="currently-reading">
-            ${books.filter(book => book.status === 'currReading').map(book => bookTemplate(book))}
+            ${books.filter(book => book.status === 'currReading').map(book => profileBooksTemplate(book))}
             </div>
           </section>
           <section class="to-read-section">
             <h3>To-Read</h3>
             <div class="to-read">
-              ${books.filter(book => book.status === 'to-read').map(book => bookTemplate(book))}
+              ${books.filter(book => book.status === 'to-read').map(book => profileBooksTemplate(book))}
             </div>
           </section>
         </section>
