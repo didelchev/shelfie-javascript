@@ -6,11 +6,15 @@ const routes = [];
 export const useRoutes = (path, component, options = {}) => {
   const { isLoggedIn } = options;
   routes.push({ path, component, isLoggedIn });
+  console.log(routes)
 };
 
 // Recieves a path and checks the routes array for any matches, then runs the component function
 const Router = (path) => {
+
   const dynamicRoute = path.split("/");
+
+ 
 
   let matchedRoute;
 
@@ -35,20 +39,25 @@ const Router = (path) => {
     return;
   }
 
-  // CHECK STATIC ROUTES
 
+  // CHECK STATIC ROUTES
   matchedRoute = routes.find((route) => route.path === path);
 
   if (!matchedRoute) {
-    showMessage("No such route");
+    const errorRoute = routes.find(route => route.path === '*')
+    errorRoute.component()
+    return
   }
 
+  
   if (matchedRoute.isLoggedIn && isAuth()) {
     showMessage("You are already logged in");
     return;
   }
 
   matchedRoute.component();
+
+
 };
 
 export const Navigate = () => {

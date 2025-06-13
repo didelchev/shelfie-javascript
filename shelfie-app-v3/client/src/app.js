@@ -25,7 +25,7 @@ useRoutes('/register', showRegisterView, { isLoggedIn: true })
 useRoutes('/catalog', showCatalogView, { isLoggedIn: false })
 useRoutes('/catalog/:bookId', showBookDetailsView, { isLoggedIn: false })
 useRoutes('/profile', showProfileView, { isLoggedIn: false })
-useRoutes('/asd', show404View, { isLoggedIn: false })
+useRoutes('*', show404View)
 
 
 

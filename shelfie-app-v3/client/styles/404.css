@@ -16,13 +16,12 @@
   
   .not-found-container p {
     font-size: 1.5em;
-    margin-bottom: 20px;
   }
   
   .not-found-container a {
     display: inline-block;
     padding: 10px 20px;
-    background-color: grey;
+    background-color: rgb(30, 30, 30);
     color: white;
     text-decoration: none;
     border-radius: 5px;
