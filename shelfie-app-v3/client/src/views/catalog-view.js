@@ -7,8 +7,12 @@ import { bookTemplate } from "./book-template.js"
 const catalogTemplate = (books) => html`
 <main class="book-catalog">
       <h1>Explore books</h1>
+      <form>
+        <input placeholder="Searth for a book..." type="text" name="text" class="input">
+        <button class ='search-button'type='submit'>Search</button>
+      </form>
       <div class="book-catalog-grid">
-      ${books.map(book => bookTemplate(book))}
+          ${books.map(book => bookTemplate(book))}
       </div>
     </main> 
 `

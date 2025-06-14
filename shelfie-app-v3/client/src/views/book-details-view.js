@@ -37,7 +37,6 @@ const saveSelectedBook = (book) => {
     listOptions.forEach(list => {
         list.addEventListener("click", (e) => {
             const listValue = e.currentTarget.value
-            console.log(listValue)
 
             const shelfOption = { shelf: listValue }
 
