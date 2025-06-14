@@ -37,14 +37,6 @@
 }
 
 
-.wrapper {
-  display: flex;
-  flex-direction: column;
-  margin-top:1em;
-  /* outline: 1px solid red; */
-    
-}
-
 #books{
   padding: 0.8em 1em;
   color: white;
@@ -56,3 +48,48 @@
 
   
 }
+
+.dropdown{
+    margin-top: 1em;
+    width: 100%;
+    position: relative;
+}
+
+.dropdown button { 
+    background-color: #3F8363;
+    color: white;
+    padding: 1em;
+    border: none;
+    cursor: pointer;
+    width: 100%;
+    border-radius: 2em;
+}
+
+.dropdown .options {
+    display: none;
+    position: absolute;
+    width: 100%;
+    text-align: center;
+    border: 1px solid black;
+}
+
+.dropdown .dropdown-options {
+    display: block;
+    padding: 1em;
+    border-radius:unset;
+    width: 100%;
+    background-color: white;
+    color: black;
+
+}
+.dropdown .dropdown-options:hover {
+    background-color: rgba(15, 1, 1, 0.363)
+    
+
+}
+
+
+.dropdown:hover .options {
+    display: block;
+}
+

@@ -10,16 +10,16 @@ export const bookDetailsTemplate = (book, isLogged) => html`
         <div class="image-container">
             <img src="${book.image}" alt="book">
             <!--If user is auth display buttons -->
-                <div class='wrapper'>
-                ${isLogged() ? html`
-                    <select name='books' id='books'>
-                        <option value='read'>Read</option>
-                        <option value='currReading'>Currently Reading</option>
-                        <option value='toRead'>Want to Read</option>
-                    </select>`: null}
-                
+                    ${isLogged() ? html`
+                        <div class='dropdown'>
+                            <button>Selece a shelf:</button>
+                            <div class ='options'>
+                                <button class='dropdown-options' value='read' >Read</button>
+                                <button class='dropdown-options' value = 'currReading' >Currently Reading</button>
+                                <button class='dropdown-options' value = 'toRead' >Want to Read</button>
+                         </div>
+                        ` : null}
             </div>
-
         </div>
         <div class="book-description">
             <h1>${book.title}</h1>
@@ -32,17 +32,21 @@ export const bookDetailsTemplate = (book, isLogged) => html`
 `
 
 const saveSelectedBook = (book) => {
-    const options= document.getElementById('books')
+    const listOptions = document.querySelectorAll('.dropdown-options');
 
-    if(!options){
-        return
-    }
-    options.addEventListener('change', (e) => {
-        const bookId = book._id
-        const shelfOption = {shelf : e.currentTarget.value}
-        addBook(bookId, shelfOption)
-            .then((res) => showMessage(res.message))
-            .catch((err) => showMessage(err))
+    listOptions.forEach(list => {
+        list.addEventListener("click", (e) => {
+            const listValue = e.currentTarget.value
+            console.log(listValue)
+
+            const shelfOption = { shelf: listValue }
+
+            const bookId = book._id;
+
+            addBook(bookId, shelfOption)
+                .then(res => showMessage(res.message))
+                .catch(err => showMessage(err))
+        })
     })
 }
 
@@ -71,3 +75,9 @@ export const showBookDetailsView = (bookId) => {
 
 
 
+// <!-- ${isLogged() ? html`
+//     <select name='books' id='books'>
+//         <option value='read'>Read</option>
+//         <option value='currReading'>Currently Reading</option>
+//         <option value='toRead'>Want to Read</option>
+//     </select>`: null} -->
