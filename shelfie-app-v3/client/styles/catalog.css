@@ -23,14 +23,14 @@
 
 }
 
-form{
+.search-form{
     display: flex;
     align-items: center;
     justify-content: center;
     gap: 0.5em  ;
 }
 
-input {
+.input {
     width: 100%;
     max-width: 420px;
     height: 45px;
