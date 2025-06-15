@@ -6,7 +6,6 @@ const routes = [];
 export const useRoutes = (path, component, options = {}) => {
   const { isLoggedIn } = options;
   routes.push({ path, component, isLoggedIn });
-  console.log(routes)
 };
 
 // Recieves a path and checks the routes array for any matches, then runs the component function

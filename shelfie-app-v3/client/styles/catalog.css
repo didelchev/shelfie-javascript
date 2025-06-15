@@ -65,3 +65,39 @@
     border: 1.5px solid lightgrey;
 
   }
+
+/* FILTER  */
+
+.category-filter {
+  display: block;
+  width: 601.7px;
+  margin: 0 auto;
+  font-family: sans-serif;
+  margin-top: 1em;
+}
+
+.category-filter-toggle {
+  padding: 12px;
+  border: 1.5px solid lightgrey;
+  border-radius: 12px;
+  cursor: pointer;
+  list-style: none;
+  user-select: none;
+}
+
+.category-filter-menu {
+  display: grid;
+  grid-template-columns: repeat(2, 5fr);
+  margin-top: 0.5rem;
+  padding: 0.5rem;
+  background: white;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+}
+
+.category-filter-menu label {
+  display: block;
+  margin: 0.3rem 0;
+}
+
