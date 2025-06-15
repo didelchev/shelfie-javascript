@@ -28,10 +28,11 @@ const submitHandler = (e) => {
 }
 
 const searchHandler = (e) => {
-  const query = e.currentTarget.value
+  const query = e.currentTarget.value.toLowerCase()
   
   let filteredBooks = allBooks.filter(book => {
-    return book.title.toLowerCase().includes(query)
+    return (book.title.toLowerCase().includes(query) || 
+           book.author.toLowerCase().includes(query))
   })
 
   render(catalogTemplate(filteredBooks, submitHandler, searchHandler))
