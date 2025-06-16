@@ -39,14 +39,14 @@ const submitHandler = (e) => {
   console.log(e.currentTarget);
 };
 
-const newHandler = (e) => {
+const filterHandler = (e) => {
   e.preventDefault()
   const genreInputs = Array.from(document.querySelectorAll('input[type="checkbox"]:checked'))
   .map(genre => genre.value.charAt(0).toUpperCase() + genre.value.slice(1).toLowerCase())
   
   
 
-  let newArray = allBooks.filter(book => {
+  let filteredBooks = allBooks.filter(book => {
     return book.genre.some(g =>
       genreInputs.includes(g)
     );
@@ -54,25 +54,25 @@ const newHandler = (e) => {
   })
 
   if(!genreInputs.length){
-    newArray = allBooks
+    filteredBooks = allBooks
   }
 
   
-    render(catalogTemplate(newArray, searchHandler, submitHandler, newHandler));
+    render(catalogTemplate(filteredBooks, searchHandler, submitHandler, filterHandler));
 
 }
 
 const searchHandler = (e) => {
   const query = e.currentTarget.value.toLowerCase();
 
-  let filteredBooks = allBooks.filter((book) => {
+  let searchedBooks = allBooks.filter((book) => {
     return (
       book.title.toLowerCase().includes(query) ||
       book.author.toLowerCase().includes(query)
     );
     // TODO:  Search by ISBN
   });
-  render(catalogTemplate(filteredBooks, submitHandler, searchHandler ));
+  render(catalogTemplate(searchedBooks, submitHandler, searchHandler ));
 };
 
 export const showCatalogView = () => {
@@ -81,7 +81,7 @@ export const showCatalogView = () => {
   }
   getAll().then((books) => {
     allBooks = books;
-    render(catalogTemplate(allBooks, submitHandler, searchHandler, newHandler));
+    render(catalogTemplate(allBooks, submitHandler, searchHandler, filterHandler));
     Navigate();
   });
 };
