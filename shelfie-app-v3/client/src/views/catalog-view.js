@@ -44,8 +44,6 @@ const filterHandler = (e) => {
   const genreInputs = Array.from(document.querySelectorAll('input[type="checkbox"]:checked'))
   .map(genre => genre.value.charAt(0).toUpperCase() + genre.value.slice(1).toLowerCase())
   
-  
-
   let filteredBooks = allBooks.filter(book => {
     return book.genre.some(g =>
       genreInputs.includes(g)
@@ -58,7 +56,7 @@ const filterHandler = (e) => {
   }
 
   
-    render(catalogTemplate(filteredBooks, searchHandler, submitHandler, filterHandler));
+  render(catalogTemplate(filteredBooks, searchHandler, submitHandler, filterHandler));
 
 }
 

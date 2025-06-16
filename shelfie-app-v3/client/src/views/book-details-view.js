@@ -1,11 +1,11 @@
 import { Navigate } from "../routes.js"
-import { addBook, getOne } from "../services/book-service.js"
+import { addBook, getOne, addBookReview } from "../services/book-service.js"
 import { render,html } from "../lib.js"
 import { showMessage } from "../utils/notification.js"
 import { getUserData } from "../utils/user-data.js"
 
 
-export const bookDetailsTemplate = (book, isLogged) => html`
+export const bookDetailsTemplate = (book, isLogged, addBookComment) => html`
 <section class="book-details">
         <div class="image-container">
             <img src="${book.image}" alt="book">
@@ -28,6 +28,7 @@ export const bookDetailsTemplate = (book, isLogged) => html`
             <p><span class="label">Genre:</span> <a href="#">${(book.genre).join(", ")}</a></p> 
             <p>${book.description}</p>
         </div>
+        <button @click =${addBookComment} class='send'>Send</button>
     </section> 
 `
 
@@ -49,6 +50,13 @@ const saveSelectedBook = (book) => {
     })
 }
 
+const addBookComment = (book) => {
+    const bookId = book._id
+    addBookReview(bookId)
+        .then(res => showMessage(res.message))
+        .catch(err => showMessage(err))
+}
+
 const isLogged = () => {
     const user = getUserData()
 
@@ -64,7 +72,7 @@ const isLogged = () => {
 export const showBookDetailsView = (bookId) => {
     getOne(bookId)
         .then(book => {
-            render(bookDetailsTemplate(book, isLogged))
+            render(bookDetailsTemplate(book, isLogged, addBookComment(book)))
             isLogged()
             saveSelectedBook(book)
             Navigate()
