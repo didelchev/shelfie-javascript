@@ -15,7 +15,7 @@ const catalogTemplate = (books, submitHandler, searchHandler, newHandler) => htm
     </form>
     <details class="category-filter">
       <summary class="category-filter-toggle">Select Categories ⌄</summary>
-      <form @submit=${newHandler} class="category-filter-menu">
+      <form @change=${newHandler} class="category-filter-menu">
         <label><input class="genre" type="checkbox" value="fiction" /> Fiction</label>
         <label><input class="genre" type="checkbox" value="fantasy" /> Fantasy</label>
         <label><input class="genre" type="checkbox" value="biography" /> Biography</label>
@@ -44,14 +44,13 @@ const newHandler = (e) => {
   e.preventDefault()
   const genreInputs = Array.from(document.querySelectorAll('input[type="checkbox"]:checked'))
   .map(genre => genre.value.charAt(0).toUpperCase() + genre.value.slice(1).toLowerCase())
-  console.log(genreInputs)
 
   const newArray = allBooks.filter(book => {
     return book.genre.some(g =>
       genreInputs.includes(g)
     );
   });
-    render(catalogTemplate(newArray, submitHandler, newHandler));
+    render(catalogTemplate(newArray, searchHandler, submitHandler, newHandler));
 
 }
 
