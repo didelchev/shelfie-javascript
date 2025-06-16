@@ -44,12 +44,21 @@ const newHandler = (e) => {
   e.preventDefault()
   const genreInputs = Array.from(document.querySelectorAll('input[type="checkbox"]:checked'))
   .map(genre => genre.value.charAt(0).toUpperCase() + genre.value.slice(1).toLowerCase())
+  
+  
 
-  const newArray = allBooks.filter(book => {
+  let newArray = allBooks.filter(book => {
     return book.genre.some(g =>
       genreInputs.includes(g)
     );
-  });
+
+  })
+  
+  if(!genreInputs.length){
+    newArray = allBooks
+  }
+
+  
     render(catalogTemplate(newArray, searchHandler, submitHandler, newHandler));
 
 }
