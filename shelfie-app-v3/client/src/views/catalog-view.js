@@ -16,16 +16,16 @@ const catalogTemplate = (books, submitHandler, searchHandler, newHandler) => htm
     <details class="category-filter">
       <summary class="category-filter-toggle">Select Categories ⌄</summary>
       <form @submit=${newHandler} class="category-filter-menu">
-        <label><input type="checkbox" value="fiction" /> Fiction</label>
-        <label><input type="checkbox" value="fantasy" /> Fantasy</label>
-        <label><input type="checkbox" value="biography" /> Biography</label>
-        <label><input type="checkbox" value="science fiction" /> Science Fiction</label>
-        <label><input type="checkbox" value="business" /> Business</label>
-        <label><input type="checkbox" value="classics" /> Classics</label>
-        <label><input type="checkbox" value="psychology" /> Psychology</label>
-        <label><input type="checkbox" value="mystery" /> Mystery</label>
-        <label><input type="checkbox" value="nonfiction" /> Nonfiction</label>
-        <label><input type="checkbox" value="romance" /> Romance</label>
+        <label><input class="genre" type="checkbox" value="fiction" /> Fiction</label>
+        <label><input class="genre" type="checkbox" value="fantasy" /> Fantasy</label>
+        <label><input class="genre" type="checkbox" value="biography" /> Biography</label>
+        <label><input class="genre" type="checkbox" value="science fiction" /> Science Fiction</label>
+        <label><input class="genre" type="checkbox" value="business" /> Business</label>
+        <label><input class="genre" type="checkbox" value="classics" /> Classics</label>
+        <label><input class="genre" type="checkbox" value="psychology" /> Psychology</label>
+        <label><input class="genre" type="checkbox" value="mystery" /> Mystery</label>
+        <label><input class="genre" type="checkbox" value="nonfiction" /> Nonfiction</label>
+        <label><input class="genre" type="checkbox" value="romance" /> Romance</label>
         <button class="search-button" type="submit">Submit</button>
     </form>
     </details>
@@ -42,7 +42,17 @@ const submitHandler = (e) => {
 
 const newHandler = (e) => {
   e.preventDefault()
-  console.log('yes')
+  const genreInputs = Array.from(document.querySelectorAll('input[type="checkbox"]:checked'))
+  .map(genre => genre.value.charAt(0).toUpperCase() + genre.value.slice(1).toLowerCase())
+  console.log(genreInputs)
+
+  const newArray = allBooks.filter(book => {
+    return book.genre.some(g =>
+      genreInputs.includes(g)
+    );
+  });
+    render(catalogTemplate(newArray, submitHandler, newHandler));
+
 }
 
 const searchHandler = (e) => {
