@@ -26,7 +26,6 @@ const catalogTemplate = (books, submitHandler, searchHandler, newHandler) => htm
         <label><input class="genre" type="checkbox" value="mystery" /> Mystery</label>
         <label><input class="genre" type="checkbox" value="nonfiction" /> Nonfiction</label>
         <label><input class="genre" type="checkbox" value="romance" /> Romance</label>
-        <button class="search-button" type="submit">Submit</button>
     </form>
     </details>
     <div class="book-catalog-grid">
@@ -53,7 +52,7 @@ const newHandler = (e) => {
     );
 
   })
-  
+
   if(!genreInputs.length){
     newArray = allBooks
   }
