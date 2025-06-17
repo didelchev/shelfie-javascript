@@ -1,11 +1,14 @@
 import { Navigate } from "../routes.js"
-import { addBook, getOne, addBookReview } from "../services/book-service.js"
+import { addBook, getOne, addBookReview, getBookReviews } from "../services/book-service.js"
 import { render,html } from "../lib.js"
 import { showMessage } from "../utils/notification.js"
 import { getUserData } from "../utils/user-data.js"
+import { reviewTemplate } from "./review-template.js"
 
 
-export const bookDetailsTemplate = (book, isLogged, addBookComment) => html`
+let allReviews = []
+
+export const bookDetailsTemplate = (book, isLogged, allReviews) => html`
 <section class="book-details">
         <div class="image-container">
             <img src="${book.image}" alt="book">
@@ -28,8 +31,17 @@ export const bookDetailsTemplate = (book, isLogged, addBookComment) => html`
             <p><span class="label">Genre:</span> <a href="#">${(book.genre).join(", ")}</a></p> 
             <p>${book.description}</p>
         </div>
-        <button @click =${addBookComment} class='send'>Send</button>
     </section> 
+     <div class="review-container">
+            <h3>Reviews</h3>
+            <div class='add-review'>
+                <form class="review-form">
+                    <input class='review' type="text" name="text" placeholder="Leave a review..." value="">
+                    <button class='review-btn' type="submit">Add</button>
+                </form>
+            </div>
+            ${allReviews.map(review => reviewTemplate(review))}
+        </div>
 `
 
 const saveSelectedBook = (book) => {
@@ -50,11 +62,19 @@ const saveSelectedBook = (book) => {
     })
 }
 
-const addBookComment = (book) => {
-    const bookId = book._id
-    addBookReview(bookId)
-        .then(res => showMessage(res.message))
-        .catch(err => showMessage(err))
+const addReview = (book) => {
+    const form = document.querySelector('.review-btn')
+    const bookId = book._id    
+    form.addEventListener('click', (e) => {
+        e.preventDefault()
+        const review = document.querySelector('.review').value
+
+        const reviewObj = { review: review}
+
+        addBookReview(bookId, reviewObj)
+            .then(res => showMessage(res.message))
+            .catch(err => showMessage(err))
+    })
 }
 
 const isLogged = () => {
@@ -67,14 +87,24 @@ const isLogged = () => {
     return true
 }
 
+const showBookReviews = () => {
+    getBookReviews()
+        .then(reviews => {
+            allReviews =reviews
+        })
+        .catch(err => console.log(err))
+}
+
+showBookReviews()
 
 
 export const showBookDetailsView = (bookId) => {
     getOne(bookId)
         .then(book => {
-            render(bookDetailsTemplate(book, isLogged, addBookComment(book)))
+            render(bookDetailsTemplate(book, isLogged, allReviews))
             isLogged()
             saveSelectedBook(book)
+            addReview(book)
             Navigate()
         })
 }

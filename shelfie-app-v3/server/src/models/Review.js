@@ -1,15 +1,15 @@
 import { model, Schema, Types } from "mongoose";
 
 const reviewSchema = new Schema({
-    book: {
+    bookId: {
         type: Types.ObjectId,
         ref: 'Books'
     },
-    owner: {
-        type: Types.ObjectId,
-        ref: 'Users'
+    userEmail: {
+        type: String
+
     },
-    comment: {
+    review: {
         type: String,
 
     }

@@ -1,7 +1,13 @@
 import Review from "../models/Review.js"
 
-export const addReview = (book, owner, comment) => {
+
+
+export const getBookReviews = () => {
+   return Review.find().lean()
+}
+
+export const addReview = (bookId, userEmail, review) => {
   
-   return Review.create({book, owner, comment})
+   return Review.create({bookId, userEmail, review})
 }
 

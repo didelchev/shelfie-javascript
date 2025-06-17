@@ -36,7 +36,6 @@ const catalogTemplate = (books, submitHandler, searchHandler, newHandler) => htm
 
 const submitHandler = (e) => {
   e.preventDefault();
-  console.log(e.currentTarget);
 };
 
 const filterHandler = (e) => {
