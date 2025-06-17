@@ -3,7 +3,7 @@ import { addBook, getOne, addBookReview, getBookReviews } from "../services/book
 import { render,html } from "../lib.js"
 import { showMessage } from "../utils/notification.js"
 import { getUserData } from "../utils/user-data.js"
-import { reviewTemplate } from "./review-template.js"
+import { reviewTemplate } from "../templates/review-template.js"
 
 
 let allReviews = []

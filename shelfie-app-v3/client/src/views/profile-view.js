@@ -2,9 +2,9 @@ import { html,render } from "../lib.js"
 import { Navigate } from "../routes.js"
 import { getUserCredentials } from "../services/auth-service.js"
 import { getOne } from "../services/book-service.js"
+import { profileBooksTemplate } from "../templates/book-profile-template.js"
 import { showMessage } from "../utils/notification.js"
 import { getUserData } from "../utils/user-data.js"
-import { profileBooksTemplate } from "./book-profile-template.js"
 
 
 
