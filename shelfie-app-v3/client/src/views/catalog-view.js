@@ -1,7 +1,7 @@
 import { Navigate } from "../routes.js";
 import { render, html } from "../lib.js";
 import { getAll } from "../services/book-service.js";
-import { bookTemplate } from "./book-template.js";
+import { bookTemplate } from "../templates/book-template.js";
 import { spinnerTemplate } from "../templates/spinner-template.js";
 
 let allBooks = [];

@@ -1,7 +1,7 @@
 import { getLatest } from "../services/book-service.js"
-import { bookTemplate } from "./book-template.js"
 import { render,html } from "../lib.js"
 import { Navigate } from "../routes.js"
+import { bookTemplate } from "../templates/book-template.js"
 
 const homeTemplate = (books) => 
 html`<section class="main-content">
