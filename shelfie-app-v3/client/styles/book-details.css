@@ -1,95 +1,143 @@
-.book-details{
-    display: flex;
-    width: 50%;
-    margin: 5em auto;
-    gap: 1em;
-    padding: 1em;
-    outline: 0.5px solid #0000002b;
-   
+.book-details {
+  display: flex;
+  width: 50%;
+  margin: 0 auto;
+  margin-top: 5em;
+  gap: 1em;
+  padding: 1em;
+  outline: 0.5px solid #0000002b;
 }
 .book-details > * {
-    outline: 1px solid lime;
+  outline: 1px solid lime;
 }
-.image-container  {
-    flex-shrink: 0;
-    flex-basis: content;
-    max-width: 400px    ;
-}
-
-.book-description{
-    padding: 1em;
-    flex-basis: 75ch;
-    flex-grow: 1;
+.image-container {
+  flex-shrink: 0;
+  flex-basis: content;
+  max-width: 400px;
 }
 
-.book-description p{
-    font-size: 1.2em;
-    margin-bottom: 0;
-    padding-bottom: 1em;
+.book-description {
+  padding: 1em;
+  flex-basis: 75ch;
+  flex-grow: 1;
+}
+
+.book-description p {
+  font-size: 1.2em;
+  margin-bottom: 0;
+  padding-bottom: 1em;
 }
 
 .book-description .label {
-    font-weight: 600;
+  font-weight: 600;
 }
 
 .book-description a {
-    text-decoration:underline;
+  text-decoration: underline;
 }
 
-
-#books{
+#books {
   padding: 0.8em 1em;
   color: white;
   border: none;
   border-radius: 30px;
-  background-color: #3F8363;
+  background-color: #3f8363;
   text-align: center;
   font-size: 1.2em;
-
-  
 }
 
-.dropdown{
-    margin-top: 1em;
-    width: 100%;
-    position: relative;
+/* ADD BOOK TO SHELF */
+
+.dropdown {
+  margin-top: 1em;
+  width: 100%;
+  position: relative;
 }
 
-.dropdown button { 
-    background-color: #3F8363;
-    color: white;
-    padding: 1em;
-    border: none;
-    cursor: pointer;
-    width: 100%;
-    border-radius: 2em;
+.dropdown button {
+  background-color: #3f8363;
+  color: white;
+  padding: 1em;
+  border: none;
+  cursor: pointer;
+  width: 100%;
+  border-radius: 2em;
 }
 
 .dropdown .options {
-    display: none;
-    position: absolute;
-    width: 100%;
-    text-align: center;
-    border: 1px solid black;
+  display: none;
+  position: absolute;
+  width: 100%;
+  text-align: center;
+  border: 1px solid black;
 }
 
 .dropdown .dropdown-options {
-    display: block;
-    padding: 1em;
-    border-radius:unset;
-    width: 100%;
-    background-color: white;
-    color: black;
-
+  display: block;
+  padding: 1em;
+  border-radius: unset;
+  width: 100%;
+  background-color: white;
+  color: black;
 }
 .dropdown .dropdown-options:hover {
-    background-color: rgba(15, 1, 1, 0.363)
-    
-
+  background-color: rgba(15, 1, 1, 0.363);
 }
-
 
 .dropdown:hover .options {
-    display: block;
+  display: block;
 }
 
+/* REVIEWS */
+
+.review-container {
+  display: block;
+  width: 50%;
+  margin: 0 auto;
+  padding: 2em;
+}
+
+.review-container .add-review form {
+  display: flex;
+  flex-direction: column;
+}
+.review-container .add-review input[type="text"] {
+  border: none;
+  border-radius: 5px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  font-size: 16px;
+  padding: 10px;
+  width: 100%;
+}
+
+.review-container .add-review button {
+  flex-basis: 30%;
+  align-self: flex-end;
+  outline: none;
+  height: 45px;
+  padding: 12px;
+  margin-top: 1em;
+  border-radius: 12px;
+  border: 1.5px solid lightgrey;
+}
+
+.review-container .review {
+  display: flex;
+  margin-top: 1em;
+  padding: 1em;
+  align-items:flex-start;
+  justify-content: flex-start;
+  margin-bottom: 1rem;
+  outline: 1px solid black;
+}
+.review-container .review p {
+    padding: 1px;
+}
+
+.review-container .review img {
+  border-radius: 50%;
+  height: 50px;
+  margin-right: 20px;
+  object-fit: cover;
+  width: 50px;
+}
