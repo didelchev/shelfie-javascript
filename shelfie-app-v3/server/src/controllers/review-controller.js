@@ -6,8 +6,9 @@ import { getUserById } from "../services/user-service.js";
 
 const reviewController = Router()
 
-reviewController.get("/", (req, res) => {
-    getBookReviews()
+reviewController.get("/:bookId", (req, res) => {
+    const bookId = req.params.bookId
+    getBookReviews(bookId)
         .then(reviews => res.json(reviews))
         .catch(err => res.json({message: err}))
 

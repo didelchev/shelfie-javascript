@@ -13,4 +13,4 @@ export const addBook = (bookId, shelfOption) => post(`${baseURL}/${bookId}`, she
 
 export const addBookReview = (bookId, review) => post(`${baseReviewURL}/${bookId}`, review )
 
-export const getBookReviews = () => get(`${baseReviewURL}` )
+export const getBookReviews = (bookId) => get(`${baseReviewURL}/${bookId}` )

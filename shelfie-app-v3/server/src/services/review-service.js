@@ -2,8 +2,9 @@ import Review from "../models/Review.js"
 
 
 
-export const getBookReviews = () => {
-   return Review.find().lean()
+export const getBookReviews = async (bookId) => {
+   const reviews = await Review.find({bookId: bookId })
+   return reviews
 }
 
 export const addReview = (bookId, userEmail, review) => {

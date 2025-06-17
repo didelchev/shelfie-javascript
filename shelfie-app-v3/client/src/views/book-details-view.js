@@ -35,7 +35,7 @@ export const bookDetailsTemplate = (book, isLogged, allReviews) => html`
      <div class="review-container">
             <h3>Reviews</h3>
             <div class='add-review'>
-                <form class="review-form">
+            <form @submit=${(e) => addReview(e, book._id)}>
                     <input class='review' type="text" name="text" placeholder="Leave a review..." value="">
                     <button class='review-btn' type="submit">Add</button>
                 </form>
@@ -62,19 +62,25 @@ const saveSelectedBook = (book) => {
     })
 }
 
-const addReview = (book) => {
-    const form = document.querySelector('.review-btn')
-    const bookId = book._id    
-    form.addEventListener('click', (e) => {
-        e.preventDefault()
-        const review = document.querySelector('.review').value
 
-        const reviewObj = { review: review}
 
-        addBookReview(bookId, reviewObj)
-            .then(res => showMessage(res.message))
-            .catch(err => showMessage(err))
-    })
+const addReview = (e, bookId) => {
+    e.preventDefault();
+
+    const input = e.target.querySelector('.review');
+    const review = input.value.trim();
+
+    const reviewObj = { review: review };
+
+    addBookReview(bookId, reviewObj)
+        .then(res => {
+            showMessage(res.message || 'Review added');
+            input.value = '';
+            showBookDetailsView(bookId); // Re-render with new data
+        })
+        .catch(err => showMessage(err.message || 'Failed to add review'));
+
+    
 }
 
 const isLogged = () => {
@@ -87,34 +93,20 @@ const isLogged = () => {
     return true
 }
 
-const showBookReviews = () => {
-    getBookReviews()
-        .then(reviews => {
-            allReviews =reviews
-        })
-        .catch(err => console.log(err))
-}
-
-showBookReviews()
-
 
 export const showBookDetailsView = (bookId) => {
     getOne(bookId)
         .then(book => {
-            render(bookDetailsTemplate(book, isLogged, allReviews))
-            isLogged()
-            saveSelectedBook(book)
-            addReview(book)
-            Navigate()
+            getBookReviews(book._id)
+                .then(reviews => {
+                    allReviews = reviews;
+                    render(bookDetailsTemplate(book, isLogged, allReviews));
+                    saveSelectedBook(book); // 🔥 needed for shelf buttons
+                })
+                .catch(err => showMessage(err.message || 'Failed to load reviews'));
         })
-}
+        .catch(err => showMessage(err.message || 'Failed to load book'));
+};
 
 
 
-
-// <!-- ${isLogged() ? html`
-//     <select name='books' id='books'>
-//         <option value='read'>Read</option>
-//         <option value='currReading'>Currently Reading</option>
-//         <option value='toRead'>Want to Read</option>
-//     </select>`: null} -->
