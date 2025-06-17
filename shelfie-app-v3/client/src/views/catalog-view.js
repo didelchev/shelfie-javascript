@@ -6,16 +6,16 @@ import { spinnerTemplate } from "./spinner-template.js";
 
 let allBooks = [];
 
-const catalogTemplate = (books, submitHandler, searchHandler, newHandler) => html`
+
+const catalogTemplate = (books, submitHandler, searchHandler, filterHandler) => html`
   <main class="book-catalog">
     <h1>Explore books</h1>
     <form @submit=${submitHandler} class="search-form">
       <input @input=${searchHandler} placeholder="Search for a book..." type="text" name="text" class="input"/>
-      <button class="search-button" type="submit">Search</button>
     </form>
     <details class="category-filter">
       <summary class="category-filter-toggle">Select Categories ⌄</summary>
-      <form @change=${newHandler} class="category-filter-menu">
+      <form @change=${filterHandler} class="category-filter-menu">
         <label><input class="genre" type="checkbox" value="fiction" /> Fiction</label>
         <label><input class="genre" type="checkbox" value="fantasy" /> Fantasy</label>
         <label><input class="genre" type="checkbox" value="biography" /> Biography</label>
@@ -40,22 +40,19 @@ const submitHandler = (e) => {
 
 const filterHandler = (e) => {
   e.preventDefault()
-  const genreInputs = Array.from(document.querySelectorAll('input[type="checkbox"]:checked'))
-  .map(genre => genre.value.charAt(0).toUpperCase() + genre.value.slice(1).toLowerCase())
-  
+  const genreInputs = Array.from(e.currentTarget.querySelectorAll('input[type="checkbox"]:checked'))
+         .map(genre => genre.value.charAt(0).toUpperCase() + genre.value.slice(1).toLowerCase())
   let filteredBooks = allBooks.filter(book => {
     return book.genre.some(g =>
       genreInputs.includes(g)
     );
-
+    
   })
-
   if(!genreInputs.length){
     filteredBooks = allBooks
   }
-
   
-  render(catalogTemplate(filteredBooks, searchHandler, submitHandler, filterHandler));
+  render(catalogTemplate(filteredBooks, submitHandler, searchHandler , filterHandler));
 
 }
 
@@ -69,14 +66,15 @@ const searchHandler = (e) => {
     );
     // TODO:  Search by ISBN
   });
-  render(catalogTemplate(searchedBooks, submitHandler, searchHandler ));
+  render(catalogTemplate(searchedBooks, submitHandler, searchHandler, filterHandler ));
 };
 
 export const showCatalogView = () => {
   if (!allBooks.length) {
     render(spinnerTemplate());
   }
-  getAll().then((books) => {
+  getAll()
+  .then((books) => {
     allBooks = books;
     render(catalogTemplate(allBooks, submitHandler, searchHandler, filterHandler));
     Navigate();
