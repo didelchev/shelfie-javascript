@@ -16,12 +16,13 @@ export const bookDetailsTemplate = (book, isLogged, allReviews) => html`
                     ${isLogged() ? html`
                         <div class='dropdown'>
                             <button>Selece a shelf:</button>
-                            <!-- <div class ='options'>
+                            <div class ='options'>
                                 <button class='dropdown-options' value='read' >Read</button>
                                 <button class='dropdown-options' value = 'currReading' >Currently Reading</button>
                                 <button class='dropdown-options' value = 'toRead' >Want to Read</button>
-                         </div> -->
+                            </div>
                          <div class="rating-container">
+                             <div class="label">Rate this book</div>
                             <div class="stars" id="star-container">
                                 <span class="star" data-value="1">&#9733;</span>
                                 <span class="star" data-value="2">&#9733;</span>
@@ -29,7 +30,6 @@ export const bookDetailsTemplate = (book, isLogged, allReviews) => html`
                                 <span class="star" data-value="4">&#9733;</span>
                                 <span class="star" data-value="5">&#9733;</span>
                             </div>
-                            <div class="label">Rate this book</div>
                         ` : null}
             </div>
         </div>
@@ -43,13 +43,15 @@ export const bookDetailsTemplate = (book, isLogged, allReviews) => html`
     </section> 
      <div class="review-container">
             <h3>Reviews</h3>
-            <div class='add-review'>
+            ${isLogged() ? html`
+                <div class='add-review'>
             <form @submit=${(e) => addReview(e, book._id)}>
                     <input class='review' type="text" name="text" placeholder="Leave a review..." value="">
                     <button class='review-btn' type="submit">Add</button>
                 </form>
             </div>
-            ${allReviews.map(review => reviewTemplate(review))}
+            `: null}
+            ${!allReviews.length ? html`<h3>No Reviews Yet</h3>` : allReviews.map(review => reviewTemplate(review)) }
         </div>
 `
 
