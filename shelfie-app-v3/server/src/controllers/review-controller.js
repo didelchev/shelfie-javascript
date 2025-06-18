@@ -25,8 +25,13 @@ reviewController.post("/:bookId",  (req,res) => {
         .catch(err => res.json({message: err}))
 })
 
+
+
 reviewController.post("/:bookId/ratings", (req, res) => {
-    const { bookId, userId, rating } = req.body;
+    const bookId = req.params.bookId
+    const { rating }  = req.body;
+    const userId = req.user._id
+    console.log(bookId, userId, rating)
 
     addRating(bookId, userId, rating)
         .then(res => res.json({message: 'Rating added'}))
