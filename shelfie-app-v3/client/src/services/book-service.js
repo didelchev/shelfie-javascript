@@ -1,6 +1,7 @@
 import { get, post } from "./requester.js";
 
 const baseURL = "http://localhost:5000/catalog";
+
 const baseReviewURL = "http://localhost:5000/reviews";
 
 export const getAll = () => get(baseURL);
@@ -14,3 +15,5 @@ export const addBook = (bookId, shelfOption) => post(`${baseURL}/${bookId}`, she
 export const addBookReview = (bookId, review) => post(`${baseReviewURL}/${bookId}`, review )
 
 export const getBookReviews = (bookId) => get(`${baseReviewURL}/${bookId}` )
+
+export const addBookRating = (bookId, rating) => post(`${baseReviewURL}/${bookId}/ratings`, rating)
