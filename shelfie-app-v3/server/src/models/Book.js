@@ -20,7 +20,7 @@ const bookSchema = new Schema({
         type: Array
     },
     ratings: {
-        avarage: { type: Number, default: 0, min:1, max: 5},
+        average: { type: Number, default: 0, min:1, max: 5},
         count: {type: Number, default: 0},
         details:[{
             userId: { type: Types.ObjectId, ref: 'User'},
