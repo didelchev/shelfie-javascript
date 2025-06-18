@@ -1,4 +1,4 @@
-import { model, Schema, } from "mongoose";
+import { model, Schema, Types } from "mongoose";
 
 const bookSchema = new Schema({
     title: {
@@ -18,6 +18,14 @@ const bookSchema = new Schema({
     },
     genre: {
         type: Array
+    },
+    ratings: {
+        avarage: { type: Number, default: 0, min:1, max: 5},
+        count: {type: Number, default: 0},
+        details:[{
+            userId: { type: Types.ObjectId, ref: 'User'},
+            value: { type: Number,min: 1, max: 5}
+        }]
     }
 })
 
