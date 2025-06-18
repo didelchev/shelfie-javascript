@@ -88,6 +88,36 @@
   display: block;
 }
 
+/* RATINGS */
+
+.rating-container {
+  text-align: center;
+  font-family: sans-serif;
+}
+
+.stars {
+  display: flex;
+  justify-content: center;
+  gap: 8px;
+  cursor: pointer;
+}
+
+.star {
+  font-size: 32px;
+  color: lightgray;
+  transition: color 0.2s;
+}
+
+.star.filled {
+  color: gold;
+}
+
+.label {
+  margin-top: 8px;
+  font-size: 16px;
+  color: #333;
+}
+
 /* REVIEWS */
 
 .review-container {

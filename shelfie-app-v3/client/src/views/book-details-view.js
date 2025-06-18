@@ -21,6 +21,15 @@ export const bookDetailsTemplate = (book, isLogged, allReviews) => html`
                                 <button class='dropdown-options' value = 'currReading' >Currently Reading</button>
                                 <button class='dropdown-options' value = 'toRead' >Want to Read</button>
                          </div>
+                         <div class="rating-container">
+                            <div class="stars" id="star-container">
+                                <span class="star" data-value="1">&#9733;</span>
+                                <span class="star" data-value="2">&#9733;</span>
+                                <span class="star" data-value="3">&#9733;</span>
+                                <span class="star" data-value="4">&#9733;</span>
+                                <span class="star" data-value="5">&#9733;</span>
+                            </div>
+                            <div class="label">Rate this book</div>
                         ` : null}
             </div>
         </div>
@@ -82,6 +91,13 @@ const addReview = (e, bookId) => {
 
     
 }
+
+
+const addRating = (e, bookId) => {
+    e.preventDefault()
+
+}
+
 
 const isLogged = () => {
     const user = getUserData()
