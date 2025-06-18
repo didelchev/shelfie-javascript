@@ -1,3 +1,4 @@
+import Book from "../models/Book.js"
 import Review from "../models/Review.js"
 
 
@@ -14,20 +15,37 @@ export const addReview = (bookId, userEmail, review) => {
 
 
 export const addRating = (bookId, userId, rating) => {
-    return Review.findById({bookId})
+    return Book.findById(bookId)
       .then(book => {
-         book.ratings.details.push({userId, value: rating})
-         book.ratings.average = calculateAverage(book.ratings)
+
+         //Check if books exists
+         if(!book) { 
+            throw new Error('Book not found !')
+         }
+         // Check if user is already rated the book
+         const existingRating = book.ratings.details.find(rating =>  rating.userId.equals(userId))
+
+         if(!existingRating){
+            //Add new rating 
+            book.ratings.details.push({userId, value: rating})
+            book.ratings.count += 1
+         }else{
+            // Update user rating
+            existingRating.value = rating
+         }
+
+         // Recalculate average
+         book.ratings.average = calculateAverageRating(book.ratings)
+         
+         return book.save()
       })
+      .catch(error => res.json({message: error}))
       
 }
 
 
 
-const calculateAverage = ( ratings ) => {
-   if(!ratings.details.length){
-      return 0
-   }
+const calculateAverageRating = ( ratings ) => {
 
    const sum = ratings.details.reduce((total, rating) => {
       return total += rating.value
