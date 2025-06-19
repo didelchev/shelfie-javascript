@@ -43,7 +43,8 @@ export const bookDetailsTemplate = (book, isLogged, allReviews) => html`
             <p>${book.description}</p>
         </div>
 
-        <div class="book-reviews">
+    </div>
+     <div class="book-reviews-bottom">
             <h3>Reviews</h3>
             ${isLogged() ? html`
                 <div class='add-review'>
@@ -58,7 +59,6 @@ export const bookDetailsTemplate = (book, isLogged, allReviews) => html`
                 : allReviews.map(review => reviewTemplate(review))
             }
         </div>
-    </div>
 </div>
     `
 const saveSelectedBook = (book) => {

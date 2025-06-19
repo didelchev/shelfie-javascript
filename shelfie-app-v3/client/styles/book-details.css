@@ -1,23 +1,30 @@
 .book-details-grid-container{
   display: grid;
-  grid-template-columns: 1fr 2fr 2fr 2fr;
-  grid-template-rows: repeat(2,2fr);
+  grid-template-columns: repeat(4, 1fr);
+  grid-template-rows: repeat(2, 1fr);
   justify-content: center;
   margin-top: 3em;
 }
 
 .book-details-left{
-  grid-column-start: 2;
+   grid-row: span 3 / span 3;
+    grid-column-start: 2;
 }
+
+.book-details-right{
+   grid-row: span 3 / span 3;
+    grid-column-start: 3;
+}
+
+
 
 .book-details-left img {
   width: 200px;
 }
 
+
 .book-description {
   padding: 1em;
-  flex-basis: 75ch;
-  flex-grow: 1;
 }
 
 .book-description p {
@@ -116,18 +123,21 @@
 
 /* REVIEWS */
 
-.review-container {
-  display: block;
-  width: 50%;
-  margin: 0 auto;
-  padding: 2em;
+.book-reviews-bottom {
+    display: block;
+    width: 100%;
+    grid-column: span 2 / span 2;
+    grid-row: span 2 / span 2;
+    grid-column-start: 2;
+    grid-row-start: 4;
+    justify-self: start;
 }
 
-.review-container .add-review form {
+.book-reviews-bottom .add-review form {
   display: flex;
   flex-direction: column;
 }
-.review-container .add-review input[type="text"] {
+.book-reviews-bottom .add-review input[type="text"] {
   border: none;
   border-radius: 5px;
   box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
@@ -136,7 +146,7 @@
   width: 100%;
 }
 
-.review-container .add-review button {
+.book-reviews-bottom .add-review button {
   flex-basis: 30%;
   align-self: flex-end;
   outline: none;
@@ -147,7 +157,7 @@
   border: 1.5px solid lightgrey;
 }
 
-.review-container .review {
+.book-reviews-bottom .review {
   display: flex;
   margin-top: 1em;
   padding: 1em;
@@ -156,11 +166,11 @@
   margin-bottom: 1rem;
   outline: 1px solid black;
 }
-.review-container .review p {
+.book-reviews-bottom .review p {
     padding: 1px;
 }
 
-.review-container .review img {
+.book-reviews-bottom .review img {
   border-radius: 50%;
   height: 50px;
   margin-right: 20px;
