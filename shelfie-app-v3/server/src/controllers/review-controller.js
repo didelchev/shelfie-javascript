@@ -1,5 +1,5 @@
 import { Router } from "express";
-import { addRating, addReview, getBookReviews } from "../services/review-service.js";
+import { addRating, addReview, getBookReviews, getRating } from "../services/review-service.js";
 import { getUserById } from "../services/user-service.js";
 
 
@@ -31,6 +31,8 @@ reviewController.get("/:bookId/ratings", (req, res) => {
     const bookId = req.params.bookId
     const userId = req.user._id
 
+    getRating(bookId, userId)
+    .then(response => res.json({rating: response.userRating, average: response.averageRating}))
 
 })
 
@@ -39,7 +41,6 @@ reviewController.post("/:bookId/ratings", (req, res) => {
     const bookId = req.params.bookId
     const { rating }  = req.body;
     const userId = req.user._id
-    console.log(bookId, userId, rating)
 
     addRating(bookId, userId, rating)
         .then(res => res.json({message: 'Rating added'}))

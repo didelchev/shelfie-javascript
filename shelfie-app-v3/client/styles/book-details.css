@@ -138,6 +138,13 @@
   color: rgb(202, 109, 27);
 }
 
+.average-stars {
+  color: lightgray;
+}
+.average-stars.filled {
+  color: rgb(202, 109, 27);
+}
+
 .label {
   margin-top: 8px;
   font-size: 16px;

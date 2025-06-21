@@ -43,6 +43,22 @@ export const addRating = (bookId, userId, rating) => {
       
 }
 
+export const getRating = (bookId, userId) => {
+   return Book.findById(bookId)
+      .then( book => {
+         if(!book){
+            throw new Error('Book not found ')
+         }
+
+         const userRating = book.ratings.details.find(rating => rating.userId.equals(userId))
+
+
+         const averageRating = book.ratings.average
+         
+         return { averageRating, userRating: userRating.value}
+
+      })
+}
 
 
 const calculateAverageRating = ( ratings ) => {
@@ -53,3 +69,4 @@ const calculateAverageRating = ( ratings ) => {
 
    return sum / ratings.details.length
 }
+
