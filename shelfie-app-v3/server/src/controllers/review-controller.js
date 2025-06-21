@@ -27,6 +27,14 @@ reviewController.post("/:bookId",  (req,res) => {
 
 
 
+reviewController.get("/:bookId/ratings", (req, res) => {
+    const bookId = req.params.bookId
+    const userId = req.user._id
+
+
+})
+
+
 reviewController.post("/:bookId/ratings", (req, res) => {
     const bookId = req.params.bookId
     const { rating }  = req.body;
