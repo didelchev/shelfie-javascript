@@ -17,3 +17,5 @@ export const addBookReview = (bookId, review) => post(`${baseReviewURL}/${bookId
 export const getBookReviews = (bookId) => get(`${baseReviewURL}/${bookId}` )
 
 export const addBookRating = (bookId, rating) => post(`${baseReviewURL}/${bookId}/ratings`, rating)
+
+export const getBookRating = (bookId) => get(`${baseReviewURL}/${bookId}/ratings`)

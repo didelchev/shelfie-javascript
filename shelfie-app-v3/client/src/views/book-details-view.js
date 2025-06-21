@@ -1,5 +1,5 @@
 import { Navigate } from "../routes.js"
-import { addBook, getOne, addBookReview, getBookReviews, addBookRating } from "../services/book-service.js"
+import { addBook, getOne, addBookReview, getBookReviews, addBookRating, getBookRating } from "../services/book-service.js"
 import { render,html } from "../lib.js"
 import { showMessage } from "../utils/notification.js"
 import { getUserData } from "../utils/user-data.js"
@@ -94,7 +94,6 @@ const saveSelectedBook = (book) => {
 }
 
 
-
 const addReview = (e, bookId) => {
     e.preventDefault();
 
@@ -149,6 +148,16 @@ const addRating = (book) => {
 }
 
 
+const getRating = (book) => {
+    const bookId = book._id;
+
+    getBookRating(bookId)
+        .then(res => console.log(res))
+        .catch(err => console.log(err))
+}
+
+
+
 const isLogged = () => {
     const user = getUserData()
 
@@ -160,6 +169,9 @@ const isLogged = () => {
 }
 
 
+
+
+
 export const showBookDetailsView = (bookId) => {
     getOne(bookId)
         .then(book => {
@@ -168,7 +180,8 @@ export const showBookDetailsView = (bookId) => {
                     allReviews = reviews;
                     render(bookDetailsTemplate(book, isLogged, allReviews));
                     addRating(book)
-                    saveSelectedBook(book); // 🔥 needed for shelf buttons
+                    getRating(book)
+                    saveSelectedBook(book); 
                 })
                 .catch(err => showMessage(err.message || 'Failed to load reviews'));
         })
