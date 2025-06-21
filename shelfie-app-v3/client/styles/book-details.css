@@ -1,27 +1,49 @@
 .book-details-grid-container{
   display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  grid-template-rows: repeat(2, 1fr);
+  grid-gap: 2em;
+  grid-template-columns: repeat(5, 1fr);
   justify-content: center;
   margin-top: 3em;
   padding: 1em;
-  gap: 1em;
+  position: relative;
 }
 
 .book-details-left{
-  grid-row: span 3 / span 3;
   grid-column-start: 2;
 }
 
 .book-details-right{
-  grid-row: span 3 / span 3;
-  grid-column-start: 3;
+  grid-column: 3 / span 2; 
+}
+
+.book-average-ratings{
+  display: flex;
+  padding: 1em;
+  gap: 1em;
+  flex-direction: column;
+  grid-column: 2 / 4;
 }
 
 
 
+.book-average-ratings h1{
+  grid-column: 1;
+}
+
+
+.book-average-ratings .averege-stars{
+  display: flex;
+  gap: 1em;
+  align-items: baseline;
+  grid-column: 1;
+}
+.book-reviews-bottom {
+  grid-column: 2/-2;
+}
+
+
 .book-details-left img {
-  width: 250px;
+  width: 100%;
   border-top-right-radius: 1em;
   border-bottom-right-radius: 1em;
   margin: 0 auto;
@@ -47,12 +69,13 @@
 
 .dropdown {
   display: inline-block;
-  margin: 1em;
+  margin-top: 1em;
   width: 100%;
   position: relative;
 }
 
 .dropdown button {
+  width: 100%;
   background-color: #3f8363;
   color: white;
   padding: 1em;
@@ -123,15 +146,7 @@
 
 /* REVIEWS */
 
-.book-reviews-bottom {
-    display: block;
-    width: 100%;
-    grid-column: span 2 / span 2;
-    grid-row: span 2 / span 2;
-    grid-column-start: 2;
-    grid-row-start: 4;
-    justify-self: start;
-}
+
 
 .book-reviews-bottom .add-review form {
   display: flex;

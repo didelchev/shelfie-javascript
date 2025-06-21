@@ -44,6 +44,20 @@ export const bookDetailsTemplate = (book, isLogged, allReviews) => html`
         </div>
 
     </div>
+    <div class="book-average-ratings">
+        <h2>Community Ratings</h2>
+        <div class = "averege-stars">
+            <h1>4.31</h1>
+            <div class='star-wrapper'>
+            <span class="star" data-value="1">&#9733;</span>
+            <span class="star" data-value="1">&#9733;</span>
+            <span class="star" data-value="1">&#9733;</span>
+            <span class="star" data-value="1">&#9733;</span>
+            <p>Based on 23 reviews</p>
+        </div>
+        </div>
+
+    </div>
      <div class="book-reviews-bottom">
             <h3>Reviews</h3>
             ${isLogged() ? html`
