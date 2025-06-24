@@ -1,7 +1,7 @@
 import { Redirect } from "../routes.js";
-import { showMessage } from "../utils/notification.js";
-import { updateNav } from "../utils/update-nav.js";
-import { clearUserData, getUserData } from "../utils/user-data.js";
+import { showMessage } from "./notification.js";
+import { updateNav } from "./update-nav.js";
+import { clearUserData, getUserData } from "./user-data.js";
 
 const request = (method, url, data) => {
 

@@ -151,11 +151,8 @@
 
     const getRating = (book) => {
         const bookId = book._id;
-
-        // This should target only the stars for the specific book
         const averageStars = document.querySelectorAll('.average-stars');
         const averageHeader = document.querySelector('.average-header')
-        console.log(averageHeader.textContent)
 
         const fillStars = (rating) => {
             averageStars.forEach((star, index) => {

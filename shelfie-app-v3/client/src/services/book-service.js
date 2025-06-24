@@ -1,4 +1,4 @@
-import { get, post } from "./requester.js";
+import { get, post } from "../utils/requester.js";
 
 const baseURL = "http://localhost:5000/catalog";
 
