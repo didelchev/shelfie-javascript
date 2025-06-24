@@ -38,6 +38,8 @@ const submitHandler = (e) => {
   e.preventDefault();
 };
 
+
+// its OK
 const filterHandler = (e) => {
   e.preventDefault()
   const genreInputs = Array.from(e.currentTarget.querySelectorAll('input[type="checkbox"]:checked'))
@@ -56,6 +58,7 @@ const filterHandler = (e) => {
 
 }
 
+// its OK
 const searchHandler = (e) => {
   const query = e.currentTarget.value.toLowerCase();
 

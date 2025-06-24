@@ -76,6 +76,8 @@
             </div>
     </div>
         `
+
+    //TODO: Change
     const saveSelectedBook = (book) => {
         const listOptions = document.querySelectorAll('.dropdown-options');
 
@@ -94,7 +96,7 @@
         })
     }
 
-
+    // its OK
     const addReview = (e, bookId) => {
         e.preventDefault();
 
@@ -114,7 +116,7 @@
         
     }
 
-
+    // TODO: Change
     const addRating = (book) => {
         const starsRating = document.querySelectorAll(".star")
         const bookId = book._id;
@@ -148,7 +150,7 @@
 
     }
 
-
+    // TODO: Change
     const getRating = (book) => {
         const bookId = book._id;
 
@@ -174,7 +176,7 @@
 
 
 
-
+    // Move to utils at some point
     const isLogged = () => {
         const user = getUserData()
 
