@@ -23,3 +23,6 @@ export const isAuth = () => {
   return true
 
 }
+
+
+export const isLogged = () => !!getUserData();

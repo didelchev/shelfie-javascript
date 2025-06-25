@@ -2,13 +2,12 @@
     import { addBook, getOne, addBookReview, getBookReviews, addBookRating, getBookRating } from "../services/book-service.js"
     import { render,html } from "../lib.js"
     import { showMessage } from "../utils/notification.js"
-    import { getUserData } from "../utils/user-data.js"
+    import { isLogged } from "../utils/user-data.js"
     import { reviewTemplate } from "../templates/review-template.js"
+    import { fillStars } from "../utils/ratings.js"
 
 
-    let allReviews = []
-
-    export const bookDetailsTemplate = (book, isLogged, allReviews) => html`
+    export const bookDetailsTemplate = (book, isLogged, reviews) => html`
     <div class="book-details-grid-container">
         <div class="book-details-left">
             <img src="${book.image}" alt="book">
@@ -69,15 +68,13 @@
                         </form>
                     </div>
                 ` : null}
-                ${!allReviews.length
+                ${!reviews.length
                     ? html`<h3>No Reviews Yet</h3>`
-                    : allReviews.map(review => reviewTemplate(review))
+                    : reviews.map(review => reviewTemplate(review))
                 }
             </div>
     </div>
         `
-
-    //TODO: Change
     const saveSelectedBook = (book) => {
         const listOptions = document.querySelectorAll('.dropdown-options');
 
@@ -96,7 +93,7 @@
         })
     }
 
-    // its OK
+
     const addReview = (e, bookId) => {
         e.preventDefault();
 
@@ -116,79 +113,47 @@
         
     }
 
-    // TODO: Change
-    const addRating = (book) => {
-        const starsRating = document.querySelectorAll(".star")
-        const bookId = book._id;
-
-        let currentRating = 0
-
-        // Display stars on hover / click
-        starsRating.forEach((star, index)=> {
-            star.addEventListener('mouseover', () => fillStars(index + 1));
-            star.addEventListener('mouseout', () => fillStars(currentRating));
-            star.addEventListener('click', () => {
-                currentRating = index + 1;
-                const ratingObj = { rating: currentRating}
-                addBookRating(bookId, ratingObj)
-                    .then(res => {
-                        console.log(res)
-                        fillStars(currentRating)
-                    })
-                    .catch(err => console.log(err))
-            });
 
 
+const addRating = (book) => {
+    const starsRating = document.querySelectorAll(".star");
+    const bookId = book._id;
+
+    let currentRating = 0;
+
+    starsRating.forEach((star, index) => {
+        star.addEventListener('mouseover', () => fillStars(starsRating, index + 1));
+        star.addEventListener('mouseout', () => fillStars(starsRating, currentRating));
+        star.addEventListener('click', () => {
+            currentRating = index + 1;
+            const ratingObj = { rating: currentRating };
+
+            addBookRating(bookId, ratingObj)
+                .then(res => {
+                    console.log(res);
+                    fillStars(starsRating, currentRating);
+                })
+                .catch(err => console.log(err));
+        });
+    });
+};
+
+
+
+const getRating = (book) => {
+    const bookId = book._id;
+    const averageStars = document.querySelectorAll('.average-stars');
+    const averageHeader = document.querySelector('.average-header');
+
+    getBookRating(bookId)
+        .then(res => {
+            const { userRating, average } = res;
+            console.log(userRating, average)
+            fillStars(averageStars, average);
+            averageHeader.textContent = average.toFixed(2);
         })
-
-
-        const fillStars = (rating) => {
-            starsRating.forEach((star, index) => {
-                star.classList.toggle('filled', index < rating)
-            })
-        }
-
-    }
-
-    // TODO: Change
-    const getRating = (book) => {
-        const bookId = book._id;
-
-        // This should target only the stars for the specific book
-        const averageStars = document.querySelectorAll('.average-stars');
-        const averageHeader = document.querySelector('.average-header')
-        console.log(averageHeader.textContent)
-
-        const fillStars = (rating) => {
-            averageStars.forEach((star, index) => {
-                star.classList.toggle('filled', index < rating);
-            });
-        };
-
-        // Call directly if DOM is loaded
-        getBookRating(bookId)
-            .then(res => {
-                const { rating, average } = res;
-                fillStars(rating); // <- use `average`, not `ratings`
-                averageHeader.textContent = average.toFixed(2)
-            });
-    };
-
-
-
-    // Move to utils at some point
-    const isLogged = () => {
-        const user = getUserData()
-
-        if(!user){
-            return false
-        }
-
-        return true
-    }
-
-
-
+        .catch(err => console.log(err));
+};
 
 
     export const showBookDetailsView = (bookId) => {
@@ -196,8 +161,7 @@
             .then(book => {
                 getBookReviews(book._id)
                     .then(reviews => {
-                        allReviews = reviews;
-                        render(bookDetailsTemplate(book, isLogged, allReviews));
+                        render(bookDetailsTemplate(book, isLogged, reviews));
                         addRating(book)
                         getRating(book)
                         saveSelectedBook(book); 
