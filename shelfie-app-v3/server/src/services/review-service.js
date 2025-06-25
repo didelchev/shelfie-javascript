@@ -50,11 +50,13 @@ export const getRating = (bookId, userId) => {
             throw new Error('Book not found ')
          }
 
-         const userRating = book.ratings.details.find(rating => rating.userId.equals(userId))
-
-
-         const averageRating = book.ratings.average
+         let userRating = book.ratings.details.find(rating => rating.userId.equals(userId))
          
+         let averageRating = book.ratings.average
+
+         if(!userRating){
+            userRating = { value: 0}
+         }
          return { averageRating, userRating: userRating.value}
 
       })
