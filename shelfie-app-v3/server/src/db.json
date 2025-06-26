@@ -79,7 +79,8 @@
     "pages": 288,
     "image": "https://toppsta.com/images/covers/0/7/7/4/9781836040774.jpg?t=1736915539",
     "genre": ["Historical Fiction", "Historical", "Young Adult"],
-    "description": "With the Second World War looming, four young people sit on a train waiting to be evacuated to a safer place...but they don't want to go. They climb out of the carriage and head back home to Greenwich, forming an unlikely friendship.They spend their days trying to be useful. Laurence is building a secret machine. Gemmy searches bombed-out homes for things of value - only to find an adorable mutt she can't even give away. Franklin wants to join the Fire Service, although it means lying about his age. Olive looks after her father, who is broken by the deaths of his fellow firefighters. And together, the four roam the streets of London, discovering their resilience amongst the secrets of the city.But as the Blitz unleashes a barrage of bombs on London, turning the sky ragged with flame, can the friends keep each other safe and survive?"
+    "description": "With the Second World War looming, four young people sit on a train waiting to be evacuated to a safer place...but they don't want to go. They climb out of the carriage and head back home to Greenwich, forming an unlikely friendship.They spend their days trying to be useful. Laurence is building a secret machine. Gemmy searches bombed-out homes for things of value - only to find an adorable mutt she can't even give away. Franklin wants to join the Fire Service, although it means lying about his age. Olive looks after her father, who is broken by the deaths of his fellow firefighters. And together, the four roam the streets of London, discovering their resilience amongst the secrets of the city.But as the Blitz unleashes a barrage of bombs on London, turning the sky ragged with flame, can the friends keep each other safe and survive?",
+    "ISBN" : "9781836044970"
   },
   {
     "title": "Fearless",
@@ -97,7 +98,8 @@
       "Magic",
       "Young Adult Fantasy"
     ],
-    "description": "Paedyn Gray and Kai Azer return to the Kingdom of Ilya.And Paedyn has a life-altering choice to make. Whatever she decides will determine her fate and the fate of those around her forever.In the ultimate battle of love and loyalty, who wins?"
+    "description": "Paedyn Gray and Kai Azer return to the Kingdom of Ilya.And Paedyn has a life-altering choice to make. Whatever she decides will determine her fate and the fate of those around her forever.In the ultimate battle of love and loyalty, who wins?",
+    "ISBN": "9781665955461"
   },
   {
     "title": "Sunrise of the Reaping",
@@ -114,7 +116,8 @@
       "Young Adult Fantasy",
       "Teen"
     ],
-    "description": "As the day dawns on the fiftieth annual Hunger Games, fear grips the districts of Panem. This year, in honor of the Quarter Quell, twice as many tributes will be taken from their homes.Back in District 12, Haymitch Abernathy is trying not to think too hard about his chances. All he cares about is making it through the day and being with the girl he loves.When Haymitch’s name is called, he can feel all his dreams break. He’s torn from his family and his love, shuttled to the Capitol with the three other District 12 tributes: a young friend who’s nearly a sister to him, a compulsive oddsmaker, and the most stuck-up girl in town. As the Games begin, Haymitch understands he’s been set up to fail. But there’s something in him that wants to fight . . . and have that fight reverberate far beyond the deadly arena."
+    "description": "As the day dawns on the fiftieth annual Hunger Games, fear grips the districts of Panem. This year, in honor of the Quarter Quell, twice as many tributes will be taken from their homes.Back in District 12, Haymitch Abernathy is trying not to think too hard about his chances. All he cares about is making it through the day and being with the girl he loves.When Haymitch’s name is called, he can feel all his dreams break. He’s torn from his family and his love, shuttled to the Capitol with the three other District 12 tributes: a young friend who’s nearly a sister to him, a compulsive oddsmaker, and the most stuck-up girl in town. As the Games begin, Haymitch understands he’s been set up to fail. But there’s something in him that wants to fight . . . and have that fight reverberate far beyond the deadly arena.",
+    "ISBN" : "9781546178774"
   },
   {
     "title": "Atomic Habits",
@@ -131,8 +134,10 @@
       "Leadership",
       "Health"
     ],
-    "description": "No matter your goals, Atomic Habits offers a proven framework for improving—every day. James Clear, one of the world's leading experts on habit formation, reveals practical strategies that will teach you exactly how to form good habits, break bad ones, and master the tiny behaviors that lead to remarkable results."
-  },
+    "description": "No matter your goals, Atomic Habits offers a proven framework for improving—every day. James Clear, one of the world's leading experts on habit formation, reveals practical strategies that will teach you exactly how to form good habits, break bad ones, and master the tiny behaviors that lead to remarkable results.",
+    "ISBN" : "0735211299" 
+   },
+
   {
     "title": "1984",
     "author": "George Orwell",
@@ -149,7 +154,8 @@
       "School",
       "Fantasy"
     ],
-    "description": "A masterpiece of rebellion and imprisonment where war is peace freedom is slavery and Big Brother is watching. Thought Police, Big Brother, Orwellian - these words have entered our vocabulary because of George Orwell's classic dystopian novel 1984. The story of one man's Nightmare Odyssey as he pursues a forbidden love affair through a world ruled by warring states and a power structure that controls not only information but also individual thought and memory 1984 is a prophetic haunting tale More relevant than ever before 1984 exposes the worst crimes imaginable the destruction of truth freedom and individuality. With a foreword by Thomas Pynchon. This beautiful paperback edition features deckled edges and french flaps a perfect gift for any occasion"
+    "description": "A masterpiece of rebellion and imprisonment where war is peace freedom is slavery and Big Brother is watching. Thought Police, Big Brother, Orwellian - these words have entered our vocabulary because of George Orwell's classic dystopian novel 1984. The story of one man's Nightmare Odyssey as he pursues a forbidden love affair through a world ruled by warring states and a power structure that controls not only information but also individual thought and memory 1984 is a prophetic haunting tale More relevant than ever before 1984 exposes the worst crimes imaginable the destruction of truth freedom and individuality. With a foreword by Thomas Pynchon. This beautiful paperback edition features deckled edges and french flaps a perfect gift for any occasion",
+    "ISBN": "9780452284234"
   },
   {
     "title": "A Court of Thorns and Roses",
