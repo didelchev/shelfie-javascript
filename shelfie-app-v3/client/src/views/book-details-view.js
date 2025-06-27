@@ -75,6 +75,11 @@
             </div>
     </div>
         `
+
+ 
+    let currentRating = 0;
+    
+
     const saveSelectedBook = (book) => {
         const listOptions = document.querySelectorAll('.dropdown-options');
 
@@ -119,7 +124,6 @@ const addRating = (book) => {
     const starsRating = document.querySelectorAll(".star");
     const bookId = book._id;
 
-    let currentRating = 0;
 
     starsRating.forEach((star, index) => {
         star.addEventListener('mouseover', () => fillStars(starsRating, index + 1));
@@ -129,8 +133,7 @@ const addRating = (book) => {
             const ratingObj = { rating: currentRating };
 
             addBookRating(bookId, ratingObj)
-                .then(res => {
-                    console.log(res);
+                .then(() => {
                     fillStars(starsRating, currentRating);
                 })
                 .catch(err => console.log(err));
@@ -144,11 +147,18 @@ const getRating = (book) => {
     const bookId = book._id;
     const averageStars = document.querySelectorAll('.average-stars');
     const averageHeader = document.querySelector('.average-header');
+    const userRatingStars = document.querySelectorAll(".star");
 
     getBookRating(bookId)
         .then(res => {
             const { userRating, average } = res;
-            console.log(userRating, average)
+
+            if(userRating !== null || userRating !== undefined ) { 
+                fillStars(userRatingStars, userRating)
+
+                currentRating = userRating
+            }
+
             fillStars(averageStars, average);
             averageHeader.textContent = average.toFixed(2);
         })

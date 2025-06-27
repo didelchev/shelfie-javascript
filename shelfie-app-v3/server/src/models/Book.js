@@ -24,7 +24,7 @@ const bookSchema = new Schema({
         count: {type: Number, default: 0},
         details:[{
             userId: { type: Types.ObjectId, ref: 'User'},
-            value: { type: Number,min: 1, max: 5}
+            value: { type: Number,min: 1, max: 5, default: 0}
         }]
     }
 })
