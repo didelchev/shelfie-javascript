@@ -16,9 +16,23 @@ html`<section class="main-content">
           </div>
         </div>
         <div class="welcome-image">
-          <img src="../images/welcome-image.jpg" alt="Image of a book shelf" />
+          <img src="../images/book-image2.jpg" alt="Image of a book shelf" />
         </div>
       </section>
+      <div class = "features-grid-container">
+        <div class="feature-item">
+          <h4>Local Library Sync</h4>
+          <p>asdasdasdasdasdasdasdsadasdasdasdsadasdasdasdsadsadasdasdasdasdsadasdasdasdasdasdasdasdasdasdasdasasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdas</p>
+        </div>
+        <div class="feature-item">
+          <h4>Personalized Book Recommendations</h4>
+          <p>asdasdasdasdasdasdasdsadasdasdasdsadasdasdasdsadsadasd</p>
+        </div>
+        <div class="feature-item">
+          <h4>Reading Progress Tracker</h4>
+          <p>asdasdasdasdasdasdasdsadasdasdasdsadasdasdasdsadsadasd</p>
+        </div>
+      </div> 
       <section class="app-description">
         <h3>Description</h3>
         <p>

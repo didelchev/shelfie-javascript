@@ -20,6 +20,9 @@
 
 body {
   min-height: 100vh;
+  background-color: #F2F2F2;
+  /* background-color: #EAD8C0; */
+
 }
 
 /* responsive images/videos */

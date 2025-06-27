@@ -7,25 +7,20 @@
 }
 
 
-.main-content .welcome-image img{
-    border-bottom-right-radius: 20em;
-    border-top-left-radius: 24em;
-
-}
 .welcome-text{
     display: flex;
     flex-direction: column;
-    padding:10em 2em;
+    padding:8em 2em;
     /* border: 1px solid black; */
     
 }
 .welcome-text h1{
     font-weight: 800;
-    font-size: 4em;
+    font-size: 5em;
 }
 
 .welcome-text h2{
-    font-size: 1.9em;
+    font-size: 1.6em;
 }
 
 .welcome-text .action-buttons{
@@ -35,9 +30,27 @@
 
 .action-buttons > a {
     border: none;
-    background-color: black;
+    background-color: #708D81;
     color: white;
-    padding: 0.5em 1.5em;
+    padding: 1em 1.5em;
+    /* border-radius: 0.3em; */
+    font-size: 1.1em;
+}
+
+.features-grid-container {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-auto-flow: row;
+    outline: 1px solid black;
+    padding:3em;
+    gap: 3em;
+}
+
+.feature-item{
+    border: 1px solid black;
+    padding: 2em;    
+    overflow: hidden;
+    word-break: break-word;
 }
 
 .app-description h3{ 
@@ -48,7 +61,7 @@
     text-align: center;
     font-size: 1.5em;
     line-height: 1.65;
-    background-color: #f4f2e9;
+    background-color: #E7E6E1;
 }
 
 .popular-books h2 {
@@ -62,7 +75,7 @@
     grid-template-columns: repeat(4, 200px);
     margin-top: 3em;
     justify-content: center;
-    gap: 10em;
+    gap: 7em;
 }
 
 .popular-books img {

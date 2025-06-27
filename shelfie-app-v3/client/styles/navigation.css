@@ -2,13 +2,15 @@
     display: flex;
     align-items: center;
     justify-content: space-between;
-    background-color: #f4f2e9;
+    background-color: #F2F2F2; 
+    color: #0D0D0D;
     padding: 1em 3em;
 }
 
 .header .navbar .logo{
     font-size: 2.2em;
     font-weight: 600;
+    color: #0D0D0D;
 }
 
 .navbar ul {
@@ -21,3 +23,11 @@
 .navbar .user{
     display: none;
 }
+
+/* Color Theme Swatches in Hex */
+/* .Open-book-isolated-on-white-background-1-hex { color: #BFAF8F; }
+.Open-book-isolated-on-white-background-2-hex { color: #D9D0C1; }
+.Open-book-isolated-on-white-background-3-hex { color: #A68D6F; }
+.Open-book-isolated-on-white-background-4-hex { color: #F2F2F2; }
+.Open-book-isolated-on-white-background-5-hex { color: #0D0D0D; } */
+
