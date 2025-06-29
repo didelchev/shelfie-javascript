@@ -17,7 +17,7 @@
     justify-content: center;    
 }
 .welcome-text h1{
-    font-weight: 800;
+    font-weight: 700;
     font-size: 5em;
 }
 
@@ -104,6 +104,8 @@
     padding: 2em;    
     word-break: break-word;
     background-color: white;
+    box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+
 }
 
 .circle-border {
@@ -177,22 +179,45 @@
 
 
 /* --------------------TESTIMONIALS-------------------------------- */
+
+.testimonials h2{
+  margin-top: 2em;
+  text-align: left;
+}
 .testimonials-grid-container{
   display: grid;
-  width: 70%;
+  width: 80%;
   grid-template-columns: repeat(3, 1fr);
   grid-template-rows: 1fr 1fr;
   padding:3em 12em;
   justify-items: center;
   gap: 2em;
-  border: 1px solid black;
   margin: 0 auto;
 }
 
 .testimonials-grid-container .testimonial-item{
-  width: 250px;
-  height: 300px;
-  border: 1px solid black;
+  display: flex;
+  background-color: white;
+  flex-direction: column;
+  padding: 2em;
+  width: 100%;
+  border-radius: 0.4em;
+  box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+}
+
+.testimonials-grid-container .testimonial-item .checked{
+  color: orange;
+}
+.testimonials-grid-container .testimonial-item .testimonial-author{
+  display: flex;
+  gap: 1em;
+  margin-top: 1em;
+}
+
+.testimonials-grid-container .testimonial-item .testimonial-author img{
+  aspect-ratio: 1 /1;
+  width: 100px;
+
 }
 
 /* --------------------RECOMENDED BOOKS-------------------------- */
