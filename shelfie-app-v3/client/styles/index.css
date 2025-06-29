@@ -14,8 +14,7 @@
 .welcome-text{
     display: flex;
     flex-direction: column;
-    margin-top: 14em;
-    
+    justify-content: center;    
 }
 .welcome-text h1{
     font-weight: 800;
