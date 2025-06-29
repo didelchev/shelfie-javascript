@@ -180,9 +180,9 @@
 
 /* --------------------TESTIMONIALS-------------------------------- */
 
-.testimonials h2{
+.testimonials .divider{
   margin-top: 2em;
-  text-align: left;
+  font-size: 2em;
 }
 .testimonials-grid-container{
   display: grid;
@@ -208,12 +208,29 @@
 .testimonials-grid-container .testimonial-item .checked{
   color: orange;
 }
+
+
 .testimonials-grid-container .testimonial-item .testimonial-author{
   display: flex;
+  position: relative;
   gap: 1em;
-  margin-top: 1em;
+  margin-top: 2em;
+}
+.testimonials-grid-container .testimonial-item .testimonial-author::after{
+  font-family: "Font Awesome 6 Free";
+  font-weight: 700; 
+  font-size: 4em;
+  content: "\f10e";
+  position: absolute;
+  color: grey;
+  bottom: 0.3em;
+  opacity: 0.2;
+  right: 0.2em;
 }
 
+.testimonials-grid-container .testimonial-item .testimonial-author h5{
+  margin-top: 1em;
+}
 .testimonials-grid-container .testimonial-item .testimonial-author img{
   aspect-ratio: 1 /1;
   width: 100px;
