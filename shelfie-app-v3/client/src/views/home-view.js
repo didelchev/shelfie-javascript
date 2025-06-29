@@ -48,12 +48,47 @@ html`<section class="main-content">
           <p>Track your personal reading journey by adding books to your custom shelves. Organize your collection the way you like—whether it's “Want to Read,” “Currently Reading,” or “Finished.” Rate and comment on books to share your thoughts and keep a record of what you’ve read. Simple and personal, it’s your bookshelf, your way.</p>
         </div>
       </div> 
-      <!-- <section class="app-description">
-        <h3>Description</h3>
-        <p>
-          Shelfie is your ultimate digital companion for every book lover. Seamlessly organize your personal library, track your reading progress, and discover new literary adventures tailored to your tastes.<br> Connect with a vibrant community of fellow readers, share recommendations, and delve deeper into the stories that matter to you. Whether you're a casual reader or a dedicated bibliophile, Shelfie helps you celebrate and manage your world of books with ease and joy.
-        </p>
-      </section> -->
+      <section class ="about-app-container">
+        <div class="about-image">
+          <img src="../../images/example5.jpg" alt="Organized books with Shelfie">
+        </div>
+        <div class="about-description">
+          <div class="about-text-wrapper">
+            <h1>More Than a Bookshelf</h1>
+              <p>
+                Shelfie isn’t just a tracker—it’s a celebration of your reading journey. Imagine a space where every book you’ve loved, every story that changed you, and every future adventure you’re dreaming of lives together in perfect harmony.
+              <br><br>
+                Whether you're a casual reader or a lifelong book lover, Shelfie gives you the tools to stay organized, inspired, and connected to your reading life. Add books to personalized shelves, leave your thoughts with ratings and comments, and receive recommendations that truly reflect your unique tastes. It’s more than just keeping track—it’s about building a digital home for the stories that shape you.
+              </p>
+          </div>
+          <div class="action-buttons">
+              <a class="link" href="/catalog">Start Exploring</a>
+          </div>
+        </div>
+      </section>
+       <section class= "testimonials">
+        <h2>What Our Users Says</h2>
+        <div class="testimonials-grid-container">
+          <div class="testimonial-item">
+            <p>Test</p>
+          </div>
+          <div class="testimonial-item">
+            <p>Test</p>
+          </div>
+          <div class="testimonial-item">
+            <p>Test</p>
+          </div>
+          <div class="testimonial-item">
+            <p>Test</p>
+          </div>
+          <div class="testimonial-item">
+            <p>Test</p>
+          </div>
+          <div class="testimonial-item">
+            <p>Test</p>
+          </div>
+        </div>
+      </section>
       <section class="popular-books">
         <div class="divider">
           <span>Recently Added Books</span>

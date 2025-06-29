@@ -32,11 +32,12 @@
 
 .action-buttons > a {
     border: none;
-    background-color: #0D0D0D;
+    background-color: #708D81;
     color: white;
-    padding: 1em 1.5em;
-    /* border-radius: 0.3em; */
+    padding: 1em 2em;
+    border-radius: 2em;
     font-size: 1.1em;
+    font-weight: 400;
     
 }
 /* -------------------------------------- */
@@ -83,13 +84,13 @@
 }
 
 
-/* ------------------------------------------------------- */
+/* ------------------------FEATURES------------------------------- */
 
 .features-grid-container {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     grid-auto-flow: row;
-    padding:3em 10em;
+    padding:3em 12em;
     gap: 5em;
 }
 
@@ -129,20 +130,76 @@
     color: #708D81;
 }
 
-.app-description h3{ 
-    font-weight: 600;
+/* --------------------WHY SHELFIE------------------------------- */
+
+.about-app-container {
+  display: grid;
+  grid-template-columns: 1.5fr 2fr;
+  margin-top: 2em;
+  padding:3em 12em;
+  gap: 5em;
+  background-image: url("../../images/blob-haikei(1).svg");
+  
 }
-.app-description { 
-    padding: 3em 7em;
-    text-align: center;
-    font-size: 1.5em;
-    line-height: 1.65;
-    background-color: #E7E6E1;
+
+.about-app-container .about-image img{
+  border-radius: 0.4em;
 }
 
-/* ---------------------------------------------- */
+.about-app-container .about-description{
+  padding: 2em;
+
+}
+
+.about-app-container .about-description h1{
+  font-weight: 500;
+  font-size: 3em;
+
+}
+.about-app-container .about-description p{
+  font-size: 1.2em;
+
+}
+
+.about-app-container .about-description{
+  display: flex;
+  flex-direction: column;
+}
+
+.about-app-container .about-description .action-buttons {
+  margin-top: 1em;
+  font-size: 1.1em;
+}
+
+.about-app-container .about-description .action-buttons  a{
+  background-color: #708D81;
+}
 
 
+/* --------------------TESTIMONIALS-------------------------------- */
+.testimonials-grid-container{
+  display: grid;
+  width: 70%;
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: 1fr 1fr;
+  padding:3em 12em;
+  justify-items: center;
+  gap: 2em;
+  border: 1px solid black;
+  margin: 0 auto;
+}
+
+.testimonials-grid-container .testimonial-item{
+  width: 250px;
+  height: 300px;
+  border: 1px solid black;
+}
+
+/* --------------------RECOMENDED BOOKS-------------------------- */
+
+.popular-books{
+  margin-top: 4em;
+}
 
 .popular-books-grid {
     display: grid;
@@ -150,6 +207,7 @@
     margin-top: 3em;
     justify-content: center;
     gap: 7em;
+
 }
 
 .divider {
@@ -158,7 +216,7 @@
   align-items: center;
   text-align: center;
   margin: 0 auto;
-  color: #708D81; /* or any orange/yellow tone */
+  color: #708D81; 
   font-weight: bold;
   text-transform: uppercase;
   font-size: 1.8em;
