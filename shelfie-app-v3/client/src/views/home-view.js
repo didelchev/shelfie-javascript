@@ -187,10 +187,10 @@ html`<section class="main-content">
     <div class="footer-links">
       <h4>Explore</h4>
       <ul>
-        <li><a href="#">Home</a></li>
-        <li><a href="#">Library</a></li>
-        <li><a href="#">Wishlist</a></li>
-        <li><a href="#">Profile</a></li>
+        <li><a href="/">Home</a></li>
+        <li><a href="/catalog">Explore</a></li>
+        <li><a href="/login">Login</a></li>
+        <li><a href="/register">Register</a></li>
       </ul>
     </div>
 

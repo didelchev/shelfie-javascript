@@ -331,9 +331,9 @@
 
 /* ----------------------FOOTER------------------------ */
 .footer {
-  background-color: #030303;
-  color: white;
-  padding: 2.857em 1.429em 1.429em; /* 40px, 20px, 20px */
+  background-color: #45454516;
+  color: black;
+  padding: 2.9em 1.5em 1.4em; 
   font-size: 1em;
 }
 
@@ -341,15 +341,15 @@
   display: flex;
   flex-wrap: wrap;
   justify-content: space-between;
-  max-width: 85.714em; /* 1200px */
+  max-width: 85em; 
   margin: auto;
-  gap: 1.429em; /* 20px */
+  gap: 1.4em; 
 }
 
 .footer-brand h2 {
-  font-size: 1.714em; /* 24px */
-  color: white;
-  margin-bottom: 0.571em; /* 8px */
+  font-size: 1.7em; 
+  color: black;
+  margin-bottom: 0.6em;
 }
 
 .footer-links ul,
@@ -361,32 +361,35 @@
 
 .footer-links li,
 .footer-social a {
-  margin-bottom: 0.571em; /* 8px */
+  margin-bottom: 0.6em; 
 
 }
 
 .footer-links a,
 .footer-social a {
   text-decoration: none;
-  color: white;
   transition: color 0.2s ease;
+}
+
+.footer-links  li > a {
+  color: black;
+
 }
 
 .footer-links a:hover,
 .footer-social a:hover {
-  color: white;
+  color: rgba(0, 0, 0, 0.472);
 }
 
 .footer-social .social-icons a {
-  font-size: 1.429em; /* 20px */
-  margin-right: 0.714em; /* 10px */
+  font-size: 1.4em; 
+  margin-right: 0.7em; 
 }
 
 .footer-bottom {
   text-align: center;
-  margin-top: 2.143em; /* 30px */
+  margin-top: 2em; 
   font-size: 1em;
-  color: #9ca3af;
-  border-top: 0.071em solid #374151; /* 1px */
-  padding-top: 1.143em; /* 16px */
+  color: black;
+  padding-top: 1em; 
 }
