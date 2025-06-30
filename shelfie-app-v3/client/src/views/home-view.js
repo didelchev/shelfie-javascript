@@ -177,21 +177,43 @@ html`<section class="main-content">
         ${books.map(book => bookTemplate(book))}
         </div>
       </section>
-    <footer>
-      <div class="footer">
-        <p>&copy; 2025 Shelfie - All rights reserved</p>
-        <div class="footer-links">
-          <a href="/privacy-policy">Privacy Policy</a>
-          <a href="/terms-of-service">Terms of Service</a>
-        </div>
+    <footer class="footer">
+  <div class="footer-container">
+    <div class="footer-brand">
+      <h2>Shelfie</h2>
+      <p>Your personal book companion.</p>
+    </div>
+
+    <div class="footer-links">
+      <h4>Explore</h4>
+      <ul>
+        <li><a href="#">Home</a></li>
+        <li><a href="#">Library</a></li>
+        <li><a href="#">Wishlist</a></li>
+        <li><a href="#">Profile</a></li>
+      </ul>
+    </div>
+
+    <div class="footer-social">
+      <h4>Connect</h4>
+      <div class="social-icons">
+        <a href="#"><i class="fab fa-twitter"></i></a>
+        <a href="#"><i class="fab fa-github"></i></a>
+        <a href="#"><i class="fab fa-discord"></i></a>
       </div>
-    </footer>
+    </div>
+  </div>
+
+  <div class="footer-bottom">
+    <p>© 2025 Shelfie. All rights reserved.</p>
+  </div>
+</footer>
     `
   
 export const showHomeView = () => {
   getLatest()
     .then(books => {
-      const latestBooks = books.slice(-4)
+      const latestBooks = books.slice(-6)
       render(homeTemplate(latestBooks))
       Navigate()
     })

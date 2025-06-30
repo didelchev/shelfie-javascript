@@ -242,14 +242,17 @@
 
 .popular-books{
   margin-top: 4em;
+  background: linear-gradient(to right, #f9f9f9, #f0f0f0);
+  padding: 40px 20px;
 }
 
 .popular-books-grid {
     display: grid;
-    grid-template-columns: repeat(4, 200px);
+    grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+    padding: 3em 12em;
     margin-top: 3em;
     justify-content: center;
-    gap: 7em;
+    gap: 4em;
 
 }
 
@@ -274,20 +277,116 @@
 }
 
 
+.popular-books-grid .book {
+  background-color: white;
+  padding: 0.5em;
+  position: relative;
+  border-radius: 0.3em;
+  box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+   transition: transform 0.2s ease;
+
+
+}
+
+.popular-books-grid .book:hover{
+  transform: translateY(-5px);
+}
+
+
 .popular-books-grid  img {
-    border-top-right-radius: 1.5em;
-    border-bottom-right-radius: 1.5em;
+    border-radius: 0.4em;
+    border: 0.3em solid white;
+     box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+
 }
 
 .popular-books-grid .book h5 {
-    font-weight: 500;
+    font-weight: 600;
+    font-size: 1rem;
     white-space: normal;
     margin-top: 0.5em;
     margin-bottom: 0;
     
 }
-.popular-books-grid > div.books > p {
-    font-size: 1.1em;
-    color: #0D0D0D;
+.popular-books-grid .book .checked {
+  color: orange;
+}
+.popular-books-grid .book  p {
+    font-size: 0.9em;
+    padding: 0;
+    color: #555;
 }
 
+.badge {
+  position: absolute;
+  top: 8px;
+  right: 8px;
+  background:#708D81;
+  color: white;
+  padding: 2px 6px;
+  border-radius: 4px;
+  font-size: 0.75rem;
+}
+
+
+/* ----------------------FOOTER------------------------ */
+.footer {
+  background-color: #030303;
+  color: white;
+  padding: 2.857em 1.429em 1.429em; /* 40px, 20px, 20px */
+  font-size: 1em;
+}
+
+.footer-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  max-width: 85.714em; /* 1200px */
+  margin: auto;
+  gap: 1.429em; /* 20px */
+}
+
+.footer-brand h2 {
+  font-size: 1.714em; /* 24px */
+  color: white;
+  margin-bottom: 0.571em; /* 8px */
+}
+
+.footer-links ul,
+.footer-social .social-icons {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.footer-links li,
+.footer-social a {
+  margin-bottom: 0.571em; /* 8px */
+
+}
+
+.footer-links a,
+.footer-social a {
+  text-decoration: none;
+  color: white;
+  transition: color 0.2s ease;
+}
+
+.footer-links a:hover,
+.footer-social a:hover {
+  color: white;
+}
+
+.footer-social .social-icons a {
+  font-size: 1.429em; /* 20px */
+  margin-right: 0.714em; /* 10px */
+}
+
+.footer-bottom {
+  text-align: center;
+  margin-top: 2.143em; /* 30px */
+  font-size: 1em;
+  color: #9ca3af;
+  border-top: 0.071em solid #374151; /* 1px */
+  padding-top: 1.143em; /* 16px */
+}
