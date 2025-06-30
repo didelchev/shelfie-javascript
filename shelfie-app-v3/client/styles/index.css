@@ -234,6 +234,7 @@
 .testimonials-grid-container .testimonial-item .testimonial-author img{
   aspect-ratio: 1 /1;
   width: 100px;
+  border-radius: 50%;
 
 }
 
