@@ -189,6 +189,7 @@
   width: 80%;
   grid-template-columns: repeat(3, 1fr);
   grid-template-rows: 1fr 1fr;
+  align-items: stretch;
   padding:3em 12em;
   justify-items: center;
   gap: 2em;
@@ -199,6 +200,8 @@
   display: flex;
   background-color: white;
   flex-direction: column;
+  justify-content: space-evenly;
+  font-style: italic;
   padding: 2em;
   width: 100%;
   border-radius: 0.4em;
