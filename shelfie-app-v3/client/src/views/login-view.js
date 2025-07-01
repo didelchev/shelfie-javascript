@@ -7,7 +7,20 @@ import { saveUserData } from "../utils/user-data.js"
 
 
 const loginTemplate = (loginHandler) => html`
-    <section class="login-container">
+<div class="login-grid-container">
+   <div class="left-section">
+    <div class="content">
+      <a routerLink="/home">
+        <img src="#" alt="Logo" class="logo" />
+      </a>
+      <h1>Creation starts here</h1>
+      <p>
+        Access millions of free, high-resolution photos you can’t find anywhere
+        else.
+      </p>
+    </div>
+  </div>
+  <div class="login-container">
       <form @submit=${loginHandler} class="login-form">
         <h2>Login</h2>
         <label for="email">Email</label>
@@ -16,16 +29,9 @@ const loginTemplate = (loginHandler) => html`
         <input type="password" id="password" name="password" />
         <button type="submit">Login</button>
       </form>
-    </section>
-    <footer>
-        <div class="footer">
-          <p>&copy; 2025 Shelfie - All rights reserved</p>
-          <div class="footer-links">
-            <a href="/privacy-policy">Privacy Policy</a>
-            <a href="/terms-of-service">Terms of Service</a>
-          </div>
-        </div>
-      </footer>
+  </div>
+</div>
+    
     `
 
 
