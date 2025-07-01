@@ -10,7 +10,7 @@ const loginTemplate = (loginHandler) => html`
 <div class="login-grid-container">
    <div class="left-section">
     <div class="content">
-      <a routerLink="/home">
+      <a href="/">
         <img src="#" alt="Logo" class="logo" />
       </a>
       <h1>Creation starts here</h1>
