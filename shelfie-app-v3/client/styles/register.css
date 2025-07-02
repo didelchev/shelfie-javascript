@@ -1,43 +1,120 @@
-/* body{
-    background-color: #eee;
-} */
+.register-grid-container{
+    display: grid;
+    grid-template-columns: 1fr 1.5fr;
+    height: 100vh;
 
-.register-container{
+}
+
+.left-section{
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    height: 83vh;
-
+    background-color: #F2F2F2 ;
+    /* outline: 1px solid black;x */
 }
 
 .register-form{
     display: flex;
     flex-direction: column;
     padding: 2em;
-    width: 500px;
-    background-color: white;
-    box-shadow: 0 0 1em rgba(0, 0, 0, 0.1);
+    width: 70%;
+    /* max-width: 900px; */
+    justify-content: center;
+    /* background-color: white; */
+    /* border-radius: 0.4em; */
+    /* box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px; */
 }
 
 .register-form h2{
-    text-align: center;
+    text-align: left;
     font-size: 2.4em;
+    margin-bottom: 0.3em;
+    font-weight: 500;
 }
 
 .register-form > label{
     font-size: 1.2em;
+    margin-bottom: 0.4em;
 }
 
 .register-form > input {
-    margin-bottom: 1em;
-    padding: 0.3em;
+    margin-bottom: 1.6em;
+    padding: 0.5em;
+    border: 1px solid lightgray;
+    border-radius: 0.4em;
+    background-clip: padding-box;
+    outline: none;
+    transition: border 0.3s, box-shadow 0.3s;
+}
+.register-form > input:focus{
+  box-shadow: 0 0 0 2px #708D81;
 }
 
 .register-form button{
     border: none;
-    background-color: black;
+    background-color: #708D81;
     color: white;
-    padding: 1em 0;
+    padding: 0.7em 0;
     font-size: 1.2em;
+    border-radius: 0.5em;
+    cursor: pointer;
 }
+.register-form button:hover{
+  background-color: #708d81c7;
+  cursor: pointer;
+}
+
+
+.right-section {
+  background: url(../../images/example2.jpg) center/cover no-repeat;
+  color: #fff;
+  display: flex;
+  align-items:center;
+  justify-content: flex-end;
+  text-align: right;
+}
+
+.right-section .content {
+  max-width: 500px;
+  margin-bottom: 10em;
+  margin-right: 5em;
+}
+
+.right-section h2{
+    font-weight: 500;
+}
+
+.right-section .logo{
+    max-width: 50px;
+  margin-bottom: 20px;
+}
+
+.right-section a{
+    align-self: flex-end;
+}
+
+
+
+.right-section h1{
+font-size: 3.5em;
+  font-weight: 800;
+  margin-bottom: 10px;
+}
+
+
+.right-section p {
+  font-size: 1.5em;
+  margin-bottom: 5px;
+}
+
+.register-form .registered{
+  margin-top: 1em;
+  text-align: center;
+  font-style: italic;
+  color: grey;
+}
+
+.register-form .registered a {
+  color: black;
+  }

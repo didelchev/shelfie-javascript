@@ -1,20 +1,14 @@
-/* body{
-    background-color: #eee;
-} */
 
 .login-grid-container{
     display: grid;
     grid-template-columns: 1.5fr 1fr;
     height: 100vh;
-    /* padding: 2em; */
-    outline: 1px solid black;
-    background-color: white;
 }
 
 .left-section-container {
+  display: flex;
   background: url(../../images/example1.jpg) center/cover no-repeat;
   color: #fff;
-  display: flex;
   align-items:center;
   justify-content: flex-start;
   padding: 20px;
@@ -42,11 +36,6 @@
 .left-section-container p {
   font-size: 1.5em;
   margin-bottom: 5px;
-}
-
-.left-section-container .credit {
-  font-size: 12px;
-  opacity:0.8;
 }
 
 .right-section-container{
