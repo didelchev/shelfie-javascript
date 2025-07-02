@@ -13,3 +13,8 @@ export const updateNav = ( ) => {
     
 
     
+export const hideNav = () => {
+  const navigation = document.querySelector('.header')
+
+  navigation.style.display = 'none'
+}

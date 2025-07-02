@@ -2,7 +2,7 @@ import { render,html } from "../lib.js"
 import { Navigate, Redirect } from "../routes.js"
 import { login } from "../services/auth-service.js"
 import { showMessage } from "../utils/notification.js"
-import { updateNav } from "../utils/update-nav.js"
+import { hideNav, updateNav } from "../utils/update-nav.js"
 import { saveUserData } from "../utils/user-data.js"
 
 
@@ -38,6 +38,7 @@ const loginTemplate = (loginHandler) => html`
 
 export const showLoginView = () => {
   document.title = 'Login'
+  hideNav()
     const loginHandler = (e) => {
         e.preventDefault()
 
@@ -52,6 +53,7 @@ export const showLoginView = () => {
             })
             .catch(err => showMessage(err)) 
     }
+    
     render(loginTemplate(loginHandler))
     Navigate()
     
