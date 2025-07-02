@@ -19,16 +19,7 @@ const registerTemplate = (registerHandler) => html`
         <input type="password" id="re-password" name="re-password" />
         <button class ='submit' type="submit">Register</button>
       </form>
-    </section>
-    <footer>
-      <div class="footer">
-        <p>&copy; 2025 Shelfie - All rights reserved</p>
-        <div class="footer-links">
-          <a href="/privacy-policy">Privacy Policy</a>
-          <a href="/terms-of-service">Terms of Service</a>
-        </div>
-      </div>
-    </footer>
+</section>
     `
 
 
