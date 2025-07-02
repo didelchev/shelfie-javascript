@@ -8,26 +8,29 @@ import { saveUserData } from "../utils/user-data.js"
 
 const loginTemplate = (loginHandler) => html`
 <div class="login-grid-container">
-   <div class="left-section">
+   <div class="left-section-container">
     <div class="content">
       <a href="/">
         <img src="#" alt="Logo" class="logo" />
       </a>
-      <h1>Creation starts here</h1>
+      <h1>Your Next Read Awaits</h1>
       <p>
-        Access millions of free, high-resolution photos you can’t find anywhere
-        else.
+        Organize, discover, and fall in love with books—all in one place.
       </p>
     </div>
   </div>
-  <div class="login-container">
+  <div class="right-section-container">
       <form @submit=${loginHandler} class="login-form">
-        <h2>Login</h2>
+        <h2>Welcome back</h2>
+        <p>Welcome back, please enter your credentials.</p>
         <label for="email">Email</label>
         <input type="text" id="email" name="email" />
         <label for="password">Password</label>
         <input type="password" id="password" name="password" />
-        <button type="submit">Login</button>
+        <button type="submit">Sign in</button>
+        <p class="not-registered">
+          Don't have an account ? <a href="/register">Sign up for free</a>
+        </p>
       </form>
   </div>
 </div>
