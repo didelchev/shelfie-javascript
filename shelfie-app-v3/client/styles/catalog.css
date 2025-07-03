@@ -158,7 +158,7 @@
 .left-section-filters {
   flex: 1 1 260px;
   max-width: 300px;
-  background: rgba(255, 255, 255, 0.8);
+  background: #f2f2f2;
   backdrop-filter: blur(6px);
   border-radius: var(--border-radius);
   padding: 1rem;
@@ -177,6 +177,12 @@
   transition: border var(--transition);
 }
 
+.search-form label{
+  font-weight: 600;
+  font-size: 0.95rem;
+  color: #333;
+}
+
 .input:focus {
   border-color: var(--primary);
   outline: none;
@@ -184,7 +190,6 @@
 
 .sort-section {
   margin: 1rem 0;
-  padding: 0 1rem;
   display: flex;
   flex-direction: column;
   gap: 0.5rem;
@@ -242,6 +247,42 @@
   cursor: pointer;
 }
 
+.rating-filter {
+  margin-top: 2rem;
+}
+
+.rating-title {
+  font-size: 1.2rem;
+  margin-bottom: 0.5rem;
+}
+
+.rating-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.rating-row {
+  cursor: pointer;
+  padding: 6px 10px;
+  border-radius: 8px;
+  transition: background 0.2s;
+  font-size: 1rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.rating-row:hover {
+  background-color: #eee;
+}
+
+.rating-label {
+  font-size: 0.9rem;
+  color: #666;
+}
+
+
 
 /* BOOK GRID */
 .book-catalog-grid {
@@ -252,7 +293,7 @@
 }
 
 /* BOOK CARD TEMPLATE */
-.book {
+.book-catalog-grid .book {
   display: flex;
   flex-direction: column;
   gap: 0.5rem;
@@ -262,28 +303,29 @@
   transition: transform var(--transition);
 }
 
-.book:hover {
+.book-catalog-grid .book:hover {
   transform: translateY(-4px);
 }
 
-.book img {
+.book-catalog-grid .book img {
   width: 100%;
   height: auto;
   border-radius: 8px;
   object-fit: cover;
 }
 
-.book h5 {
+.book-catalog-grid .book h5 {
   font-size: 1.1rem;
   margin-top: 0.5rem;
 }
 
-.book p {
+.book-catalog-grid .book p {
   font-size: 0.9rem;
   padding-bottom: 0.5em ;
   color: #555;
 }
-.book .checked {
+
+.book-catalog-grid .book .checked {
   color: orange;
 }
 /* RESPONSIVE */

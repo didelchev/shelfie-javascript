@@ -10,7 +10,8 @@ let allBooks = [];
 const catalogTemplate = (books, submitHandler, searchHandler, filterHandler) => html`
  <main class="book-catalog">
   <div class="left-section-filters">
-    <form @submit=${submitHandler} class="search-form">
+    <form @submit=${submitHandler} class="search-form" id='search-form'>
+      <label for="search-form">Search</label>
       <input
         @input=${searchHandler}
         placeholder="Search for a book..."
@@ -29,7 +30,7 @@ const catalogTemplate = (books, submitHandler, searchHandler, filterHandler) => 
   </div>
     <div class="category-filter">
       <h2 class="category-title">Categories</h2>
-      <form @change=${filterHandler} class="category-filter-menu">
+      <form @change=${filterHandler} class="category-filter-menu" >
         <label><input class="genre" type="checkbox" value="fiction" /> Fiction</label>
         <label><input class="genre" type="checkbox" value="fantasy" /> Fantasy</label>
         <label><input class="genre" type="checkbox" value="biography" /> Biography</label>
@@ -42,6 +43,17 @@ const catalogTemplate = (books, submitHandler, searchHandler, filterHandler) => 
         <label><input class="genre" type="checkbox" value="romance" /> Romance</label>
       </form>
     </div>
+    <div class="rating-filter">
+  <h2 class="rating-title">Filter by Rating</h2>
+  <ul class="rating-list">
+    ${[5, 4, 3, 2, 1].map(stars => html`
+      <li class="rating-row" @click=${() => filterByRating(stars)}>
+        ${'★'.repeat(stars)}${'☆'.repeat(5 - stars)}
+        <span class="rating-label"></span>
+      </li>
+    `)}
+  </ul>
+</div>
   </div>
 
   <div class="book-catalog-grid">
@@ -110,6 +122,11 @@ const sortHandler = (e) => {
   render(catalogTemplate(sortedBooks, submitHandler, searchHandler, filterHandler, sortHandler));
 };
 
+const filterByRating = (minStars) => {
+  const filtered = allBooks.filter(book => Number(book.ratings.average) >= minStars )
+  render(catalogTemplate(filtered, submitHandler, searchHandler, filterHandler, sortHandler));
+
+}
 
 
 export const showCatalogView = () => {
