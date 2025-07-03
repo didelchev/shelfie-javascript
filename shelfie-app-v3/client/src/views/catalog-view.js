@@ -10,16 +10,20 @@ let allBooks = [];
 const catalogTemplate = (books, submitHandler, searchHandler, filterHandler) => html`
  <main class="book-catalog">
   <div class="left-section-filters">
-    <form @submit=${submitHandler} class="search-form" id='search-form'>
+    <form @submit=${submitHandler} class="search-form" id="search-form">
       <label for="search-form">Search</label>
-      <input
-        @input=${searchHandler}
-        placeholder="Search for a book..."
-        type="text"
-        name="text"
-        class="input"
-      />
+      <div class="search-input-wrapper">
+        <i class="fa fa-search search-icon"></i>
+          <input
+            @input=${searchHandler}
+            placeholder="Search for a book..."
+            type="text"
+            name="text"
+            class="input"
+          />
+      </div>
     </form>
+
     <div class="sort-section">
     <label for="sort">Sort by</label>
     <select id="sort" name="sort" @change=${sortHandler}>
