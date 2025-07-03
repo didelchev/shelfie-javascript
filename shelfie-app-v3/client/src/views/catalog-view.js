@@ -8,13 +8,27 @@ let allBooks = [];
 
 
 const catalogTemplate = (books, submitHandler, searchHandler, filterHandler) => html`
-  <main class="book-catalog">
-    <h1>Explore books</h1>
+ <main class="book-catalog">
+  <div class="left-section-filters">
     <form @submit=${submitHandler} class="search-form">
-      <input @input=${searchHandler} placeholder="Search for a book..." type="text" name="text" class="input"/>
+      <input
+        @input=${searchHandler}
+        placeholder="Search for a book..."
+        type="text"
+        name="text"
+        class="input"
+      />
     </form>
-    <details class="category-filter">
-      <summary class="category-filter-toggle">Select Categories ⌄</summary>
+    <div class="sort-section">
+    <label for="sort">Sort by</label>
+    <select id="sort" name="sort" @change=${sortHandler}>
+      <option value="title">Title (A–Z)</option>
+      <option value="author">Author</option>
+      <option value="rating">Rating</option>
+    </select>
+  </div>
+    <div class="category-filter">
+      <h2 class="category-title">Categories</h2>
       <form @change=${filterHandler} class="category-filter-menu">
         <label><input class="genre" type="checkbox" value="fiction" /> Fiction</label>
         <label><input class="genre" type="checkbox" value="fantasy" /> Fantasy</label>
@@ -26,13 +40,17 @@ const catalogTemplate = (books, submitHandler, searchHandler, filterHandler) => 
         <label><input class="genre" type="checkbox" value="mystery" /> Mystery</label>
         <label><input class="genre" type="checkbox" value="nonfiction" /> Nonfiction</label>
         <label><input class="genre" type="checkbox" value="romance" /> Romance</label>
-    </form>
-    </details>
-    <div class="book-catalog-grid">
-      ${books.map((book) => bookTemplate(book))}
+      </form>
     </div>
-  </main>
+  </div>
+
+  <div class="book-catalog-grid">
+    ${books.map((book) => bookTemplate(book))}
+  </div>
+</main>
+
 `;
+
 
 const submitHandler = (e) => {
   e.preventDefault();
@@ -71,6 +89,28 @@ const searchHandler = (e) => {
   });
   render(catalogTemplate(searchedBooks, submitHandler, searchHandler, filterHandler ));
 };
+
+const sortHandler = (e) => {
+  const value = e.target.value;
+
+  let sortedBooks = [...allBooks];
+
+  switch (value) {
+    case "title":
+      sortedBooks.sort((a, b) => a.title.localeCompare(b.title));
+      break;
+    case "author":
+      sortedBooks.sort((a, b) => a.author.localeCompare(b.author));
+      break;
+    case "rating":
+      sortedBooks.sort((a, b) => Number(b.ratings.average) - Number(a.ratings.average));
+      break;
+  }
+
+  render(catalogTemplate(sortedBooks, submitHandler, searchHandler, filterHandler, sortHandler));
+};
+
+
 
 export const showCatalogView = () => {
   if (!allBooks.length) {
