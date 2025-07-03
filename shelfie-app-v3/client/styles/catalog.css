@@ -251,6 +251,11 @@
   margin-top: 2rem;
 }
 
+.rating-filter .checked{
+  color: orange;
+
+}
+
 .rating-title {
   font-size: 1.2rem;
   margin-bottom: 0.5rem;
@@ -263,14 +268,14 @@
 }
 
 .rating-row {
+  display: flex;
+  align-items: center;
+  gap: 0.5em;
   cursor: pointer;
   padding: 6px 10px;
   border-radius: 8px;
   transition: background 0.2s;
   font-size: 1rem;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
 }
 
 .rating-row:hover {

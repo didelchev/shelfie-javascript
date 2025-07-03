@@ -48,7 +48,8 @@ const catalogTemplate = (books, submitHandler, searchHandler, filterHandler) => 
   <ul class="rating-list">
     ${[5, 4, 3, 2, 1].map(stars => html`
       <li class="rating-row" @click=${() => filterByRating(stars)}>
-        ${'★'.repeat(stars)}${'☆'.repeat(5 - stars)}
+        ${Array.from({ length: stars }).map(() => html`<span class="fa fa-star checked"></span>`)}
+        ${Array.from({ length: 5 - stars }).map(() => html`<span class="fa fa-star"></span>`)}
         <span class="rating-label"></span>
       </li>
     `)}
