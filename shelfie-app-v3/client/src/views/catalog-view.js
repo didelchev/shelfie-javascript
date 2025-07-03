@@ -89,7 +89,6 @@ const filterHandler = (e) => {
 
 }
 
-// its OK
 const searchHandler = (e) => {
   const query = e.currentTarget.value.toLowerCase();
 
@@ -102,6 +101,7 @@ const searchHandler = (e) => {
   });
   render(catalogTemplate(searchedBooks, submitHandler, searchHandler, filterHandler ));
 };
+
 
 const sortHandler = (e) => {
   const value = e.target.value;
@@ -124,7 +124,7 @@ const sortHandler = (e) => {
 };
 
 const filterByRating = (minStars) => {
-  const filtered = allBooks.filter(book => Number(book.ratings.average) >= minStars )
+  const filtered = allBooks.filter(book => Number(book.ratings.average) === minStars )
   render(catalogTemplate(filtered, submitHandler, searchHandler, filterHandler, sortHandler));
 
 }
