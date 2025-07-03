@@ -151,6 +151,8 @@
   display: flex;
   gap: 2rem;
   padding: calc(var(--navbar-height) + 1.5rem) 2rem 2rem;
+  padding-left: 0;
+  padding-bottom: 0;
   flex-wrap: wrap;
 }
 
@@ -158,14 +160,12 @@
 .left-section-filters {
   flex: 1 1 260px;
   max-width: 300px;
+  height: 100vh;
   background: #f2f2f2;
-  backdrop-filter: blur(6px);
-  border-radius: var(--border-radius);
   padding: 1rem;
-  box-shadow: var(--shadow);
-  height: fit-content;
   position: sticky;
-  top: calc(var(--navbar-height) + 1rem);
+  border-right: 1px solid lightgrey;
+  top: calc(var(--navbar-height) + 2rem);
 }
 
 .search-form .input {
