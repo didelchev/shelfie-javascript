@@ -45,16 +45,25 @@ const catalogTemplate = (books, submitHandler, searchHandler, filterHandler) => 
     </div>
     <div class="rating-filter">
   <h2 class="rating-title">Filter by Rating</h2>
-  <ul class="rating-list">
+  <form class="rating-list">
     ${[5, 4, 3, 2, 1].map(stars => html`
-      <li class="rating-row" @click=${() => filterByRating(stars)}>
-        ${Array.from({ length: stars }).map(() => html`<span class="fa fa-star checked"></span>`)}
-        ${Array.from({ length: 5 - stars }).map(() => html`<span class="fa fa-star"></span>`)}
+      <label class="rating-row">
+        <input
+          type="radio"
+          name="rating"
+          value=${stars}
+          @change=${() => filterByRating(stars)}
+        />
+        <span class="stars">
+          ${Array.from({ length: stars }).map(() => html`<span class="fa fa-star checked"></span>`)}
+          ${Array.from({ length: 5 - stars }).map(() => html`<span class="fa fa-star"></span>`)}
+        </span>
         <span class="rating-label"></span>
-      </li>
+      </label>
     `)}
-  </ul>
+  </form>
 </div>
+
   </div>
 
   <div class="book-catalog-grid">
