@@ -20,6 +20,7 @@
 .book-details-left img {
 box-shadow: rgba(0, 0, 0, 0.512) 0px 3px 8px;
 
+
 }
 
 
@@ -186,9 +187,9 @@ box-shadow: rgba(0, 0, 0, 0.512) 0px 3px 8px;
 
 .book-average-ratings h2{
   font-size: 1.6em;
+  margin-bottom: 0;
   font-weight: 400;
 }
-
 
 .average-stars-container{
   display: flex;
@@ -238,23 +239,41 @@ box-shadow: rgba(0, 0, 0, 0.512) 0px 3px 8px;
 }
 .book-reviews-bottom .add-review input[type="text"] {
   border: none;
-  border-radius: 5px;
+  border-radius: 0.5em;
   box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-  font-size: 16px;
-  padding: 10px;
+  font-size: 1em;
+  padding: 2em;
   width: 100%;
+  outline: none;
+  transition: border 0.3s, box-shadow 0.3s;
+
+}
+.book-reviews-bottom .add-review input[type="text"]:focus{
+  box-shadow: 0 0 0 2px #708D81;
+
 }
 
+
+
 .book-reviews-bottom .add-review button {
-  flex-basis: 30%;
+  flex-basis: 40%;
   align-self: flex-end;
-  outline: none;
-  height: 45px;
-  padding: 12px;
-  margin-top: 1em;
-  border-radius: 12px;
-  border: 1.5px solid lightgrey;
+  border: none;
+  background-color: #708D81;
+  color: white;
+  padding: 1em 2em;
+  border-radius: 2em;
+  font-size: 1.1em;
+  font-weight: 400;
+    cursor: pointer;
+
+
 }
+.book-reviews-bottom .add-review button:hover{
+  background-color: #708d81c7;
+  cursor: pointer;
+}
+
 
 .book-reviews-bottom .review {
   display: flex;
@@ -263,10 +282,14 @@ box-shadow: rgba(0, 0, 0, 0.512) 0px 3px 8px;
   align-items:flex-start;
   justify-content: flex-start;
   margin-bottom: 1rem;
+  background-color: white;
   border-radius: 0.5em;
   box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
 
 }
+
+
+
 .book-reviews-bottom .review p {
     padding: 1px;
 }

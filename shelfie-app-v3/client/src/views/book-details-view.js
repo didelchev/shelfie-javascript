@@ -68,7 +68,7 @@
         <div class='add-review'>
             <form @submit=${(e) => addReview(e, book._id)}>
                 <input class='review' type="text" name="text" placeholder="Leave a review..." value="">
-                <button class='review-btn' type="submit">Add</button>
+                <button class='review-btn' type="submit">Add Review</button>
             </form>
         </div>
         ` : null}
