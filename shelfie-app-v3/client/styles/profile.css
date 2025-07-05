@@ -1,193 +1,121 @@
-/* ---------- GLOBAL CONTAINER ---------- */
-
-.profile-container {
-  display: flex;
-  flex-direction: column;
-  max-width: 1100px;
-  margin: 4em auto;
-  padding: 2em;
-  border-radius: 16px;
-  box-shadow: 0 6px 24px rgba(0, 0, 0, 0.12);
+.profile-banner {
+  height: 200px;
+  background: linear-gradient(to right, #708D81, #3B6064);
+  border-radius: 0 0 2em 2em;
 }
 
-/* ---------- USER INFO ---------- */
-.user-info-card {
-  max-width: 600px;
+.profile-card {
+  background: white;
+  padding: 2em;
+  margin: -100px auto 1em;
   width: 90%;
-  margin: 2em auto;
-  padding: 2em;
-  background-color: #ffffff;
+  max-width: 900px;
   border-radius: 1em;
-  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
-  display: flex;
-  flex-direction: column;
-  gap: 1.5em;
-  transition: transform 0.3s ease;
-}
-
-.user-info-card:hover {
-  transform: translateY(-5px);
-}
-
-.user-info-header {
+  box-shadow: 0 8px 20px rgba(0,0,0,0.1);
   display: flex;
   align-items: center;
-  gap: 1.5em;
+  gap: 2em;
+  position: relative;
 }
 
-.user-info-header img {
-  width: 100px;
-  height: 100px;
-  object-fit: cover;
+.profile-card img {
+  width: 120px;
+  height: 120px;
   border-radius: 50%;
-  border: 3px solid #708D81;
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.05);
+  object-fit: cover;
+  border: 4px solid #fff;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
 }
 
-.user-basic-details h2 {
-  font-size: 1.8em;
+.profile-details h2 {
   margin: 0;
-  color: #333;
+  font-size: 1.8rem;
+  color: #2c3e50;
 }
 
-.user-basic-details h4 {
-  margin: 0.3em 0 0 0;
-  color: #666;
-  font-weight: 400;
-}
-
-.user-extra-info {
-  padding-top: 1em;
-  border-top: 1px solid #eee;
-}
-
-.user-extra-info p {
-  margin: 0.4em 0;
-  color: #444;
+.profile-details .email {
+  color: #555;
   font-size: 1em;
 }
 
-.user-extra-info .bio {
-  font-style: italic;
+.profile-details .bio {
+  margin-top: 0.5em;
   color: #777;
+  font-style: italic;
+  font-size: 0.95em;
 }
 
-
-
-/* ---------- BOOK SECTIONS ---------- */
-
-.books > section {
-  margin-bottom: 2.5em;
-}
-
-.books > section > h3 {
-  font-size: 1.5em;
-  color: #3e6259;
-  margin-bottom: 1em;
-  position: relative;
-  padding-left: 0.5em;
-  font-weight: 600;
-}
-
-.books > section > h3::before {
-  content: "";
-  position: absolute;
-  height: 100%;
-  width: 6px;
-  background-color: #708d81;
-  left: 0;
-  border-radius: 4px;
-}
-
-/* ---------- BOOK CAROUSEL ---------- */
-
-.books > section > div {
+.profile-stats {
   display: flex;
-  overflow-x: auto;
-  padding: 1em 0;
-  gap: 1.5em;
-  scrollbar-width: thin;
-  scrollbar-color: #bbb transparent;
+  justify-content: center;
+  gap: 3em;
+  margin-bottom: 2em;
 }
 
-.books > section > div::-webkit-scrollbar {
-  height: 8px;
-}
-.books > section > div::-webkit-scrollbar-thumb {
-  background-color: #bbb;
-  border-radius: 4px;
-}
-
-.single-book {
-  flex: 0 0 130px;
-  background: white;
-  border-radius: 10px;
-  overflow: hidden;
-  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.08);
-  transition: transform 0.2s, box-shadow 0.2s;
-  cursor: pointer;
-}
-
-.single-book:hover {
-  transform: translateY(-6px);
-  box-shadow: 0 10px 24px rgba(0, 0, 0, 0.15);
-}
-
-.single-book img {
-  width: 100%;
-  height: 180px;
-  object-fit: cover;
-  display: block;
-}
-
-.single-book p {
+.profile-stats div {
   text-align: center;
-  font-size: 0.9em;
-  padding: 0.7em;
-  color: #333;
-  background-color: #f9f9f9;
 }
 
-/* ---------- RESPONSIVE MEDIA QUERIES ---------- */
+.profile-stats strong {
+  font-size: 1.5rem;
+  color: #3B6064;
+}
 
-@media (max-width: 900px) {
-  .profile-container {
-    width: 90%;
-    padding: 1.5em;
+.profile-stats span {
+  display: block;
+  font-size: 0.95rem;
+  color: #555;
+}
+
+.book-shelf {
+  width: 90%;
+  max-width: 1000px;
+  margin: auto;
+}
+
+.book-shelf h3 {
+  font-size: 1.4em;
+  color: #3B6064;
+  margin: 2em 0 0.5em;
+  border-bottom: 1px solid #ddd;
+  padding-bottom: 0.5em;
+}
+
+.shelf-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1.5em;
+  margin-bottom: 2em;
+}
+
+.shelf-row .single-book {
+  flex: 1 1 120px;
+  max-width: 150px;
+}
+
+.shelf-row .single-book img {
+  width: 100%;
+  aspect-ratio: 2/3; /* typical book cover ratio */
+  object-fit: cover;
+  border-radius: 8px;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+}
+
+
+/* Responsive */
+@media (max-width: 768px) {
+  .profile-card {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
   }
 
-  .user-info h2 {
-    font-size: 1.6em;
-  }
-
-  .books > section > div {
+  .profile-stats {
+    flex-direction: column;
     gap: 1em;
   }
 
-  .single-book {
-    flex: 0 0 110px;
-  }
-}
-
-@media (max-width: 600px) {
-  .user-info img {
-    width: 110px;
-    height: 110px;
-  }
-
-  .user-info h2 {
-    font-size: 1.4em;
-  }
-
-  .books > section > h3 {
-    font-size: 1.2em;
-  }
-
-  .single-book {
-    flex: 0 0 95px;
-  }
-
-  .single-book p {
-    font-size: 0.8em;
+  .shelf-row {
+    justify-content: center;
   }
 }
