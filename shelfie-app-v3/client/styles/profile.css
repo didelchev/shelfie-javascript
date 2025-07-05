@@ -1,51 +1,195 @@
+/* ---------- GLOBAL CONTAINER ---------- */
+
 .profile-container {
-    display: flex;
-    flex-direction: column;
-    outline: 1px solid grey;
-    width: 50%;
-    margin: 5em auto;
+  display: flex;
+  flex-direction: column;
+  max-width: 1100px;
+  margin: 4em auto;
+  padding: 2em;
+  border-radius: 16px;
+  background: linear-gradient(to right, #f6f8f9, #e9f1ec);
+  box-shadow: 0 6px 24px rgba(0, 0, 0, 0.12);
+  font-family: "Segoe UI", sans-serif;
+}
+
+/* ---------- USER INFO ---------- */
+.user-info-card {
+  max-width: 600px;
+  width: 90%;
+  margin: 2em auto;
+  padding: 2em;
+  background-color: #ffffff;
+  border-radius: 1em;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
+  display: flex;
+  flex-direction: column;
+  gap: 1.5em;
+  transition: transform 0.3s ease;
+}
+
+.user-info-card:hover {
+  transform: translateY(-5px);
+}
+
+.user-info-header {
+  display: flex;
+  align-items: center;
+  gap: 1.5em;
+}
+
+.user-info-header img {
+  width: 100px;
+  height: 100px;
+  object-fit: cover;
+  border-radius: 50%;
+  border: 3px solid #708D81;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.05);
+}
+
+.user-basic-details h2 {
+  font-size: 1.8em;
+  margin: 0;
+  color: #333;
+}
+
+.user-basic-details h4 {
+  margin: 0.3em 0 0 0;
+  color: #666;
+  font-weight: 400;
+}
+
+.user-extra-info {
+  padding-top: 1em;
+  border-top: 1px solid #eee;
+}
+
+.user-extra-info p {
+  margin: 0.4em 0;
+  color: #444;
+  font-size: 1em;
+}
+
+.user-extra-info .bio {
+  font-style: italic;
+  color: #777;
 }
 
 
-.user-info{
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: flex-start;
-    margin-top: 2em;
+
+/* ---------- BOOK SECTIONS ---------- */
+
+.books > section {
+  margin-bottom: 2.5em;
 }
 
-.user-info p {
-    padding: 0;
+.books > section > h3 {
+  font-size: 1.5em;
+  color: #3e6259;
+  margin-bottom: 1em;
+  position: relative;
+  padding-left: 0.5em;
+  font-weight: 600;
 }
 
-.user-info img { 
-    aspect-ratio: 1/1;
-    width: 150px;
-    border-radius: 50%;
+.books > section > h3::before {
+  content: "";
+  position: absolute;
+  height: 100%;
+  width: 6px;
+  background-color: #708d81;
+  left: 0;
+  border-radius: 4px;
 }
 
-
-.profile-container .books{
-    padding: 2em;
-    text-align: center;
-}
-
-
-.books > section > h3{
-    margin-top: 0.5em;
-    text-align: left;
-}
-
+/* ---------- BOOK CAROUSEL ---------- */
 
 .books > section > div {
-    outline: 1px solid black;
-    display: flex;
-    flex-wrap:nowrap;
-    gap: 2em;
-    padding: 2em;
+  display: flex;
+  overflow-x: auto;
+  padding: 1em 0;
+  gap: 1.5em;
+  scrollbar-width: thin;
+  scrollbar-color: #bbb transparent;
 }
 
-.books > section > div > .single-book{
-    flex: 0 1 100px;
+.books > section > div::-webkit-scrollbar {
+  height: 8px;
+}
+.books > section > div::-webkit-scrollbar-thumb {
+  background-color: #bbb;
+  border-radius: 4px;
+}
+
+.single-book {
+  flex: 0 0 130px;
+  background: white;
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.08);
+  transition: transform 0.2s, box-shadow 0.2s;
+  cursor: pointer;
+}
+
+.single-book:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 10px 24px rgba(0, 0, 0, 0.15);
+}
+
+.single-book img {
+  width: 100%;
+  height: 180px;
+  object-fit: cover;
+  display: block;
+}
+
+.single-book p {
+  text-align: center;
+  font-size: 0.9em;
+  padding: 0.7em;
+  color: #333;
+  background-color: #f9f9f9;
+}
+
+/* ---------- RESPONSIVE MEDIA QUERIES ---------- */
+
+@media (max-width: 900px) {
+  .profile-container {
+    width: 90%;
+    padding: 1.5em;
+  }
+
+  .user-info h2 {
+    font-size: 1.6em;
+  }
+
+  .books > section > div {
+    gap: 1em;
+  }
+
+  .single-book {
+    flex: 0 0 110px;
+  }
+}
+
+@media (max-width: 600px) {
+  .user-info img {
+    width: 110px;
+    height: 110px;
+  }
+
+  .user-info h2 {
+    font-size: 1.4em;
+  }
+
+  .books > section > h3 {
+    font-size: 1.2em;
+  }
+
+  .single-book {
+    flex: 0 0 95px;
+  }
+
+  .single-book p {
+    font-size: 0.8em;
+  }
 }

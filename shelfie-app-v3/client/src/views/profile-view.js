@@ -7,36 +7,48 @@ import { showMessage } from "../utils/notification.js"
 import { getUserData } from "../utils/user-data.js"
 
 
-
 const profileTemplate = (books, user) => html`
-   <section class="profile-container">
-        <div class="user-info">
-          <img src="../../images/profile-blank.webp" alt="Profile picture" />
-          <h2>${user.username}</h2>
-          <h3>${user.email}</h3>
+  <section class="profile-container">
+    <div class="user-info-card">
+      <div class="user-info-header">
+        <img src="${user.profileImageUrl || '../../images/profile-blank.webp'}" alt="Profile picture" />
+         <div class="user-basic-details">
+              <h2>${user.fullName || user.username}</h2>
+              <h4>${user.email}</h4>
+          </div>
         </div>
-        <section class="books">
-          <section class="read-section">
-            <h3>Read</h3>
-            <div class="read">
-            ${books.filter(book => book.status === 'read').map(book => profileBooksTemplate(book))}
-            </div>
-          </section>
-          <section class="currently-reading-section">
-            <h3>Currently Reading</h3>
-            <div class="currently-reading">
-            ${books.filter(book => book.status === 'currReading').map(book => profileBooksTemplate(book))}
-            </div>
-          </section>
-          <section class="to-read-section">
-            <h3>To-Read</h3>
-            <div class="to-read">
-              ${books.filter(book => book.status === 'to-read').map(book => profileBooksTemplate(book))}
-            </div>
-          </section>
-        </section>
+        <div class="user-extra-info">
+          <p><strong>Location:</strong> ${user.location || 'Unknown'}</p>
+          <p><strong>Joined:</strong> ${new Date(user.joinDate).toLocaleDateString()}</p>
+          <p class="bio">"${user.bio || 'No bio yet.'}"</p>
+        </div>
+    </div>
+
+    <section class="books">
+      <section class="read-section">
+        <h3>Read</h3>
+        <div class="read">
+          ${books.filter(book => book.status === 'read').map(book => profileBooksTemplate(book))}
+        </div>
       </section>
-`
+
+      <section class="currently-reading-section">
+        <h3>Currently Reading</h3>
+        <div class="currently-reading">
+          ${books.filter(book => book.status === 'currReading').map(book => profileBooksTemplate(book))}
+        </div>
+      </section>
+
+      <section class="to-read-section">
+        <h3>To-Read</h3>
+        <div class="to-read">
+          ${books.filter(book => book.status === 'to-read').map(book => profileBooksTemplate(book))}
+        </div>
+      </section>
+    </section>
+  </section>
+`;
+
 
 
 
