@@ -7,9 +7,7 @@
   margin: 4em auto;
   padding: 2em;
   border-radius: 16px;
-  background: linear-gradient(to right, #f6f8f9, #e9f1ec);
   box-shadow: 0 6px 24px rgba(0, 0, 0, 0.12);
-  font-family: "Segoe UI", sans-serif;
 }
 
 /* ---------- USER INFO ---------- */
