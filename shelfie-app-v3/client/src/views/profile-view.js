@@ -10,14 +10,14 @@ import { getUserData } from "../utils/user-data.js"
 const profileTemplate = (books, user) => html`
   <section class="profile-page">
   <div class="profile-banner"></div>
-
   <div class="profile-card">
     <img src="${user.profileImageUrl || '../../images/profile-blank.webp'}" alt="Profile Picture" />
     <div class="profile-details">
-      <h2>${user.fullName || user.username}</h2>
+      <h2>${user.username}</h2>
       <p class="email">${user.email}</p>
       <p class="bio">${user.bio || "This user hasn't written a bio yet."}</p>
     </div>
+    <button class="edit-btn">Edit</button>
   </div>
 
   <div class="profile-stats">
@@ -54,6 +54,7 @@ export const showProfileView = () => {
   // Get the user data from DB
   getUserCredentials()
     .then(user => {
+      console.log(user)
       // For each collection returnes an array of its books after the promise resloves 
       const readBooks = Promise.all(user.read.map(bookId => getOne(bookId)));
       const toReadBooks = Promise.all(user.toRead.map(bookId => getOne(bookId)));

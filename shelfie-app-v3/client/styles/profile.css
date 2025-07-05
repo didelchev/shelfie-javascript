@@ -1,30 +1,30 @@
 .profile-banner {
-  height: 200px;
-  background: linear-gradient(to right, #708D81, #3B6064);
-  border-radius: 0 0 2em 2em;
+    height: 300px;
+    /* background: linear-gradient(90deg, rgba(217, 208, 193, 1) 0%, rgba(231, 230, 225, 1) 100%); */
+    background: url('../images/example3.jpg') center/cover no-repeat;
 }
 
 .profile-card {
-  background: white;
-  padding: 2em;
-  margin: -100px auto 1em;
-  width: 90%;
-  max-width: 900px;
-  border-radius: 1em;
-  box-shadow: 0 8px 20px rgba(0,0,0,0.1);
-  display: flex;
-  align-items: center;
-  gap: 2em;
-  position: relative;
+    background: white;
+    padding: 2em;
+    margin: -100px auto 1em;
+    width: 90%;
+    max-width: 900px;
+    border-radius: 1em;
+    box-shadow: 0 8px 20px rgba(0,0,0,0.1);
+    display: flex;
+    align-items: center;
+    gap: 2em;
+    position: relative;
 }
 
 .profile-card img {
-  width: 120px;
-  height: 120px;
-  border-radius: 50%;
-  object-fit: cover;
-  border: 4px solid #fff;
-  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+    width: 120px;
+    height: 120px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 4px solid #fff;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
 }
 
 .profile-details h2 {
@@ -44,6 +44,38 @@
   font-style: italic;
   font-size: 0.95em;
 }
+
+.edit-btn {
+  background-color: #708D81;
+  color: white;
+  border: none;
+  border-radius: 1em;
+  padding: 0.6em 1.2em;
+  font-weight: 500;
+  cursor: pointer;
+  margin-left: auto;
+  align-self: flex-start;
+  transition: background-color 0.3s;
+}
+
+.edit-btn:hover {
+  background-color: #5f7f73;
+}
+
+.edit-form {
+  display: flex;
+  flex-direction: column;
+  gap: 1em;
+  margin-top: 1em;
+}
+
+.edit-form input {
+  padding: 0.8em;
+  border-radius: 0.5em;
+  border: 1px solid #ccc;
+  font-size: 1em;
+}
+
 
 .profile-stats {
   display: flex;
@@ -79,6 +111,18 @@
   margin: 2em 0 0.5em;
   border-bottom: 1px solid #ddd;
   padding-bottom: 0.5em;
+  padding-left: 0.5em;
+  position: relative;
+}
+
+.book-shelf h3::before{
+    content: "";
+    position: absolute;
+    height: 80%;
+    width: 6px;
+    background-color: #708D81;
+    left: 0;
+    border-radius: 4px;
 }
 
 .shelf-row {
@@ -95,7 +139,7 @@
 }
 
 .single-book:hover{
-    transform: translateY(-6px);
+  transform: translateY(-6px);
   box-shadow: 0 10px 24px rgba(0, 0, 0, 0.15);
 }
 
