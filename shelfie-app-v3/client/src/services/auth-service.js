@@ -1,4 +1,4 @@
-import { get, post } from "../utils/requester.js"
+import { get, patch, post } from "../utils/requester.js"
 import { clearUserData } from "../utils/user-data.js"
 
 const baseURL = 'http://localhost:5000/auth'
@@ -31,4 +31,9 @@ export const logout = () => {
 
 export const getUserCredentials = () => {
     return get(`http://localhost:5000/profile`)
+}
+
+
+export const editUserCredentials = (updatedUser) => {
+    return patch(`http://localhost:5000/profile`, updatedUser)
 }
