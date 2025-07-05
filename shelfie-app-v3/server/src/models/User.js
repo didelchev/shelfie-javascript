@@ -16,6 +16,10 @@ const userSchema = new Schema({
         required: true,
         minLength: [4, "Your password is too short !"]
     },
+    profileImageUrl: {
+        type: String,
+        default: '' 
+  },
     read: [{
         type: Types.ObjectId,
         ref: 'Books'
