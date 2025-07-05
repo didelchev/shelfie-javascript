@@ -4,8 +4,9 @@
     left: 50%;
     transform: translateX(-50%);
     text-align: center;
-    margin-top: 1em;
+    margin-top: 12em;
     clip-path: polygon(7% 0, 100% 0, 100% 20%, 100% 59%, 93% 100%, 20% 100%, 0 100%, 0 43%);
+    z-index: 9999;
 }
 
 
