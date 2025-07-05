@@ -91,11 +91,17 @@
 .shelf-row .single-book {
   flex: 1 1 120px;
   max-width: 150px;
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.single-book:hover{
+    transform: translateY(-6px);
+  box-shadow: 0 10px 24px rgba(0, 0, 0, 0.15);
 }
 
 .shelf-row .single-book img {
   width: 100%;
-  aspect-ratio: 2/3; /* typical book cover ratio */
+  aspect-ratio: 2/3; 
   object-fit: cover;
   border-radius: 8px;
   box-shadow: 0 4px 10px rgba(0,0,0,0.1);
