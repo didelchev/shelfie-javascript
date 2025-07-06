@@ -4,7 +4,6 @@
 .env.local
 .env*.local
 
-# Optional: Also ignore common files
 node_modules/
 dist/
 build/
