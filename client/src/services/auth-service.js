@@ -31,12 +31,12 @@ export const logout = () => {
 }
 
 export const getUserCredentials = () => {
-    return get(`https://shelfie-book-app.onrender.com/catalog`)
+    return get(`https://shelfie-book-app.onrender.com/profile`)
     // return get(`http://localhost:5000/profile`)
 }
 
 
 export const editUserCredentials = (updatedUser) => {
-    return patch(`https://shelfie-book-app.onrender.com/catalog`, updatedUser)
+    return patch(`https://shelfie-book-app.onrender.com/profile`, updatedUser)
     // return patch(`http://localhost:5000/profile`, updatedUser)
 }
