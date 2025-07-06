@@ -31,10 +31,11 @@ authController.post("/login", async (req,res) => {
 
     try{
         const result = await login(email, password)
+        
         res.json(result)
 
     }catch(err){
-        res.status(400).json({ message: "Invalid email or password" })
+        res.status(400).json({ message: err.message || "Login failed !" })
     }
     
 })
