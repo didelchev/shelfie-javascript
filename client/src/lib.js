@@ -1,10 +1,10 @@
 // import { html, render as renderBase } from "../node_modules/lit-html/lit-html.js"
 import { html, render as renderBase } from "lit-html"
 
-const root = document.getElementById('root');
+const app = document.getElementById('app');
 
 const render = (templateResult) => {
-    renderBase(templateResult, root)
+    renderBase(templateResult, app)
 }
 
 export { 
