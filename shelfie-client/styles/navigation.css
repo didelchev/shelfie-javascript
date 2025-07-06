@@ -1,0 +1,40 @@
+.header nav {
+    display: flex;
+    align-items: center;
+    position: fixed;
+    width: 100%;
+    top: 0; /* Add this */
+    left: 0;
+    justify-content: space-between;
+    background-color: #f2f2f2;
+    box-shadow: 0 1px 2px rgba(0,0,0,0.15);
+    color: #0D0D0D;
+    padding: 1em 3em;
+    z-index: 9999;
+    
+}
+
+.header .navbar .logo{
+    font-size: 2.2em;
+    font-weight: 600;
+    color: #0D0D0D;
+}
+    
+.navbar ul {
+    display: flex;
+    gap: 1.3em;
+    padding-bottom: 0em;
+    font-size: 1.2em;
+}
+
+.navbar .user{
+    display: none;
+}
+
+/* Color Theme Swatches in Hex */
+/* .Open-book-isolated-on-white-background-1-hex { color: #BFAF8F; }
+.Open-book-isolated-on-white-background-2-hex { color: #D9D0C1; }
+.Open-book-isolated-on-white-background-3-hex { color: #A68D6F; }
+.Open-book-isolated-on-white-background-4-hex { color: #F2F2F2; }
+.Open-book-isolated-on-white-background-5-hex { color: #0D0D0D; } */
+
