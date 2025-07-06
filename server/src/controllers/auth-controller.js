@@ -10,7 +10,7 @@ authController.post("/register", async (req,res) => {
     try{
         await register(email, username, password)
     }catch(err){
-        console.log(err)
+        res.json({ message: err })
     }
 
     const result = await login(email, password)
