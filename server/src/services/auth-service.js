@@ -5,9 +5,10 @@ import jwt from 'jsonwebtoken'
 
 export const register = async(email, username, password) => {
   const userCount = await User.countDocuments({ email });
+  console.log(userCount)
 
     if (userCount > 0) {
-        throw new Error('User already exists');
+      throw new Error('User already exists');
     }
 
     return User.create({ email, username, password });

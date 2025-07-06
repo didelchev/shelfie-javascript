@@ -6,16 +6,19 @@ const authController = Router()
 
 authController.post("/register", async (req,res) => {
     const { email,username, password, rePassword } = req.body
+    console.log(email, username, password)
 
     try{
         await register(email, username, password)
+
+        const result = await login(email, password)
+    
+         res.json(result)
     }catch(err){
-        res.json({ message: err })
+        res.status(400).json({ message: err.message || 'Registration failed !'})
     }
 
-    const result = await login(email, password)
     
-    res.json(result)
 
 
         

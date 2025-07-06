@@ -30,12 +30,15 @@ const request = (method, url, data) => {
         return Promise.reject('Unauthorized - please login to your account !')
       }
       if(!response.ok){
-        return Promise.reject('Failed to fetch resource   ')
+        return response.json()
+          .then(data => {
+            throw new Error(data.message)
+          })
+        
       }
       return response.json(); 
     })
     .catch((error) => {
-      showMessage(error)
       throw error
     });
 };
