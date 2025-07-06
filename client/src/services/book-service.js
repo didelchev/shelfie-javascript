@@ -2,7 +2,8 @@ import { get, post } from "../utils/requester.js";
 
 const baseURL = "https://shelfie-book-app.onrender.com/catalog" ;
 
-const baseReviewURL = "http://localhost:5000/reviews";
+const baseReviewURL = "https://shelfie-book-app.onrender.com/reviews";
+// const baseReviewURL = "http://localhost:5000/reviews";
 
 export const getAll = () => get(baseURL);
 

@@ -1,7 +1,8 @@
 import { get, patch, post } from "../utils/requester.js"
 import { clearUserData } from "../utils/user-data.js"
 
-const baseURL = 'http://localhost:5000/auth'
+const baseURL = "https://shelfie-book-app.onrender.com/auth"
+// const baseURL = 'http://localhost:5000/auth'
 
 
 export const register = (email, username, password, rePassword) => {
@@ -30,10 +31,12 @@ export const logout = () => {
 }
 
 export const getUserCredentials = () => {
-    return get(`http://localhost:5000/profile`)
+    return get(`https://shelfie-book-app.onrender.com/catalog`)
+    // return get(`http://localhost:5000/profile`)
 }
 
 
 export const editUserCredentials = (updatedUser) => {
-    return patch(`http://localhost:5000/profile`, updatedUser)
+    return patch(`https://shelfie-book-app.onrender.com/catalog`, updatedUser)
+    // return patch(`http://localhost:5000/profile`, updatedUser)
 }
