@@ -3,7 +3,7 @@
     /* background: linear-gradient(90deg, rgba(217, 208, 193, 1) 0%, rgba(231, 230, 225, 1) 100%); */
     width: 80%;
     margin: 0 auto;
-    background: url('../images/example3.jpg') bottom/cover no-repeat;
+    background: url('/images/example3.jpg') bottom/cover no-repeat;
     border-bottom-left-radius: 4em;
     border-bottom-right-radius: 4em;
 }

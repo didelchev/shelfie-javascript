@@ -67,7 +67,7 @@
 
 
 .right-section {
-  background: url(../../images/example2.jpg) center/cover no-repeat;
+  background: url(/images/example2.jpg) center/cover no-repeat;
   color: #fff;
   display: flex;
   align-items:center;
