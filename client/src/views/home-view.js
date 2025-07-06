@@ -147,7 +147,7 @@ html`<section class="main-content">
               "Shelfie has brought a quiet joy back into my reading life. I used to feel guilty about unread books or half-finished stories, but this app reframes the experience — making it okay to pause, revisit, or simply enjoy a book slowly. I love that I can sort books by how they made me feel, not just by genre or rating. It's not just practical; it's personal, and that’s why I recommend it to every reader I know."
             </blockquote>
             <div class="testimonial-author">
-              <img src="../../images/profile-picture3.jpg" alt="Profile Picture">
+              <img src="/images/profile-picture3.jpg" alt="Profile Picture">
               <h5>John Doe</h5>
             </div>
           </div>
@@ -163,7 +163,7 @@ html`<section class="main-content">
               "After a decade of using every book tracking app imaginable, I was about to give up hope of ever finding one that truly understood readers. Then I discovered Shelfie, and it was like finding a kindred spirit in app form. The attention to detail shows the developers genuinely care about books - from the way you can organize by mood and not just genre, to the thoughtful reading progress tracker that doesn't make you feel guilty for taking your time. It's clear this was made by people who actually curl up with books on rainy Sundays, who know the thrill of discovering a perfect new read, and who understand that a bookshelf is deeply personal. For the first time, my digital collection feels as warm and inviting as my physical one."
             </blockquote>
             <div class="testimonial-author">
-              <img src="../../images/profile-picture5.jpg" alt="Profile Picture">
+              <img src="/images/profile-picture5.jpg" alt="Profile Picture">
               <h5>Johanna Doe</h5>
             </div>
           </div>
