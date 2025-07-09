@@ -83,7 +83,6 @@ const submitHandler = (e) => {
 };
 
 
-// its OK
 const filterHandler = (e) => {
   e.preventDefault()
   const genreInputs = Array.from(e.currentTarget.querySelectorAll('input[type="checkbox"]:checked'))
@@ -108,7 +107,8 @@ const searchHandler = (e) => {
   let searchedBooks = allBooks.filter((book) => {
     return (
       book.title.toLowerCase().includes(query) ||
-      book.author.toLowerCase().includes(query)
+      book.author.toLowerCase().includes(query) ||
+      book.ISBN.toLowerCase().includes(query)
     );
     // TODO:  Search by ISBN
   });
