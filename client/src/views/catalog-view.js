@@ -105,7 +105,7 @@ const searchHandler = (e) => {
   const query = e.currentTarget.value.toLowerCase();
 
   let searchedBooks = allBooks.filter((book) => {
-    console.log(book.ISBN)
+    console.log(typeof book.ISBN)
     return (
       book.title.toLowerCase().includes(query) ||
       book.author.toLowerCase().includes(query) ||
