@@ -108,7 +108,8 @@ const searchHandler = (e) => {
     console.log(book)
     return (
       book.title.toLowerCase().includes(query) ||
-      book.author.toLowerCase().includes(query)
+      book.author.toLowerCase().includes(query) ||
+      book.ISBN.includes(query)
       
     );
     // TODO:  Search by ISBN
