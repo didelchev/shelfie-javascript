@@ -50,10 +50,10 @@ export const showRegisterView = () => {
 
         register(email,username, password, rePassword)
             .then(data => {
-                // saveUserData(data)
+                saveUserData(data)
                 console.log(data)
                 showMessage('Register Successful')
-                // Redirect('/')
+                Redirect('/')
                 updateNav()
                 
             })
