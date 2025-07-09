@@ -105,10 +105,11 @@ const searchHandler = (e) => {
   const query = e.currentTarget.value.toLowerCase();
 
   let searchedBooks = allBooks.filter((book) => {
+    console.log(searchedBooks)
     return (
       book.title.toLowerCase().includes(query) ||
-      book.author.toLowerCase().includes(query) ||
-      book.ISBN.toLowerCase().includes(query)
+      book.author.toLowerCase().includes(query)
+      
     );
     // TODO:  Search by ISBN
   });
