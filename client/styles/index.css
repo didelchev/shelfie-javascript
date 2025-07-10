@@ -546,18 +546,16 @@
   overflow: hidden; /* ensures the overlay doesn't spill out */
       
     }
+ .main-content::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background-color: rgba(112, 141, 129, 0.8); /* beige with transparency */
+    z-index: 0;
+    pointer-events: none;
+  }
 
-.overlay {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background-color: rgba(112, 141, 129, 0.7); /* beige with transparency */
-  z-index: 1;
-}
 
-    
 
     .welcome-text{
       position: relative;
@@ -619,10 +617,6 @@
     width: 90%;
   }
 
-  .testimonial-quote {
-    font-size: 0.95em;
-  }
-
   .about-app-container  .about-text-wrapper h1 {
     font-size: 1.9em;
   }
@@ -630,6 +624,42 @@
   .about-app-container  .about-text-wrapper  p {
     font-size: 1.1em;
   }
+
+
+.popular-books-grid .book {
+  padding: 0.4em;
+}
+
+.popular-books-grid .book h5 {
+  font-size: 0.9em;
+}
+
+.popular-books-grid .book p {
+  font-size: 0.75em;
+}
+
+.popular-books-grid img {
+  width: 100%;
+  height: auto;
+  max-width: 120px;
+}
+
+.testimonials-grid-container .testimonial-item {
+  padding: 1em;
+}
+
+.testimonials-grid-container .testimonial-item .testimonial-author img {
+  width: 60px;
+}
+
+.testimonials-grid-container .testimonial-item .testimonial-author::after {
+  font-size: 2.5em;
+}
+
+.testimonial-quote {
+  font-size: 0.8em;
+}
+
 
   .footer-brand h2 {
     font-size: 1.6em;

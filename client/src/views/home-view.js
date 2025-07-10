@@ -6,7 +6,6 @@ import { bookTemplate } from "../templates/book-template.js"
 const homeTemplate = (books) => 
 html`
     <section class="main-content">
-      <div class='overlay'></div>
         <div class="welcome-text">
           <h1>Welcome to Shelfie</h1>
           <h2>
