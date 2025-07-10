@@ -44,18 +44,20 @@
 
 .book-stack-wrapper {
   position: relative;
+  display: flex;;
   width: 100%;
   height: auto;
   grid-column: 2 / span 2;
   padding: 2em 0;
 }
 
+
 .book-stack {
   position: relative;
   width: 300px;
   height: 300px;
   margin: 0 auto;
-}
+} 
 
 .book-stack > img {
     position: absolute;
@@ -325,16 +327,6 @@
     color: #555;
 }
 
-/* .badge {
-  position: absolute;
-  top: 8px;
-  right: 8px;
-  background:#708D81;
-  color: white;
-  padding: 2px 6px;
-  border-radius: 4px;
-  font-size: 0.75rem;
-} */
 
 
 /* ----------------------FOOTER------------------------ */
@@ -401,4 +393,185 @@
   font-size: 1em;
   color: black;
   padding-top: 1em; 
+}
+
+
+/* ======= RESPONSIVE STYLES ======= */
+
+
+@media (max-width: 1250px) {
+  .book-1 {
+  z-index: 4;
+  transform: translate(0px, 380px) scale(1);
+}
+
+.book-2 {
+  z-index: 3;
+  transform: translate(100px, 380px) scale(0.90);
+}
+
+.book-3 {
+  z-index: 3;
+  transform: translate(-100px, 380px) scale(0.90);
+}
+
+.book-4 {
+  z-index: 1;
+  transform: translate(-180px, 360px) scale(0.75);
+}
+
+.book-5 {
+  z-index: 2;
+  transform: translate(200px, 400px) scale(0.90);
+}
+  
+}
+
+/* Tablets and below (<= 992px) */
+@media (max-width: 992px) {
+  .main-content {
+    grid-template-columns: 1fr 1fr;
+    padding: 3em;
+    gap: 3em;
+    height: auto;
+    text-align: left;
+  }
+
+  .welcome-text{
+    margin-top: 5em;
+    margin-left: 2em;
+  }
+
+  .welcome-text h1 {
+    font-size: 3em;
+  }
+
+  .welcome-text h2 {
+    font-size: 1.2em;
+  }
+
+  .welcome-text .action-buttons {
+    flex-direction: row;
+    gap: 1em;
+    align-items: center;
+  }
+
+  .book-stack-wrapper {
+    position: relative;
+    padding: 2em 0;
+  }
+
+  .book-stack > img {
+    position: absolute;
+    border-radius: 0.2em;
+    box-shadow: rgba(0, 0, 0, 0.1) 0px 10px 15px -3px, rgba(0, 0, 0, 0.05) 0px 4px 6px -2px;
+}
+   .book-1 {
+  z-index: 4;
+  transform: translate(0px, -25px) scale(0.55);
+}
+
+.book-2 {
+  z-index: 3;
+  transform: translate(45px, -20px) scale(0.50);
+}
+
+.book-3 {
+  z-index: 3;
+  transform: translate(-45px, -20px) scale(0.50);
+}
+
+.book-4 {
+  z-index: 1;
+  transform: translate(-100px, -40px) scale(0.40)
+}
+
+.book-5 {
+  z-index: 2;
+  transform: translate(115px, 0px) scale(0.50)
+}
+
+  .features-grid-container {
+    grid-template-columns: 1fr;
+    padding: 2em;
+    gap: 3em;
+  }
+
+  .about-app-container {
+    grid-template-columns: 1fr;
+    text-align: center;
+    padding: 2em;
+  }
+
+  .about-app-container .about-description {
+    padding: 1em 0;
+  }
+
+  .testimonials-grid-container {
+    grid-template-columns: 1fr;
+    gap: 2em;
+    padding: 2em;
+  }
+
+  .popular-books-grid {
+    grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+    padding: 2em;
+  }
+
+  .footer-container {
+    flex-direction: column;
+    text-align: center;
+    gap: 2em;
+    padding: 2em 1em;
+  }
+}
+
+
+
+/* Phones (<= 576px) */
+@media (max-width: 576px) {
+  .welcome-text h1 {
+    font-size: 2.2em;
+  }
+
+  .welcome-text h2 {
+    font-size: 1em;
+  }
+
+  .action-buttons > a {
+    font-size: 1em;
+    padding: 0.8em 1.6em;
+  }
+
+  .book-stack {
+    transform: scale(0.6);
+    height: auto;
+    width: 100%;
+  }
+
+  .divider {
+    font-size: 1.2em;
+    width: 90%;
+  }
+
+  .testimonial-quote {
+    font-size: 0.95em;
+  }
+
+  .about-text-wrapper h1 {
+    font-size: 1.8em;
+  }
+
+  .about-text-wrapper p {
+    font-size: 1em;
+  }
+
+  .footer-brand h2 {
+    font-size: 1.6em;
+  }
+
+  .footer-links h4,
+  .footer-social h4 {
+    font-size: 1.1em;
+  }
 }
