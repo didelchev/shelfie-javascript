@@ -59,18 +59,18 @@
 
 .book-stack > img {
     position: absolute;
-    border: 7px solid white;
-    border-radius: 0.3em;
+    border-radius: 0.2em;
+    box-shadow: rgba(0, 0, 0, 0.1) 0px 10px 15px -3px, rgba(0, 0, 0, 0.05) 0px 4px 6px -2px;
 }
 
 .book-1 {
   z-index: 4;
-  transform: translate(0px, 150px) scale(1);
+  transform: translate(0px, 180px) scale(1);
 }
 
 .book-2 {
-  z-index: 2;
-  transform: translate(150px, 190px) scale(0.90);
+  z-index: 3;
+  transform: translate(170px, 180px) scale(0.90);
 }
 
 .book-3 {
@@ -80,7 +80,12 @@
 
 .book-4 {
   z-index: 1;
-  transform: translate(-250px, 170px) scale(0.80);
+  transform: translate(-280px, 160px) scale(0.75);
+}
+
+.book-5 {
+  z-index: 2;
+  transform: translate(300px, 200px) scale(0.90);
 }
 
 

@@ -20,7 +20,8 @@ html`<section class="main-content">
             <img src="/images/book1.jpg" class="book book-1" alt="Book 1">
             <img src="/images/book2.jpg"  class="book book-2" alt="Book 2">
             <img src="/images/book3.jpg" class="book book-3" alt="Book 3">
-            <img src="/images/book4.jpg" class="book book-4" alt="Book 3">
+            <img src="/images/book4.jpg" class="book book-4" alt="Book 4">
+            <img src="/images/book5.jpg" class="book book-5" alt="Book 5">
           </div>
         </div>
 
