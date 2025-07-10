@@ -568,7 +568,7 @@
 
 
     .welcome-text h1 {
-      font-size: 1.6em;
+      font-size: 1.8em;
       color: #F2F2F2;
 
     }
@@ -586,6 +586,22 @@
 
   .book-stack{
     display: none;
+  }
+
+
+  .feature-item {
+    height: min-content;
+  }
+  .feature-item h3{
+    font-size: 1.2em;
+  }
+
+  .feature-item p{
+    font-size: 0.8em;
+  }
+
+  .feature-item i {
+    font-size: 2em;
   }
 
   .divider {
