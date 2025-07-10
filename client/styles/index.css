@@ -4,7 +4,6 @@
   padding-left: 7em;
   gap: 2em;
   grid-template-columns: 1fr 2fr;
-  background-image: url("/");
   background-image: url("/images/blob-scene-haikei(6).svg");
   background-position: center;
   background-size: cover;
@@ -66,22 +65,22 @@
 
 .book-1 {
   z-index: 4;
-  transform: translate(-230px, 200px) scale(1);
+  transform: translate(0px, 150px) scale(1);
 }
 
 .book-2 {
   z-index: 2;
-  transform: translate(100px, 300px) scale(0.85);
+  transform: translate(150px, 190px) scale(0.90);
 }
 
 .book-3 {
   z-index: 3;
-  transform: translate(0px, 100px) scale(0.90);
+  transform: translate(-150px, 180px) scale(0.90);
 }
 
 .book-4 {
   z-index: 1;
-  transform: translate(200px, 160px) scale(0.80);
+  transform: translate(-250px, 170px) scale(0.80);
 }
 
 
