@@ -562,19 +562,19 @@
     .welcome-text{
       position: relative;
       z-index: 2;
-      margin-top: 3em;
-      margin-left: 1em;
+      margin-top: 2.5em;
+      margin-left: 0.8em;
     }
 
 
     .welcome-text h1 {
-      font-size: 1.8em;
+      font-size: 2em;
       color: #F2F2F2;
 
     }
 
     .welcome-text h2 {
-      font-size: 0.8em;
+      font-size: 1.1em;
       color: #F2F2F2;
     }
 
@@ -604,6 +604,16 @@
     font-size: 2em;
   }
 
+
+  .about-text-wrapper{
+    text-align: left  ;
+  }
+
+  .about-description .action-buttons a{
+    font-size: 1em;
+    padding: 1.2em 2em;
+  }
+
   .divider {
     font-size: 1.2em;
     width: 90%;
@@ -613,12 +623,12 @@
     font-size: 0.95em;
   }
 
-  .about-text-wrapper h1 {
-    font-size: 1.8em;
+  .about-app-container  .about-text-wrapper h1 {
+    font-size: 1.9em;
   }
 
-  .about-text-wrapper p {
-    font-size: 1em;
+  .about-app-container  .about-text-wrapper  p {
+    font-size: 1.1em;
   }
 
   .footer-brand h2 {
