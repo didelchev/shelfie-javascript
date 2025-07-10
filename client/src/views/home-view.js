@@ -4,7 +4,9 @@ import { Navigate } from "../routes.js"
 import { bookTemplate } from "../templates/book-template.js"
 
 const homeTemplate = (books) => 
-html`<section class="main-content">
+html`
+    <section class="main-content">
+      <div class='overlay'></div>
         <div class="welcome-text">
           <h1>Welcome to Shelfie</h1>
           <h2>
@@ -24,7 +26,6 @@ html`<section class="main-content">
             <img src="/images/book5.jpg" class="book book-5" alt="Book 5">
           </div>
         </div>
-
       </section>
       <div class = "features-grid-container">
         <div class="feature-item">
