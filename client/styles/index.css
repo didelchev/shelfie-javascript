@@ -625,24 +625,36 @@
     font-size: 1.1em;
   }
 
+.popular-books-grid {
+    grid-template-columns: repeat(2, 1fr); /* Two columns on mobile */
+    gap: 2em;
+    padding: 2em 1em;
+  }
 
-.popular-books-grid .book {
-  padding: 0.4em;
-}
+  .popular-books-grid .book {
+    width: 100%; 
+    max-width: 120px; 
+    margin: 0 auto; 
+    padding: 0.5em;
+  }
 
-.popular-books-grid .book h5 {
-  font-size: 0.9em;
-}
+  .popular-books-grid .book h5 {
+    font-size: 0.8em;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow:ellipsis;
+    word-break: break-word;
+  }
 
-.popular-books-grid .book p {
-  font-size: 0.75em;
-}
+  .popular-books-grid .book p {
+    font-size: 0.7em;
+  }
 
-.popular-books-grid img {
-  width: 100%;
-  height: auto;
-  max-width: 120px;
-}
+  .popular-books-grid img {
+    max-width: 100px;
+    height: auto;
+    border: 0.2em solid white;
+  }
 
 .testimonials-grid-container .testimonial-item {
   padding: 1em;
