@@ -74,11 +74,11 @@ html`
         <div class="testimonials-grid-container">
           <div class="testimonial-item">
              <div class="star-wrapper">
-              <span class="fa fa-star checked"></span>
-              <span class="fa fa-star checked"></span>
-              <span class="fa fa-star checked"></span>
-              <span class="fa fa-star checked"></span>
-              <span class="fa fa-star"></span>
+                <span class="fa fa-star checked"></span>
+                <span class="fa fa-star checked"></span>
+                <span class="fa fa-star checked"></span>
+                <span class="fa fa-star checked"></span>
+                <span class="fa fa-star"></span>
             </div>
             <blockquote class="testimonial-quote">
               "“I’ve bounced between spreadsheets, notes apps, and other reading trackers, but nothing felt right until I found Shelfie. The design is calm and thoughtful, and for once, I’m not overwhelmed by features I don’t need. It gives me just enough flexibility to reflect my reading habits — organizing by mood, logging thoughts mid-book, and celebrating books I re-read without judgment. It’s intuitive, it’s comforting, and it makes me feel more connected to my books. I didn’t know I needed an app like this until I used it.”"
