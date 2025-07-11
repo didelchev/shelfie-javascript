@@ -530,13 +530,12 @@
 
 /* Phones (<= 576px) */
 @media (max-width: 576px) {
-
-
-
-    .main-content {
+.main-content {
   position: relative;
-  grid-template-columns: 1fr;
-  padding: 3em;
+  /* grid-template-columns: 1fr; */
+  /* grid-column: 1 / 4; */
+  display: block;
+  padding: 5em 3em;
   gap: 3em;
   height: 50vh;
   text-align: left;
@@ -633,7 +632,7 @@
 
   .popular-books-grid .book {
     width: 100%; 
-    max-width: 120px; 
+    max-width: 140px; 
     margin: 0 auto; 
     padding: 0.5em;
   }
@@ -651,7 +650,7 @@
   }
 
   .popular-books-grid img {
-    max-width: 100px;
+    max-width: 120px;
     height: auto;
     border: 0.2em solid white;
   }
