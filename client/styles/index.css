@@ -142,7 +142,10 @@
   margin-top: 2em;
   padding: 3em 12em;
   gap: 5em;
-  background-image: url("/images/blob-haikei(1).svg");
+  background-image: url("/images/blob-haikei(8).svg");
+  background-position:center;
+  background-size: cover;
+
 }
 
 .about-app-container .about-image img {
