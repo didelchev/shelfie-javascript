@@ -116,3 +116,79 @@
 .login-form .not-registered a {
   color: black;
   }
+
+  @media (max-width: 1024px) {
+  .login-grid-container {
+    grid-template-columns: 1fr; /* Stack vertically */
+    height: auto;
+  }
+
+  .left-section-container {
+    height: 300px;
+    justify-content: center;
+    text-align: center;
+    padding: 1em;
+  }
+
+  .left-section-container .content {
+    margin: 0;
+    max-width: 100%;
+  }
+
+  .left-section-container h1 {
+    font-size: 2em;
+  }
+
+  .left-section-container p {
+    font-size: 1.1em;
+  }
+
+  .right-section-container {
+    padding: 2em 1em;
+  }
+
+  .login-form {
+    width: 100%;
+    max-width: 400px;
+  }
+
+  .login-form h2 {
+    font-size: 2em;
+    text-align: center;
+  }
+
+  .login-form p:first-of-type {
+    text-align: center;
+  }
+}
+
+@media (max-width: 600px) {
+  .left-section-container {
+    height: 200px;
+  }
+
+  .left-section-container h1 {
+    font-size: 1.5em;
+  }
+
+  .left-section-container p {
+    font-size: 1em;
+  }
+
+  .login-form {
+    padding: 1em;
+  }
+
+  .login-form h2 {
+    font-size: 1.6em;
+  }
+
+  .login-form > label {
+    font-size: 1em;
+  }
+
+  .login-form > input,
+  .login-form button {
+    font-size: 1em;
+  }
+}
