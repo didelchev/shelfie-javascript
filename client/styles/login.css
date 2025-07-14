@@ -117,78 +117,58 @@
   color: black;
   }
 
-  @media (max-width: 1024px) {
+ @media (max-width: 768px) {
   .login-grid-container {
-    grid-template-columns: 1fr; /* Stack vertically */
-    height: auto;
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+    background: url('/images/example1.jpg') center/cover no-repeat;
+    position: relative;
   }
 
   .left-section-container {
-    height: 300px;
-    justify-content: center;
-    text-align: center;
-    padding: 1em;
-  }
-
-  .left-section-container .content {
-    margin: 0;
-    max-width: 100%;
-  }
-
-  .left-section-container h1 {
-    font-size: 2em;
-  }
-
-  .left-section-container p {
-    font-size: 1.1em;
+    display: none; /* Hide image section on mobile */
   }
 
   .right-section-container {
+    position: relative;
+    z-index: 2;
+    background-color: rgba(255, 255, 255, 0.9); /* translucent form background */
     padding: 2em 1em;
+    margin: auto;
+    border-radius: 1em;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+    width: 90%;
+    max-width: 400px;
   }
 
   .login-form {
     width: 100%;
-    max-width: 400px;
+    padding: 0;
   }
 
-  .login-form h2 {
-    font-size: 2em;
+  .login-form h1,
+  .left-section-container .content h1 {
+    font-size: 1.8em;
     text-align: center;
   }
 
-  .login-form p:first-of-type {
-    text-align: center;
-  }
-}
-
-@media (max-width: 600px) {
-  .left-section-container {
-    height: 200px;
-  }
-
-  .left-section-container h1 {
-    font-size: 1.5em;
-  }
-
-  .left-section-container p {
-    font-size: 1em;
-  }
-
-  .login-form {
-    padding: 1em;
-  }
-
   .login-form h2 {
-    font-size: 1.6em;
+    text-align: center;
+    font-size: 1.4em;
   }
 
-  .login-form > label {
-    font-size: 1em;
+  .login-form p {
+    text-align: center;
+    font-size: 0.95em;
   }
 
-  .login-form > input,
+  .login-form input,
   .login-form button {
     font-size: 1em;
+  }
+
+  .login-form .not-registered {
+    font-size: 0.9em;
   }
 }
