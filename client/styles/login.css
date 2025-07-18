@@ -145,18 +145,19 @@
 
   .login-form {
     width: 100%;
-    padding: 0;
+    padding: 2em 1em;
   }
 
-  .login-form h1,
+  /* .login-form h1,
   .left-section-container .content h1 {
     font-size: 1.8em;
-    text-align: center;
-  }
+    text-align: left;
+  } */
 
   .login-form h2 {
     text-align: center;
-    font-size: 1.4em;
+    font-size: 2em;
+    font-weight: 500;
   }
 
   .login-form p {
