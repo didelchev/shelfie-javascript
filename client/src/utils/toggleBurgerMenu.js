@@ -1,3 +1,5 @@
+import { getUserData } from "./user-data";
+
 export function setupBurgerMenu() {
   const burger = document.getElementById('burger');
   const guestLinks = document.querySelector('.guest');
