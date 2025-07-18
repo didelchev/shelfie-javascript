@@ -1,9 +1,10 @@
+/* Base styles for the nav bar */
 .header nav {
     display: flex;
     align-items: center;
     position: fixed;
     width: 100%;
-    top: 0; /* Add this */
+    top: 0;
     left: 0;
     justify-content: space-between;
     background-color: #f2f2f2;
@@ -11,30 +12,58 @@
     color: #0D0D0D;
     padding: 1em 3em;
     z-index: 9999;
-    
 }
 
-.header .navbar .logo{
+.header .navbar .logo {
     font-size: 2.2em;
     font-weight: 600;
     color: #0D0D0D;
 }
-    
+
+/* Nav links container styles */
 .navbar ul {
     display: flex;
     gap: 1.3em;
-    padding-bottom: 0em;
+    padding-bottom: 0;
     font-size: 1.2em;
 }
 
-.navbar .user{
+/* Initially hide the user menu (shown by JS if logged in) */
+.navbar .user {
     display: none;
 }
 
-/* Color Theme Swatches in Hex */
-/* .Open-book-isolated-on-white-background-1-hex { color: #BFAF8F; }
-.Open-book-isolated-on-white-background-2-hex { color: #D9D0C1; }
-.Open-book-isolated-on-white-background-3-hex { color: #A68D6F; }
-.Open-book-isolated-on-white-background-4-hex { color: #F2F2F2; }
-.Open-book-isolated-on-white-background-5-hex { color: #0D0D0D; } */
+/* Burger menu icon styles */
+.burger {
+    display: none; /* Hidden on desktop */
+    font-size: 1.8em;
+    cursor: pointer;
+    user-select: none;
+}
 
+/* Responsive styles for mobile */
+@media (max-width: 768px) {
+    /* Show burger icon on mobile */
+    .burger {
+        display: block;
+    }
+
+    /* Allow navbar to wrap elements on mobile */
+    .navbar {
+        flex-wrap: wrap;
+    }
+
+    /* Stack nav links vertically on mobile */
+    .navbar ul {
+        flex-direction: column;
+        width: 100%;
+        background-color: #f2f2f2;
+        margin-top: 1em;
+    }
+
+    /* Style nav links on mobile */
+    .navbar ul li {
+        padding: 0.5em 1em;
+        text-align: center;
+    }
+}
