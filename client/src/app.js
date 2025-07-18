@@ -19,6 +19,7 @@ import { setupBurgerMenu } from "./utils/toggleBurgerMenu.js";
 
 updateNav()
 
+setupBurgerMenu()
 
 useRoutes('/', showHomeView, {isLoggedIn: false })
 useRoutes('/login', showLoginView , { isLoggedIn: true })
@@ -28,7 +29,6 @@ useRoutes('/catalog/:bookId', showBookDetailsView, { isLoggedIn: false })
 useRoutes('/profile', showProfileView, { isLoggedIn: false })
 useRoutes('*', show404View)
 
-setupBurgerMenu()
 
 
 document.getElementById("logout").addEventListener("click", async () => {

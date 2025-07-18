@@ -48,6 +48,11 @@
         display: block;
     }
 
+    .navbar .guest,
+    .navbar .user {
+        display: none;
+  }
+
     /* Allow navbar to wrap elements on mobile */
     .navbar {
         flex-wrap: wrap;
