@@ -13,6 +13,7 @@ import { showMessage } from "./utils/notification.js";
 import { updateNav } from "./utils/update-nav.js";
 import { showProfileView } from "./views/profile-view.js";
 import { show404View } from "./views/404-view.js";
+import { setupBurgerMenu } from "./utils/toggleBurgerMenu.js";
 
 
 
@@ -27,6 +28,7 @@ useRoutes('/catalog/:bookId', showBookDetailsView, { isLoggedIn: false })
 useRoutes('/profile', showProfileView, { isLoggedIn: false })
 useRoutes('*', show404View)
 
+setupBurgerMenu()
 
 
 document.getElementById("logout").addEventListener("click", async () => {
