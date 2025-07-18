@@ -1,4 +1,4 @@
-#notifications {
+    #notifications {
     position: absolute;
     top: 0%;
     left: 50%;
@@ -25,4 +25,40 @@
 
 #errorBox>span {
     background: rgb(132, 191, 239);
+}
+
+
+/* Hide burger on desktop */
+.burger {
+  display: none;
+  font-size: 1.8em;
+  cursor: pointer;
+}
+
+/* Responsive styles */
+@media (max-width: 768px) {
+  .burger {
+    display: block;
+  }
+
+  .navbar {
+    flex-wrap: wrap;
+  }
+
+  .nav-links {
+    flex-direction: column;
+    width: 100%;
+    display: none;
+    background-color: #f2f2f2;
+    margin-top: 1em;
+  }
+
+  .nav-links.show {
+    display: flex;
+  }
+
+  .nav-links li {
+    padding: 0.5em 1em;
+    text-align: center;
+  }
 }
