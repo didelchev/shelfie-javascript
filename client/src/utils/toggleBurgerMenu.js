@@ -6,22 +6,16 @@ export function setupBurgerMenu() {
   if (!burger) return;
 
   burger.addEventListener('click', () => {
-    if (window.innerWidth > 768) return; // only on mobile
+    if (window.innerWidth > 768) return;
 
-    // Determine which nav is currently visible or fallback
-    let navToToggle;
+    // Find the currently active (displayed) menu based on login state
+    const isLogged = Boolean(getUserData());
+    const navToToggle = isLogged ? userLinks : guestLinks;
 
-    if (guestLinks && (guestLinks.style.display === 'flex' || guestLinks.style.display === '')) {
-      navToToggle = guestLinks;
-    } else if (userLinks && (userLinks.style.display === 'flex' || userLinks.style.display === '')) {
-      navToToggle = userLinks;
-    } else {
-      // fallback: pick guestLinks or userLinks whichever exists
-      navToToggle = guestLinks || userLinks;
-    }
+    if (!navToToggle) return;
 
-    // Toggle display property
-    if (navToToggle.style.display === 'none') {
+    // Toggle it
+    if (navToToggle.style.display === 'none' || navToToggle.style.display === '') {
       navToToggle.style.display = 'flex';
     } else {
       navToToggle.style.display = 'none';
