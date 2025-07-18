@@ -122,8 +122,17 @@
     display: flex;
     flex-direction: column;
     height: 100vh;
-    background: url('/images/example1.jpg') center/cover no-repeat;
     position: relative;
+  }
+
+  .login-grid-container::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: url('/images/example1.jpg') center/cover no-repeat;
+    z-index: 0;
+    filter: blur(10px); /* use filter, not backdrop-filter */
+    transform: scale(1.05); /* slight zoom to hide blur edges */
   }
 
   .left-section-container {
@@ -133,7 +142,6 @@
   .right-section-container {
     position: relative;
     z-index: 2;
-    background-color: rgba(255, 255, 255, 0.9); /* translucent form background */
     padding: 2em 1em;
     margin: auto;
     border-radius: 1em;
@@ -147,12 +155,6 @@
     width: 100%;
     padding: 2em 1em;
   }
-
-  /* .login-form h1,
-  .left-section-container .content h1 {
-    font-size: 1.8em;
-    text-align: left;
-  } */
 
   .login-form h2 {
     text-align: center;
