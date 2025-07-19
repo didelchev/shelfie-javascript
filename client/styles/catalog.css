@@ -230,6 +230,24 @@
 .book-catalog-grid .book .checked {
   color: orange;
 }
+
+/* Toggle button styling */
+.toggle-filters-btn {
+  display: none;
+  background-color: #708D81;
+  color: white;
+  padding: 0.7em 1em;
+  font-size: 1rem;
+  border: none;
+  border-radius: 0.5em;
+  margin: 1rem;
+  cursor: pointer;
+}
+
+
+
+
+
 /* RESPONSIVE */
 @media (max-width: 768px) {
   .book-catalog {
@@ -244,5 +262,18 @@
 
   .book-catalog-grid {
     grid-template-columns: repeat(auto-fill, minmax(160px, 1fr));
+  }
+
+  .toggle-filters-btn {
+    display: block;
+  }
+
+  .left-section-filters {
+    display: none;
+  }
+
+  .left-section-filters.visible {
+    display: block;
+    margin-bottom: 1rem;
   }
 }

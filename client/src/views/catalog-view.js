@@ -3,11 +3,15 @@ import { render, html } from "../lib.js";
 import { getAll } from "../services/book-service.js";
 import { bookTemplate } from "../templates/book-template.js";
 import { spinnerTemplate } from "../templates/spinner-template.js";
+import { setupFilterToggle } from "../utils/toggleFilters.js";
 
 let allBooks = [];
 
 
 const catalogTemplate = (books, submitHandler, searchHandler, filterHandler) => html`
+<button id="toggle-filters-btn" class="toggle-filters-btn">
+  Show Filters
+</button>
  <main class="book-catalog">
   <div class="left-section-filters">
     <form @submit=${submitHandler} class="search-form" id="search-form">
@@ -153,6 +157,7 @@ export const showCatalogView = () => {
   .then((books) => {
     allBooks = books;
     render(catalogTemplate(allBooks, submitHandler, searchHandler, filterHandler));
+    setupFilterToggle();
     Navigate();
   });
 };
