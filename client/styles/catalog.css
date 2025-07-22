@@ -1,5 +1,4 @@
 :root {
-  --primary: #6c5ce7;
   --bg: #f4f6fa;
   --card-bg: white;
   --border-radius: 12px;
@@ -234,16 +233,19 @@
 /* Toggle button styling */
 .toggle-filters-btn {
   display: none;
+  width: 80%;
+  
   background-color: #708D81;
   color: white;
   padding: 0.7em 1em;
   font-size: 1rem;
   border: none;
   border-radius: 0.5em;
-  margin: 1rem;
+  margin: 7em auto;
+  margin-bottom: 1em;
+  padding: 1.2em;
   cursor: pointer;
 }
-
 
 
 
@@ -252,6 +254,7 @@
 @media (max-width: 768px) {
   .book-catalog {
     flex-direction: column;
+    padding-top: 0;
   }
 
   .left-section-filters {
@@ -276,4 +279,5 @@
     display: block;
     margin-bottom: 1rem;
   }
+
 }
