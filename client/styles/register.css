@@ -114,3 +114,55 @@ font-size: 3.5em;
 .register-form .registered a {
   color: black;
   }
+
+
+
+@media (max-width: 768px) {
+  .register-grid-container {
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+    background: url('/images/example2.jpg') center/cover no-repeat;
+    position: relative;
+  }
+
+  .right-section {
+    display: none; /* Hide image content on mobile */
+  }
+
+  .left-section {
+    position: relative;
+    z-index: 2;
+    background-color: rgba(255, 255, 255, 0.7);
+    backdrop-filter: blur(5px);
+    -webkit-backdrop-filter: blur(5px); /* Safari */
+    margin: auto;
+    padding: 2em 1em;
+    border-radius: 1em;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+    width: 90%;
+    max-width: 400px;
+    align-items: center;
+  }
+
+  .register-form {
+    width: 100%;
+    padding: 0;
+  }
+
+  .register-form h2 {
+    text-align: center;
+    font-size: 1.5em;
+  }
+
+  .register-form label,
+  .register-form input,
+  .register-form button {
+    font-size: 1em;
+  }
+
+  .register-form .registered {
+    font-size: 0.9em;
+    text-align: center;
+  }
+}
