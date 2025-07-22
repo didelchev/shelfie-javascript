@@ -6,19 +6,34 @@ const catalogController = Router();
 
 
 catalogController.get("/", (req, res) => {
-  //add error handling
   getAll()
     .then(data => res.json(data))
+    .catch(err => {
+      res.status(500).json({
+        message: 'Failed to fetch books',
+        error: err.message
+      })
+    })
   
 });
 
 
 catalogController.get("/:bookId", (req, res) => {
   let id = req.params.bookId
-// add error handling
+
   getOne(id)
-    .then(data => res.json(data))
-    
+    .then(data => {
+      if(!data){
+        return res.status(404).json({ message: 'Book not found !'})
+      }
+      res.json(data)
+    })
+    .catch(err => {
+      res.status(500).json({
+        message: "Failed to fetch book",
+        error: err.message
+      })
+    })
 
 });
 
