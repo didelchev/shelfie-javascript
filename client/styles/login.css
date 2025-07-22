@@ -122,44 +122,43 @@
     display: flex;
     flex-direction: column;
     height: 100vh;
+    background: url('/images/example1.jpg') center/cover no-repeat;
     position: relative;
   }
 
-  .login-grid-container::before {
-    content: "";
-    position: absolute;
-    inset: 0;
-    background: url('/images/example1.jpg') center/cover no-repeat;
-    z-index: 0;
-    filter: blur(10px); /* use filter, not backdrop-filter */
-    transform: scale(1.05); /* slight zoom to hide blur edges */
-  }
-
   .left-section-container {
-    display: none; /* Hide image section on mobile */
+    display: none; /* Hide image content */
   }
 
   .right-section-container {
     position: relative;
     z-index: 2;
-    padding: 2em 1em;
+    background-color: rgba(255, 255, 255, 0.7);
+    backdrop-filter: blur(5px);
+    -webkit-backdrop-filter: blur(5px); /* Safari support */
     margin: auto;
+    padding: 2em 1em;
     border-radius: 1em;
-    backdrop-filter: blur(20px);
     box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
     width: 90%;
     max-width: 400px;
+    align-items: center;
   }
 
   .login-form {
     width: 100%;
-    padding: 2em 1em;
+    padding: 0;
   }
 
   .login-form h2 {
     text-align: center;
-    font-size: 2em;
-    font-weight: 500;
+    font-size: 1.5em;
+  }
+
+  .login-form label,
+  .login-form input,
+  .login-form button {
+    font-size: 1em;
   }
 
   .login-form p {
@@ -167,12 +166,8 @@
     font-size: 0.95em;
   }
 
-  .login-form input,
-  .login-form button {
-    font-size: 1em;
-  }
-
   .login-form .not-registered {
     font-size: 0.9em;
+    text-align: center;
   }
 }
