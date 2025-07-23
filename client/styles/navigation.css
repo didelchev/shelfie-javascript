@@ -40,6 +40,11 @@
 
 /* Responsive styles for mobile */
 @media (max-width: 768px) {
+    .header .navbar .logo {
+        font-size: 2em;
+        font-weight: 600;
+        color: #0D0D0D;
+}
     .burger {
         display: block;
     }

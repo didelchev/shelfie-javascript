@@ -233,15 +233,14 @@
 /* Toggle button styling */
 .toggle-filters-btn {
   display: none;
-  width: 80%;
-  
+  width: 86%;
   background-color: #708D81;
   color: white;
   padding: 0.7em 1em;
   font-size: 1rem;
   border: none;
   border-radius: 0.5em;
-  margin: 7em auto;
+  margin: 7em 1em;
   margin-bottom: 1em;
   padding: 1.2em;
   cursor: pointer;
