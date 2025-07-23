@@ -33,29 +33,30 @@
 a {
   text-decoration: none;
   position: relative;
-  transition: all 0.3s ease;
 }
 
-a:hover {
-  transform: translateY(-3px);
+a::before,
+a::after {
+  content: "";
+  position: absolute;
+  background-color: #A6A6A6;
+  width: 0%;
+  height: 2px;
+  bottom: 0;
+  transition: width 0.8s cubic-bezier(0.68, -0.55, 0.265, 1.55);
 }
 
 a::before {
-  content: "";
-  position: absolute;
-  z-index: -1;
-  bottom: -1px;
   left: 0;
-  right: 0;
-  height: 5px;
-  background-color: #A6A6A6;
-  transform: scaleY(0);
-  transform-origin: bottom;
-  transition: transform 0.3s ease;
 }
 
-a:hover::before {
-  transform: scaleY(1);
+a::after {
+  right: 0;
+}
+
+a:hover::before,
+a:hover::after {
+  width: 100%;
 }
 
 /* Burger menu icon styles */
