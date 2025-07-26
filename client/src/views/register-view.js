@@ -44,21 +44,45 @@ export const showRegisterView = () => {
     document.title = 'Register'
     hideNav()
     const registerHandler = (e) => {
-        e.preventDefault()
+  e.preventDefault();
 
-        let { email, username, password, ["re-password"]: rePassword} = Object.fromEntries(new FormData(e.currentTarget))
+  const formData = new FormData(e.currentTarget);
+  const email = formData.get('email').trim();
+  const username = formData.get('username').trim();
+  const password = formData.get('password').trim();
+  const rePassword = formData.get('re-password').trim();
 
-        register(email,username, password, rePassword)
-            .then(data => {
-                saveUserData(data)
-                console.log(data)
-                showMessage('Register Successful')
-                Redirect('/')
-                updateNav()
-                
-            })
-            .catch(err => showMessage(err))
-    }
+  if (!email || !username || !password || !rePassword) {
+    return showMessage('All fields are required.');
+  }
+
+  const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+  if (!emailRegex.test(email)) {
+    return showMessage('Please enter a valid email address.');
+  }
+
+  if (username.length < 4) {
+    return showMessage('Username must be at least 3 characters.');
+  }
+
+  if (password.length < 6) {
+    return showMessage('Password must be at least 6 characters.');
+  }
+
+  if (password !== rePassword) {
+    return showMessage('Passwords do not match.');
+  }
+
+  register(email, username, password, rePassword)
+    .then(data => {
+      saveUserData(data);
+      showMessage('Register successful!');
+      Redirect('/');
+      updateNav();
+    })
+    .catch(err => showMessage(err));
+};
+
 
     render(registerTemplate(registerHandler))
     Navigate()

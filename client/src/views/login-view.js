@@ -37,8 +37,6 @@ const loginTemplate = (loginHandler) => html`
     
     `
 
-
-
 export const showLoginView = () => {
   document.title = 'Login'
   hideNav()
