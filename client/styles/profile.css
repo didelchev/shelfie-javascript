@@ -192,6 +192,17 @@
   box-shadow: 0 4px 10px rgba(0,0,0,0.1);
 }
 
+.remove-btn {
+  background: #d33;
+  color: white;
+  padding: 0.3em 0.6em;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  margin-top: 0.5em;
+}
+
+
 
 /* Responsive */
 @media (max-width: 768px) {

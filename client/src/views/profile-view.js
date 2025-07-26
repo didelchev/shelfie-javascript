@@ -1,12 +1,12 @@
 import { html,render } from "../lib.js"
 import { Navigate } from "../routes.js"
 import { editUserCredentials, getUserCredentials } from "../services/auth-service.js"
-import { getOne } from "../services/book-service.js"
+import { getOne, removeBookFromShelf } from "../services/book-service.js"
 import { profileBooksTemplate } from "../templates/book-profile-template.js"
 import { showMessage } from "../utils/notification.js"
 
 
-const profileTemplate = (books, user) => html`
+const profileTemplate = (books, user, removeHandler) => html`
   <section class="profile-page">
   <div class="profile-banner"></div>
   <div class="profile-card">
@@ -38,17 +38,17 @@ const profileTemplate = (books, user) => html`
   <div class="book-shelf">
     <h3>Read</h3>
     <div class="shelf-row">
-      ${books.filter(b => b.status === 'read').map(b => profileBooksTemplate(b))}
+      ${books.filter(b => b.status === 'read').map(b => profileBooksTemplate(b,removeHandler))}
     </div>
 
     <h3>Currently Reading</h3>
     <div class="shelf-row">
-      ${books.filter(b => b.status === 'currReading').map(b => profileBooksTemplate(b))}
+      ${books.filter(b => b.status === 'currReading').map(b => profileBooksTemplate(b,removeHandler))}
     </div>
 
     <h3>To-Read</h3>
     <div class="shelf-row">
-      ${books.filter(b => b.status === 'to-read').map(b => profileBooksTemplate(b))}
+      ${books.filter(b => b.status === 'to-read').map(b => profileBooksTemplate(b,removeHandler))}
     </div>
   </div>
 </section>
@@ -88,6 +88,8 @@ function onSaveEdit(e) {
 
 }
 
+
+
 export const showProfileView = () => {
   // Get the user data from DB
   getUserCredentials()
@@ -116,7 +118,17 @@ export const showProfileView = () => {
         ...currReading.map(book => ({...book, status: 'currReading'}))
       ]
 
-      render(profileTemplate(allBooks, userData))
+       const removeHandler = (bookId, shelfType) => {
+        removeBookFromShelf(bookId, shelfType)
+          .then(() => {
+            console.log(bookId, shelfType)
+            showMessage('Book removed from shelf.');
+            showProfileView(); 
+          })
+          .catch(err => showMessage(err));
+      };
+
+      render(profileTemplate(allBooks, userData, removeHandler))
       Navigate()
     }) 
     

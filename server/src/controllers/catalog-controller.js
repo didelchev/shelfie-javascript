@@ -52,4 +52,26 @@ try {
 
 })
 
+
+catalogController.patch("/:bookId", async (req, res) => {
+  const { bookId, shelfType } = req.body;
+  console.log(bookId, shelfType)
+  const userId = req.user._id;
+
+    if (!['read', 'toRead', 'currReading'].includes(shelfType)) {
+    return res.status(400).json({ message: 'Invalid shelf.' });
+  }
+
+  try {
+    const update = { $pull: { [shelfType]: bookId } };
+
+    await User.findByIdAndUpdate(userId, update);
+
+    res.json({ message: 'Book removed.' });
+
+  } catch (err) {
+    res.status(500).json({ message: 'Failed to remove book.', error: err.message });
+  }
+})
+
 export default catalogController;

@@ -1,4 +1,4 @@
-import { get, post } from "../utils/requester.js";
+import { get, patch, post } from "../utils/requester.js";
 
 const baseURL = "https://shelfie-book-app.onrender.com/catalog" ;
 
@@ -20,3 +20,5 @@ export const getBookReviews = (bookId) => get(`${baseReviewURL}/${bookId}` )
 export const addBookRating = (bookId, rating) => post(`${baseReviewURL}/${bookId}/ratings`, rating)
 
 export const getBookRating = (bookId) => get(`${baseReviewURL}/${bookId}/ratings`)
+
+export const removeBookFromShelf = (bookId, shelfType) => patch(`${baseURL}/${bookId}`, {shelfType})
