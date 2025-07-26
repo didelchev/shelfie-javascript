@@ -42,20 +42,34 @@ const loginTemplate = (loginHandler) => html`
 export const showLoginView = () => {
   document.title = 'Login'
   hideNav()
-    const loginHandler = (e) => {
-        e.preventDefault()
+  const loginHandler = (e) => {
+       e.preventDefault();
 
-        let { email, password } = Object.fromEntries(new FormData(e.currentTarget))
+      const formData = new FormData(e.currentTarget);
+      const email = formData.get('email').trim();
+      const password = formData.get('password').trim();
 
-        login(email,password)
-            .then(data => {
-                saveUserData(data)
-                showMessage('Login Successfull !')
-                Redirect('/')
-                updateNav()
-            })
-            .catch(err => showMessage(err)) 
-    }
+      if (!email || !password) {
+        return showMessage('All fields are required.');
+      }
+    
+      const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+      if (!emailRegex.test(email)) {
+        return showMessage('Please enter a valid email address.');
+      }
+  
+    
+      // Proceed with login
+      login(email, password)
+        .then(data => {
+          saveUserData(data);
+          showMessage('Login successful!');
+          Redirect('/');
+          updateNav();
+        })
+        .catch(err => showMessage(err));
+};    
+
     
     render(loginTemplate(loginHandler))
     Navigate()
