@@ -186,6 +186,7 @@
 
 .shelf-row .single-book img {
   width: 100%;
+  display: block;
   aspect-ratio: 2/3; 
   object-fit: cover;
   border-radius: 8px;
@@ -193,13 +194,21 @@
 }
 
 .remove-btn {
-  background: #d33;
+  position: absolute;
+  top: 6px;
+  right: 6px;
+  background-color: rgba(220, 0, 0, 0.85);
   color: white;
-  padding: 0.3em 0.6em;
   border: none;
-  border-radius: 4px;
+  border-radius: 25%;
+  padding: 4px 6px;
+  font-size: 12px;
   cursor: pointer;
-  margin-top: 0.5em;
+  transition: background-color 0.2s ease;
+}
+
+.remove-btn:hover {
+  background-color: rgba(180, 0, 0, 1);
 }
 
 

@@ -1,6 +1,8 @@
 import { Router } from "express";
 import { addToBookList, getAll, getOne } from "../services/book-service.js";
 import { getUserById } from "../services/user-service.js";
+import { Types } from 'mongoose';
+import User from "../models/User.js";
 
 const catalogController = Router();
 
@@ -54,22 +56,33 @@ try {
 
 
 catalogController.patch("/:bookId", async (req, res) => {
-  const { bookId, shelfType } = req.body;
-  console.log(bookId, shelfType)
+  const bookId = req.params.bookId
+  const { shelfType } = req.body;
   const userId = req.user._id;
+  console.log(userId)
+  
+  
 
     if (!['read', 'toRead', 'currReading'].includes(shelfType)) {
     return res.status(400).json({ message: 'Invalid shelf.' });
   }
 
   try {
-    const update = { $pull: { [shelfType]: bookId } };
+    const update = { $pull: { [shelfType]: new Types.ObjectId(bookId) } };
 
     await User.findByIdAndUpdate(userId, update);
+    
 
     res.json({ message: 'Book removed.' });
 
   } catch (err) {
+    console.error("❌ Failed to remove book:", {
+    message: err.message,
+    name: err.name,
+    stack: err.stack,
+    error: err,
+  });
+
     res.status(500).json({ message: 'Failed to remove book.', error: err.message });
   }
 })
