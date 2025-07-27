@@ -8,7 +8,7 @@ import { saveUserData } from "../utils/user-data.js"
 
 const loginTemplate = (loginHandler) => html`
 <div class="login-grid-container">
-   <div class="left-section-container">
+   <div class="left-section-container" data-aos="fade-right">
     <div class="content">
       <a href="/">
         <img src="#" alt="Logo" class="logo" />
@@ -19,7 +19,7 @@ const loginTemplate = (loginHandler) => html`
       </p>
     </div>
   </div>
-  <div class="right-section-container">
+  <div class="right-section-container" data-aos="fade-left">
       <form @submit=${loginHandler} class="login-form">
         <h2>Welcome back</h2>
         <p>Welcome back, please enter your credentials.</p>
