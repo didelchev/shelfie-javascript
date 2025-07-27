@@ -26,7 +26,7 @@ html`
           </div>
         </div>
       </section>
-      <div class = "features-grid-container" data-aos="fade" data-aos-delay='100'>
+      <div class = "features-grid-container" data-aos="fade" data-aos-delay='100' data-aos-duration="1000">
         <div class="feature-item">
           <div class ="circle-border">
               <i class="fas fa-search fa-3x"></i>
@@ -49,7 +49,7 @@ html`
           <p>Track your personal reading journey by adding books to your custom shelves. Organize your collection the way you like—whether it's “Want to Read,” “Currently Reading,” or “Finished.” Rate and comment on books to share your thoughts and keep a record of what you’ve read. Simple and personal, it’s your bookshelf, your way.</p>
         </div>
       </div> 
-      <section class ="about-app-container" data-aos="fade-left" data-aos-delay="200">
+      <section class ="about-app-container" data-aos="fade-left" data-aos-delay="200" >
         <div class="about-image">
           <img src="/images/example5.webp" alt="Organized books with Shelfie">
         </div>
@@ -67,7 +67,7 @@ html`
           </div>
         </div>
       </section>
-       <section class= "testimonials">
+       <section class= "testimonials" data-aos="fade" data-aos-duration="500">
         <div class="divider">
             <span>What Our Users Says</span>
         </div>
@@ -170,7 +170,7 @@ html`
           </div>
         </div>
       </section>
-      <section class="popular-books">
+      <section class="popular-books" data-aos="fade-down">
         <div class="divider">
           <span>Recently Added Books</span>
         </div>
