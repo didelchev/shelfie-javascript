@@ -12,7 +12,7 @@ const catalogTemplate = (books, submitHandler, searchHandler, filterHandler) => 
 <button id="toggle-filters-btn" class="toggle-filters-btn">
   Show Filters
 </button>
- <main class="book-catalog">
+ <main class="book-catalog" data-aos="fade-down">
   <div class="left-section-filters">
     <form @submit=${submitHandler} class="search-form" id="search-form">
       <label for="search-form">Search</label>
