@@ -14,8 +14,11 @@ import { updateNav } from "./utils/update-nav.js";
 import { showProfileView } from "./views/profile-view.js";
 import { show404View } from "./views/404-view.js";
 import { setupBurgerMenu } from "./utils/toggleBurgerMenu.js";
+import { animations } from "./lib.js";
 
 
+
+animations()
 
 updateNav()
 
