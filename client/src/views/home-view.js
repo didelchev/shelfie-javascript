@@ -5,8 +5,8 @@ import { bookTemplate } from "../templates/book-template.js"
 
 const homeTemplate = (books) => 
 html`
-    <section class="main-content">
-        <div class="welcome-text">
+    <section class="main-content" data-aos="fade-right">
+        <div class="welcome-text" >
           <h1>Welcome to Shelfie</h1>
           <h2>
             Dive into a world of books. Organize your collection and find new reads.
