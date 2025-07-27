@@ -7,7 +7,7 @@
 
 .left-section-container {
   display: flex;
-  background: url(/images/example1.jpg) center/cover no-repeat;
+  background: url(/images/example1.webp) center/cover no-repeat;
   color: #fff;
   align-items:center;
   justify-content: flex-start;
@@ -122,7 +122,7 @@
     display: flex;
     flex-direction: column;
     height: 100vh;
-    background: url('/images/example1.jpg') center/cover no-repeat;
+    background: url('/images/example1.webp') center/cover no-repeat;
     position: relative;
   }
 
