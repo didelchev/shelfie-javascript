@@ -19,3 +19,11 @@ To set up the project, follow these steps:
 4) Go to the client folder: `cd client`
 5) Install the frontend dependencies: `npm install`
 6) Start the frontend server: `npm run dev`
+
+## Technologies Used
+* JavaScript
+* Lit-html
+* Express.js
+* MongoDB Atlas
+* CSS
+* HTML
