@@ -27,3 +27,6 @@ To set up the project, follow these steps:
 * MongoDB Atlas
 * CSS
 * HTML
+
+## Requirements 
+* Build a full-stack application by making your own backend and your own front-end.
