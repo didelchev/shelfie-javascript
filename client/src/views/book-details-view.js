@@ -13,7 +13,7 @@
               <img src="${book.image}" alt="book">
         ${isLogged() ? html`
         <div class='dropdown'>
-            <button>Select a shelf:</button>
+            <button>Add to Library:</button>
             <div class='options'>
                 <button class='dropdown-options' value='read'>Read</button>
                 <button class='dropdown-options' value='currReading'>Currently Reading</button>

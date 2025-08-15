@@ -32,7 +32,7 @@ const profileTemplate = (books, user, removeHandler) => html`
   <div class="profile-stats">
     <div><strong>${books.filter(b => b.status === 'read').length}</strong><span>Read</span></div>
     <div><strong>${books.filter(b => b.status === 'currReading').length}</strong><span>Currently Reading</span></div>
-    <div><strong>${books.filter(b => b.status === 'to-read').length}< /strong><span>To-Read</span></div>
+    <div><strong>${books.filter(b => b.status === 'to-read').length}</strong><span>To-Read</span></div>
   </div>
 
   <div class="book-shelf">
