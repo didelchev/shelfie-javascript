@@ -45,6 +45,7 @@ I Started the project by drawing a wireframe on Excalidraw. The app consists of 
 * Profile Page: Allows logged-in users to see their profile, with their profile image, bio, their book stats. They can also view all the books they have added to a specific category (Read, Currently Reading, To-Read)
 
 ![Project Screenshot](client/public/images/login-register-wireframe.png)
+![Project Screenshot](client/public/images/wireframes.png)
 
 
 
