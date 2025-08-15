@@ -44,4 +44,8 @@ I Started the project by drawing a wireframe on Excalidraw. The app consists of 
 * Single Book: Shows detailed information about a specific book. Users can add books to their library by clicking the "Add to Library" button and categorize them as "Read," "Currently Reading," or "Wishlist." If a book is already in the library, the user can view its current category instead of the default "Add to Library" button.
 * Profile Page: Allows logged-in users to see their profile, with their profile image, bio, their book stats. They can also view all the books they have added to a specific category (Read, Currently Reading, To-Read)
 
+![Project Screenshot](client/public/images/login-register-wireframe.png)
+
+
+
 ## Build Process 
