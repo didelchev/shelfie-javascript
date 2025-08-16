@@ -2,9 +2,7 @@
 ![Project Screenshot](client/public/images/shelfie-welcome-img.png)
 
 ## Description
-
-## Features
-* 
+Shelfie is a minimalist book catalog app inspired by Goodreads, built with Vanilla JavaScript, HTML, and CSS on the frontend, and powered by an Express.js backend with MongoDB for data storage. I intentionally chose not to use any frontend frameworks to strengthen my core JavaScript skills and gain a deeper understanding of the fundamentals. The app provides a responsive, user-friendly interface for browsing a curated collection of books
 
 
 ## Deployment link
