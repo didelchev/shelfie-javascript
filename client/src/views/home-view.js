@@ -161,7 +161,7 @@ html`
               <span class="fa fa-star"></span>
             </div>
             <blockquote class="testimonial-quote">
-              "After a decade of using every book tracking app imaginable, I was about to give up hope of ever finding one that truly understood readers. Then I discovered Shelfie, and it was like finding a kindred spirit in app form. The attention to detail shows the developers genuinely care about books - from the way you can organize by mood and not just genre, to the thoughtful reading progress tracker that doesn't make you feel guilty for taking your time. It's clear this was made by people who actually curl up with books on rainy Sundays, who know the thrill of discovering a perfect new read, and who understand that a bookshelf is deeply personal. For the first time, my digital collection feels as warm and inviting as my physical one."
+              "After a decade of using every book tracking app imaginable, I was about to give up hope of ever finding one that truly understood readers. Then I discovered Shelfie, and it was like finding a kindred spirit in app form. The attention to detail shows the developers genuinely care about books - from the way you can organize by mood and not just genre, to the thoughtful reading progress tracker that doesn't make you feel guilty for taking your time."
             </blockquote>
             <div class="testimonial-author">
               <img src="/images/profile-picture5.webp" alt="Profile Picture">

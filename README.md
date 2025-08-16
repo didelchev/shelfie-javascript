@@ -72,7 +72,6 @@ My biggest win was successfully completing my first solo full-stack project with
 ## Bugs
 
 * Very slow loading when opening the app for the first time.
-* Navbar disappearing after login and register.
 * Burger menu not showing on home page on mobile.
 
 ## Future Improvements
