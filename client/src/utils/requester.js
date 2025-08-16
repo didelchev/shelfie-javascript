@@ -1,4 +1,4 @@
-import { Redirect } from "../routes.js";
+import { redirect } from "../routes.js";
 import { showMessage } from "./notification.js";
 import { updateNav } from "./update-nav.js";
 import { clearUserData, getUserData } from "./user-data.js";
@@ -26,7 +26,7 @@ const request = (method, url, data) => {
       if(response.status === 401) {
         clearUserData()
         updateNav()
-        Redirect('/login')
+        redirect('/login')
         return Promise.reject('Unauthorized - please login to your account !')
       }
       if(!response.ok){
