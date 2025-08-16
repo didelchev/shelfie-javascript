@@ -68,3 +68,9 @@ I Started the project by drawing a wireframe on Excalidraw. The app consists of 
 
 ## Wins
 My biggest win was successfully completing my first solo full-stack project without relying on any frontend frameworks like React, Angular, or Vue. By doing so, I filled important gaps in my JavaScript knowledge.
+
+## Future Improvements
+* Improve performance for large book lists.
+* Add reading progress
+* Edit comments
+* Like comments 
