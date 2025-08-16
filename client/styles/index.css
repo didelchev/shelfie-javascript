@@ -186,13 +186,13 @@
 }
 .testimonials-grid-container {
   display: grid;
-  width: 80%;
+  width: 100%;
   grid-template-columns: repeat(3, 1fr);
   grid-template-rows: 1fr 1fr;
   align-items: stretch;
   padding: 3em 12em;
   justify-items: center;
-  gap: 2em;
+  gap: 3em;
   margin: 0 auto;
 }
 
