@@ -18,10 +18,10 @@ To set up the project, follow these steps:
 1) Clone the project: `git clone https://github.com/didelchev/shelfie-book-app.git`
 2) Go to the root directory of the project.
 3) Go to the server folder and install the backend dependencies: `npm install`
-4) Start the backend server: `npm start`
+4) Start the backend server: `npm start`, the server will run on http://localhost:3000
 5) Go to the client folder: `cd client`
 6) Install the frontend dependencies: `npm install`
-7) Start the frontend server: `npm run dev`
+7) Start the frontend server: `npm run dev`, the server will run on http://localhost:5000
 
 ## Technologies Used
 * JavaScript
