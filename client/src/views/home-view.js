@@ -2,6 +2,7 @@ import { getLatest } from "../services/book-service.js"
 import { render,html } from "../lib.js"
 import { Navigate } from "../routes.js"
 import { bookTemplate } from "../templates/book-template.js"
+import { showNav } from "../utils/update-nav.js"
 
 const homeTemplate = (books) => 
 html`
@@ -213,7 +214,7 @@ html`
   
 export const showHomeView = () => {
 
-    showNav()
+  showNav()
   
   getLatest()
     .then(books => {
