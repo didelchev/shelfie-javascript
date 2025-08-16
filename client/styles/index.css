@@ -524,7 +524,7 @@
     content: "";
     position: absolute;
     inset: 0;
-    background-color: rgba(112, 141, 129, 0.8); /* beige with transparency */
+    background-color: rgba(112, 141, 129, 0.8); 
     z-index: 0;
     pointer-events: none;
   }

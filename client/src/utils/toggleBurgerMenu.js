@@ -10,7 +10,6 @@ export function setupBurgerMenu() {
   burger.addEventListener('click', () => {
     if (window.innerWidth > 768) return;
 
-    // Find the currently active (displayed) menu based on login state
     const isLogged = Boolean(getUserData());
     const navToToggle = isLogged ? userLinks : guestLinks;
 
