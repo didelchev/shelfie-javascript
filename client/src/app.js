@@ -4,7 +4,7 @@ import { showHomeView } from "./views/home-view.js";
 import { showLoginView } from "./views/login-view.js";
 import { showRegisterView } from "./views/register-view.js";
 
-import { Redirect, startRouter } from "./routes.js";
+import { redirect, startRouter } from "./routes.js";
 import { useRoutes } from "./routes.js";
 
 import { logout } from "./services/auth-service.js";
@@ -37,7 +37,7 @@ useRoutes('*', show404View)
 document.getElementById("logout").addEventListener("click", async () => {
     logout();
     showMessage('Successfully Loged Out')
-    Redirect('/')
+    redirect('/')
     updateNav()
 });
 

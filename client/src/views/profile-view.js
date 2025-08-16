@@ -4,6 +4,7 @@ import { editUserCredentials, getUserCredentials } from "../services/auth-servic
 import { getOne, removeBookFromShelf } from "../services/book-service.js"
 import { profileBooksTemplate } from "../templates/book-profile-template.js"
 import { showMessage } from "../utils/notification.js"
+import { showNav } from "../utils/update-nav.js"
 
 
 const profileTemplate = (books, user, removeHandler) => html`
@@ -91,6 +92,7 @@ function onSaveEdit(e) {
 
 
 export const showProfileView = () => {
+  showNav()
   // Get the user data from DB
   getUserCredentials()
     .then(user => {

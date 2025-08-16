@@ -1,5 +1,5 @@
 import { render,html } from "../lib.js"
-import { Navigate, Redirect } from "../routes.js"
+import { Navigate, redirect } from "../routes.js"
 import { login } from "../services/auth-service.js"
 import { showMessage } from "../utils/notification.js"
 import { hideNav, showNav, updateNav } from "../utils/update-nav.js"
@@ -64,9 +64,8 @@ export const showLoginView = () => {
         .then(data => {
           saveUserData(data);
           showMessage('Login successful!');
-          Redirect('/');
+          redirect('/');
           updateNav();
-          showNav();
         })
         .catch(err => showMessage(err));
 };    

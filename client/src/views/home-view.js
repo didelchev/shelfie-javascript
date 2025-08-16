@@ -212,6 +212,9 @@ html`
     `
   
 export const showHomeView = () => {
+
+    showNav()
+  
   getLatest()
     .then(books => {
       const latestBooks = books.slice(-6)

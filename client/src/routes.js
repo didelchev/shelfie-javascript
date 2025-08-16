@@ -73,7 +73,7 @@ export const Navigate = () => {
   });
 };
 
-export const Redirect = (path) => {
+export const redirect = (path) => {
   history.pushState(null, null, path);
   Router(path);
 };

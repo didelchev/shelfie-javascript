@@ -1,5 +1,5 @@
 import { render,html } from "../lib.js"
-import { Navigate, Redirect } from "../routes.js";
+import { Navigate, redirect } from "../routes.js";
 import { register } from "../services/auth-service.js";
 import { showMessage } from "../utils/notification.js";
 import { hideNav, updateNav } from "../utils/update-nav.js";
@@ -77,7 +77,7 @@ export const showRegisterView = () => {
     .then(data => {
       saveUserData(data);
       showMessage('Register successful!');
-      Redirect('/');
+      redirect('/');
       updateNav();
     })
     .catch(err => showMessage(err));
