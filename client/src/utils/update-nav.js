@@ -22,3 +22,9 @@ export const hideNav = () => {
 
   navigation.style.display = 'none'
 }
+
+export const showNav = () => {
+  const navigation = document.querySelector('.header')
+
+  navigation.style.display = 'flex'
+}
