@@ -52,6 +52,19 @@ I Started the project by drawing a wireframe on Excalidraw. The app consists of 
 
 
 ## Build Process 
+1) Initial Layout – Started with the basic design using only HTML and CSS, focusing on structure and styling before adding any JavaScript.
+
+2) Backend & Database Setup – Built the Express.js server and connected it to a MongoDB database to handle data storage and retrieval.
+
+3) Frontend Functionality – Returned to the frontend to implement:
+    * Authentication: Login and registration system
+    * Catalog Page: Displayed books with filtering and search capabilities
+    * Single Book Page: Showed detailed information, ratings, and comments
+    * Profile Page: User-specific data and settings
+
+4) Polish & Responsiveness – Refined the design, improved usability, and ensured the layout was fully responsive across devices.
+
+5) Deployed the backend on vercel.com and the frontend on netlify.com
 
 ## Wins
 My biggest win was successfully completing my first solo full-stack project without relying on any frontend frameworks like React, Angular, or Vue. By doing so, I filled important gaps in my JavaScript knowledge.
