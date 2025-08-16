@@ -199,8 +199,8 @@ html`
     <div class="footer-social">
       <h4>Connect</h4>
       <div class="social-icons">
-        <a href="#"><i class="fab fa-twitter"></i></a>
-        <a href="#"><i class="fab fa-github"></i></a>
+        <a href="https://www.linkedin.com/in/daniel-delchev-7b547a279/" target="_blank"><i class="fab fa-linkedin" target="_blank"></i></a>
+        <a href="https://github.com/didelchev" target="_blank"><i class="fab fa-github"></i></a>
         <a href="#"><i class="fab fa-discord"></i></a>
       </div>
     </div>
