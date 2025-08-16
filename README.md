@@ -4,6 +4,7 @@
 ## Description
 
 ## Features
+* 
 
 
 ## Deployment link
@@ -33,6 +34,9 @@ To set up the project, follow these steps:
 
 ## Requirements 
 * Build a full-stack application by making your own backend and your own front-end.
+* Use Vanilla JS, HTML and CSS.
+* Create a responsive design.
+* Deploy it online so it's publicly accessible.
 
 
 ## Planning 
@@ -50,3 +54,6 @@ I Started the project by drawing a wireframe on Excalidraw. The app consists of 
 
 
 ## Build Process 
+
+## Wins
+My biggest win was successfully completing my first solo full-stack project without relying on any frontend frameworks like React, Angular, or Vue. By doing so, I filled important gaps in my JavaScript knowledge.
