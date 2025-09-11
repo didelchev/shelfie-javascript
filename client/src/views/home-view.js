@@ -219,21 +219,21 @@ export const showHomeView = () => {
   
   render(spinnerTemplate())
 
-  getLatest()
-    .then(books => {
+  // getLatest()
+  //   .then(books => {
 
-      if (!books || books.length === 0) {
-      render("<p>No books found.</p>");
-      return;
-    }
+  //     if (!books || books.length === 0) {
+  //     render("<p>No books found.</p>");
+  //     return;
+  //   }
       
-      const latestBooks = books.slice(-6)
+  //     const latestBooks = books.slice(-6)
 
-      render(homeTemplate(latestBooks))
+  //     render(homeTemplate(latestBooks))
 
-      Navigate()
-    })
-    .catch(err => {
-      console.log(err)
-    })
+  //     Navigate()
+  //   })
+  //   .catch(err => {
+  //     console.log(err)
+  //   })
 }
