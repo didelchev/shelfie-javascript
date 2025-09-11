@@ -3,6 +3,7 @@ import { render,html } from "../lib.js"
 import { Navigate } from "../routes.js"
 import { bookTemplate } from "../templates/book-template.js"
 import { showNav } from "../utils/update-nav.js"
+import { spinnerTemplate } from "../templates/spinner-template.js"
 
 const homeTemplate = (books) => 
 html`
@@ -218,6 +219,11 @@ export const showHomeView = () => {
   
   getLatest()
     .then(books => {
+      
+      if(!books) {
+        render(spinnerTemplate())
+      }
+      
       const latestBooks = books.slice(-6)
       render(homeTemplate(latestBooks))
       Navigate()
