@@ -217,15 +217,23 @@ export const showHomeView = () => {
 
   showNav()
   
+  render(spinnerTemplate())
+
   getLatest()
     .then(books => {
-      
-      if(!books) {
-        render(spinnerTemplate())
-      }
+
+      if (!books || books.length === 0) {
+      render("<p>No books found.</p>");
+      return;
+    }
       
       const latestBooks = books.slice(-6)
+
       render(homeTemplate(latestBooks))
+
       Navigate()
+    })
+    .catch(err => {
+      console.log(err)
     })
 }
