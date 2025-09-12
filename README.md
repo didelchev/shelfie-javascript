@@ -74,4 +74,5 @@ My biggest win was successfully completing my first solo full-stack project with
 * Improve performance for large book lists.
 * Add reading progress
 * Edit comments
+* Remove comments
 * Like comments 
