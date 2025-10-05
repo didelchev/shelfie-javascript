@@ -40,8 +40,13 @@ export const login = async (email, password) => {
     return {
       _id: user.id,
       email: user.email,
-      accessToken: token
+      accessToken: token,
+      isAuthenticated: true
     }     
 };
+
+
+
+
 
 
