@@ -17,12 +17,14 @@ reviewController.get("/:bookId", (req, res) => {
 
 reviewController.post("/:bookId",  (req,res) => {
     const bookId = req.params.bookId;
-    const userEmail =  req.user.email;
+    // const userEmail =  req.user.email;
+    const userEmail = req.body.userEmail
     const review = req.body.review;
     
     addReview(bookId, userEmail , review)
-        .then(() => res.json({message: 'Success'}))
-        .catch(err => res.json({message: err}))
+        .then((review) => res.json({ review, message: 'Success'}))
+        .catch(err => res.json({ message: err }))
+
 })
 
 
