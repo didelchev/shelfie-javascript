@@ -54,7 +54,7 @@ I Started the project by drawing a wireframe on Excalidraw. The app consists of 
 ## Build Process 
 1) Initial Layout – Started with the basic design using only HTML and CSS, focusing on structure and styling before adding any JavaScript.
 
-2) Backend & Database Setup – Built the Express.js server and connected it to a MongoDB database to handle data storage and retrieval.
+2) Backend & Database Setup – Built the Express.js server and connected it to a MongoDB Atlas database to handle data storage and retrieval.
 
 3) Frontend Functionality – Returned to the frontend to implement:
     * Authentication: Login and registration system
@@ -69,12 +69,10 @@ I Started the project by drawing a wireframe on Excalidraw. The app consists of 
 ## Wins
 My biggest win was successfully completing my first solo full-stack project without relying on any frontend frameworks like React, Angular, or Vue. By doing so, I filled important gaps in my JavaScript knowledge.
 
-## Bugs
-
-* Very slow loading when opening the app for the first time.
 
 ## Future Improvements
 * Improve performance for large book lists.
 * Add reading progress
 * Edit comments
+* Remove comments
 * Like comments 
