@@ -99,21 +99,11 @@ export const showProfileView = () => {
     .then(user => {
       // For each collection returnes an array of its books after the promise resloves 
 
+      const readBooks = Promise.all(user.read.map(bookId => getOne(bookId)));
 
-      const safeGetOne = (bookId) => getOne(bookId)
-    .catch(err => {
-        // This is where the failing GET request is caught.
-        console.warn(`Book ID ${bookId} failed to load, skipping. Error:`, err);
-        return null; // <--- MUST return null/undefined to resolve successfully
-    });
-
-
-      const readBooks = Promise.all(user.read.map(bookId => safeGetOne));
-      console.log(readBooks)
-
-      const toReadBooks = Promise.all(user.toRead.map(bookId => safeGetOne));
+      const toReadBooks = Promise.all(user.toRead.map(bookId => getOne(bookId)));
       
-      const currReadingBooks = Promise.all(user.currReading.map(bookId => safeGetOne));
+      const currReadingBooks = Promise.all(user.currReading.map(bookId => getOne(bookId)));
       
       const userData = {
         email: user.email,
@@ -126,17 +116,11 @@ export const showProfileView = () => {
       return Promise.all([readBooks, toReadBooks, currReadingBooks, userData])
     })
     .then(([read, toRead, currReading, userData]) => {
-
-       const cleanBooks = (booksArray, status) => booksArray
-        .filter(book => book !== null && book !== undefined) // <-- Filter out nulls/undefined from failed fetches
-        .map(book => ({...book, status}));
-
       const allBooks = [
-        ...cleanBooks(toRead, 'to-read'),
-        ...cleanBooks(read, 'read'),
-        ...cleanBooks(currReading, 'currReading')
-      ];
-
+        ...toRead.map(book => ({...book, status: 'to-read'})),
+        ...read.map(book => ({...book, status: 'read'})),
+        ...currReading.map(book => ({...book, status: 'currReading'}))
+      ]
 
        const removeHandler = (bookId, shelfType) => {
         removeBookFromShelf(bookId, shelfType)
