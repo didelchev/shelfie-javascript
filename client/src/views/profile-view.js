@@ -109,6 +109,7 @@ export const showProfileView = () => {
 
 
       const readBooks = Promise.all(user.read.map(bookId => fetchOneBook(bookId)));
+      console.log(readBooks)
 
       const toReadBooks = Promise.all(user.toRead.map(bookId => fetchOneBook(bookId)));
       
@@ -125,11 +126,17 @@ export const showProfileView = () => {
       return Promise.all([readBooks, toReadBooks, currReadingBooks, userData])
     })
     .then(([read, toRead, currReading, userData]) => {
+
+       const cleanBooks = (booksArray, status) => booksArray
+        .filter(book => book !== null && book !== undefined) // <-- Filter out nulls/undefined from failed fetches
+        .map(book => ({...book, status}));
+
       const allBooks = [
-        ...toRead.map(book => ({...book, status: 'to-read'})),
-        ...read.map(book => ({...book, status: 'read'})),
-        ...currReading.map(book => ({...book, status: 'currReading'}))
-      ]
+        ...cleanBooks(toRead, 'to-read'),
+        ...cleanBooks(read, 'read'),
+        ...cleanBooks(currReading, 'currReading')
+      ];
+
 
        const removeHandler = (bookId, shelfType) => {
         removeBookFromShelf(bookId, shelfType)
