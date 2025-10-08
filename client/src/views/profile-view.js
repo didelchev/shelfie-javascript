@@ -100,20 +100,20 @@ export const showProfileView = () => {
       // For each collection returnes an array of its books after the promise resloves 
 
 
-      const fetchOneBook = (bookId) => {
-        getOne(bookId)
-          .catch(err => {
-            return null
-          })
-      }
+      const safeGetOne = (bookId) => getOne(bookId)
+    .catch(err => {
+        // This is where the failing GET request is caught.
+        console.warn(`Book ID ${bookId} failed to load, skipping. Error:`, err);
+        return null; // <--- MUST return null/undefined to resolve successfully
+    });
 
 
-      const readBooks = Promise.all(user.read.map(bookId => fetchOneBook(bookId)));
+      const readBooks = Promise.all(user.read.map(bookId => safeGetOne));
       console.log(readBooks)
 
-      const toReadBooks = Promise.all(user.toRead.map(bookId => fetchOneBook(bookId)));
+      const toReadBooks = Promise.all(user.toRead.map(bookId => safeGetOne));
       
-      const currReadingBooks = Promise.all(user.currReading.map(bookId => fetchOneBook(bookId)));
+      const currReadingBooks = Promise.all(user.currReading.map(bookId => safeGetOne));
       
       const userData = {
         email: user.email,
