@@ -10,9 +10,13 @@ profileController.get('/', isAuth,  async (req,res)=> {
 const userId = req.user._id
 
 try {
+
     const user = await getUserById(userId)
+
     res.json(user)
+
 } catch (error) {
+    
     res.status(400).json({message: "User not found !"})
 }
 

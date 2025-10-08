@@ -92,16 +92,28 @@ function onSaveEdit(e) {
 
 
 export const showProfileView = () => {
+
   showNav()
-  // Get the user data from DB
+
   getUserCredentials()
     .then(user => {
       // For each collection returnes an array of its books after the promise resloves 
-      const readBooks = Promise.all(user.read.map(bookId => getOne(bookId)));
-      const toReadBooks = Promise.all(user.toRead.map(bookId => getOne(bookId)));
-      const currReadingBooks = Promise.all(user.currReading.map(bookId => getOne(bookId)));
+
+
+      const fetchOneBook = (bookId) => {
+        getOne(bookId)
+          .catch(err => {
+            return null
+          })
+      }
+
+
+      const readBooks = Promise.all(user.read.map(bookId => fetchOneBook(bookId)));
+
+      const toReadBooks = Promise.all(user.toRead.map(bookId => fetchOneBook(bookId)));
       
-      //Get user data
+      const currReadingBooks = Promise.all(user.currReading.map(bookId => fetchOneBook(bookId)));
+      
       const userData = {
         email: user.email,
         username: user.username,
@@ -113,7 +125,6 @@ export const showProfileView = () => {
       return Promise.all([readBooks, toReadBooks, currReadingBooks, userData])
     })
     .then(([read, toRead, currReading, userData]) => {
-      //Destrucutre the values into varaiables and adds a status property for each book in the arrays
       const allBooks = [
         ...toRead.map(book => ({...book, status: 'to-read'})),
         ...read.map(book => ({...book, status: 'read'})),
@@ -130,6 +141,7 @@ export const showProfileView = () => {
       };
 
       render(profileTemplate(allBooks, userData, removeHandler))
+      
       Navigate()
     }) 
     
