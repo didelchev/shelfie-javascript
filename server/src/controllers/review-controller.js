@@ -14,17 +14,14 @@ reviewController.get("/:bookId", (req, res) => {
 
 })
 
-
 reviewController.post("/:bookId",  (req,res) => {
     const bookId = req.params.bookId;
-    // const userEmail =  req.user.email;
-    const userEmail = req.body.userEmail
+    const userEmail = req.user.email;
     const review = req.body.review;
     
     addReview(bookId, userEmail , review)
-        .then((review) => res.json({ review, message: 'Success'}))
-        .catch(err => res.json({ message: err.message }))
-
+        .then(() => res.status(201).json({ message: 'Review added successfully' }))
+        .catch(err => res.status(400).json({ message: err.message }) )
 })
 
 
