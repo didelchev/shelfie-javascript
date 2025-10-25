@@ -12,7 +12,6 @@ const reviewSchema = new Schema({
     },
      userProfileImage: {
         type: String,
-        default: ''
     },
     review: {
         type: String,
