@@ -41,6 +41,7 @@ export const login = async (email, password) => {
       _id: user.id,
       email: user.email,
       accessToken: token,
+      image: user.profileImageUrl,
       isAuthenticated: true
     }     
 };
