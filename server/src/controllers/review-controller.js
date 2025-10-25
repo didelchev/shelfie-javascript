@@ -10,21 +10,22 @@ reviewController.get("/:bookId", (req, res) => {
     const bookId = req.params.bookId;
     getBookReviews(bookId)
         .then(reviews => res.json(reviews))
-        .catch(err => res.json({message: err.message}))
+        .catch(err => res.json({message: err}))
 
 })
+
+
 
 reviewController.post("/:bookId",  (req,res) => {
     const bookId = req.params.bookId;
     const userEmail = req.user.email;
     const review = req.body.review;
-    const userImage = req.body.userImage
+    const userProfileImage = req.body.userImage 
     
-    addReview(bookId, userEmail ,userImage, review)
+    addReview(bookId, userEmail , userProfileImage, review) 
         .then((userReview) => res.status(201).json({review: userReview, message: 'Review added successfully' }))
         .catch(err => res.status(400).json({ message: err.message }) )
 })
-
 
 
 
