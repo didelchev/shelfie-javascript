@@ -18,11 +18,13 @@ reviewController.post("/:bookId",  (req,res) => {
     const bookId = req.params.bookId;
     const userEmail = req.user.email;
     const review = req.body.review;
+    const userImage = req.body.userImage
     
-    addReview(bookId, userEmail , review)
+    addReview(bookId, userEmail ,userImage, review, )
         .then(() => res.status(201).json({ message: 'Review added successfully' }))
         .catch(err => res.status(400).json({ message: err.message }) )
 })
+
 
 
 
