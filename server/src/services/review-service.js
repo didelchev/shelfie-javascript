@@ -54,7 +54,7 @@ export const getRating = (bookId, userId) => {
             throw new Error('Book not found !')
          }
 
-         const averageRating = book.rating.average
+         const averageRating = book.ratings.average
 
          if(!userId){
 
