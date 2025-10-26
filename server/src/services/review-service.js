@@ -56,9 +56,11 @@ export const getRating = (bookId, userId) => {
 
          const averageRating = book.ratings.average
 
+         const ratingCount = book.ratings.counts
+
          if(!userId){
 
-            return { averageRating }
+            return { averageRating, ratingCount }
 
          }
 
